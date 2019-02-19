@@ -17,8 +17,6 @@ public class Main extends Application {
 
         //Deneme
     }
-
-
     public static void main(String[] args) {
         launch(args);
     }
