@@ -14,7 +14,7 @@ public class Main extends Application {
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 675, 375));
         primaryStage.show();
-
+//dsasdadada
         //Deneme
     }
     public static void main(String[] args) {
