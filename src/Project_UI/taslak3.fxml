@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.2040133779264214" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="605.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="143.0">
+         <children>
+            <VBox layoutX="9.0" layoutY="8.0" prefHeight="336.0" prefWidth="100.0" spacing="15.0">
+               <children>
+                  <MenuButton mnemonicParsing="false" style="-fx-background-color: red;" text="MenuButton">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                      <MenuItem mnemonicParsing="false" text="Action 2" />
+                    </items>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" style="-fx-background-color: green;" text="MenuButton">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" style="-fx-background-color: blue;" text="MenuButton">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" style="-fx-background-color: yellow;" text="MenuButton">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" style="-fx-background-color: lightblue;" text="MenuButton">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" style="-fx-background-color: lightgreen;" text="MenuButton">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" style="-fx-background-color: white;" text="MenuButton">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" style="-fx-background-color: turquoise;" text="MenuButton">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                     </items>
+                  </MenuButton>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+  </items>
+</SplitPane>

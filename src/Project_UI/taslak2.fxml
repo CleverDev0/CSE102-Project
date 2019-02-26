@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.1318051575931232" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="483.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="481.0" prefWidth="90.0">
+         <children>
+            <VBox alignment="CENTER" layoutX="6.0" prefHeight="481.0" prefWidth="77.0" spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" rotate="-45.0" style="-fx-background-color: red;" text="Button" />
+                  <Button layoutX="19.0" layoutY="198.0" mnemonicParsing="false" rotate="-45.0" style="-fx-background-color: green;" text="Button" />
+                  <Button mnemonicParsing="false" rotate="-45.0" style="-fx-background-color: blue;" text="Button" />
+                  <Button mnemonicParsing="false" rotate="-45.0" style="-fx-background-color: yellow;" text="Button" />
+                  <Button mnemonicParsing="false" rotate="-45.0" style="-fx-background-color: purple;" text="Button" />
+                  <Button mnemonicParsing="false" rotate="-45.0" style="-fx-background-color: darkgray;" text="Button" />
+                  <Button mnemonicParsing="false" rotate="-45.0" style="-fx-background-color: lightblue;" text="Button" />
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" rotate="-45.0" style="-fx-background-color: black;" text="Button" textFill="WHITE" />
+                  <Button mnemonicParsing="false" rotate="-45.0" style="-fx-background-color: turquoise;" text="Button" />
+               </children>
+               <opaqueInsets>
+                  <Insets top="8.0" />
+               </opaqueInsets>
+            </VBox>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="403.0" prefWidth="485.0">
+         <children>
+            <Pane layoutX="5.0" layoutY="6.0" prefHeight="468.0" prefWidth="578.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
