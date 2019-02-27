@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="428.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="46.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur" wrappingWidth="511.5380859375">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <Text layoutX="46.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" wrappingWidth="205.7490234375" />
+      <Button layoutX="46.0" layoutY="288.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0" text="Giriş Yap" />
+      <MenuButton layoutX="157.0" layoutY="288.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="27.0" prefWidth="95.0" text="Kayıt Ol">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Yönetici Olarak" />
+          <MenuItem mnemonicParsing="false" text="Daire Sakini Olarak" />
+        </items>
+      </MenuButton>
+      <ImageView fitHeight="317.0" fitWidth="442.0" layoutX="251.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Project_IMG/Header_Image.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
