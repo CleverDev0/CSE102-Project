@@ -3,6 +3,8 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-8.0.15.jar!/" />
       <root url="jar://$USER_HOME$/Desktop/mysql-connector-java-8.0.15/mysql-connector-java-8.0.15/mysql-connector-java-8.0.15.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/pdfbox-1.8.16.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/pdfbox-app-1.8.16.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
