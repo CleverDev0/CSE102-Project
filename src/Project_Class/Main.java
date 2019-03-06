@@ -12,9 +12,9 @@ public class Main extends Application {
 
     //Database related variables
     private static String username = "root";
-    private static String password = "12345678";
+    private static String password = "";
 
-    private static String connectionString = "jdbc:mysql://localhost:3306/CSE_102_Project_Db";
+    private static String connectionString = "jdbc:mysql://localhost:3306/cse_102_project_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     private static Connection connection;
     private static Statement command;
     private static ResultSet data;
