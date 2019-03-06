@@ -29,7 +29,7 @@ public class Main extends Application {
         try {
             connection = DriverManager.getConnection(connectionString,username,password);
             command = connection.createStatement();
-            command.execute("INSERT INTO Users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin) Values ('Admin','123','Admin','Admin','5555555555','11111111111','abc123','14',1)");
+            command.execute("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin) Values ('Admin','123','Admin','Admin','5555555555','11111111111','abc123','14',1)");
         }
         catch (SQLException e) {
             e.printStackTrace();
