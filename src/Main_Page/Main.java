@@ -1,4 +1,4 @@
-package Project_Class;
+package Main_Page;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.sql.*;
-import org.apache.pdfbox.pdmodel.PDDocument;
 
 public class Main extends Application {
 
@@ -21,15 +20,16 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../Project_UI/Start_Page.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../Start_Page/Start_Page.fxml"));
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 700, 400));
+        primaryStage.setScene(new Scene(root));
+        //primaryStage.fullScreenProperty();
         primaryStage.show();
 
         try {
             connection = DriverManager.getConnection(connectionString,username,password);
             command = connection.createStatement();
-            command.execute("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin) Values ('Admin','123','Admin','Admin','5555555555','11111111111','abc123','14',1)");
+            //command.execute("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin) Values ('Admin','123','Admin','Admin','5555555555','11111111111','abc123','14',1)");
         }
         catch (SQLException e) {
             e.printStackTrace();

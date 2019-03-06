@@ -5,16 +5,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="331.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="331.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SignUp_Member.Controller">
    <children>
       <VBox alignment="CENTER_RIGHT" layoutX="346.0" layoutY="42.0" prefHeight="302.0" prefWidth="223.0" spacing="15.0">
          <children>
-            <TextField promptText="E-Mail" />
-            <TextField promptText="Name-Surname" />
-            <PasswordField promptText="Pasword" />
-            <TextField promptText="Code" />
-            <Button mnemonicParsing="false" text="Kayıt Ol" />
-            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="215.0" text="Sign UP Status" />
+            <TextField fx:id="email" promptText="E-Mail" />
+            <TextField fx:id="nameSurname" promptText="Name-Surname" />
+            <PasswordField fx:id="passwordField" promptText="Pasword" />
+            <TextField fx:id="code" promptText="Code" />
+            <Button mnemonicParsing="false" onAction="#createUsers" text="Kayıt Ol" />
+            <Label fx:id="signUpStatus" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="215.0" />
          </children>
       </VBox>
       <Text layoutX="46.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign UP for Member">
