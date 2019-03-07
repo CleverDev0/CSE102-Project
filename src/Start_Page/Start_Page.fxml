@@ -20,8 +20,8 @@
       <Button layoutX="46.0" layoutY="397.0" mnemonicParsing="false" onAction="#loginBtn" prefHeight="27.0" prefWidth="95.0" text="Giriş Yap" />
       <MenuButton layoutX="157.0" layoutY="397.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="27.0" prefWidth="95.0" text="Kayıt Ol">
         <items>
-          <MenuItem mnemonicParsing="false" text="Yönetici Olarak" />
-          <MenuItem mnemonicParsing="false" text="Daire Sakini Olarak" />
+          <MenuItem mnemonicParsing="false" onAction="#signManager" text="Yönetici Olarak" />
+          <MenuItem mnemonicParsing="false" onAction="#signMember" text="Daire Sakini Olarak" />
         </items>
       </MenuButton>
       <ImageView fitHeight="394.0" fitWidth="530.0" layoutX="285.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">

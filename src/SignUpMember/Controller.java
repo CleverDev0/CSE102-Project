@@ -1,4 +1,4 @@
-package SignUp_Member;
+package SignUpMember;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
