@@ -12,7 +12,7 @@
             <TextField fx:id="email" promptText="E-Mail" />
             <TextField fx:id="nameSurname" promptText="Name-Surname" />
             <PasswordField fx:id="passwordField" promptText="Pasword" />
-            <TextField fx:id="code" promptText="Code" />
+            <TextField fx:id="managerCode" promptText="Code" />
             <Button mnemonicParsing="false" onAction="#createUsers" text="Kayıt Ol" />
             <Label fx:id="signUpStatus" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="215.0" />
          </children>

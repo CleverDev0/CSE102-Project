@@ -20,7 +20,7 @@ public class Controller {
     private PasswordField passwordField;
 
     @FXML
-    private TextField code;
+    private TextField managerCode;
 
     @FXML
     private Label signUpStatus;
@@ -49,6 +49,7 @@ public class Controller {
             String mail = email.getText();
             String name = nameSurname.getText();
             String password = passwordField.getText();
+            String manaCode = managerCode.getText();
 
 
 
@@ -58,12 +59,12 @@ public class Controller {
             String pin = Integer.toString(rand);
             //codeForMember.setText(pin);
             //String serial = codeForMember.getText();
-            preparedStatement.setString(1,mail);
+            /*preparedStatement.setString(1,mail);
             preparedStatement.setString(2,name);
-            preparedStatement.setString(3,password);
+            preparedStatement.setString(3,password);*/
 
             command.execute("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin)" +
-                    " Values(?,?,?,'','','','','',1)");
+                    " Values('','','','','','','','',1)");
 
 
 
@@ -71,6 +72,7 @@ public class Controller {
             signUpStatus.setText("Sign Up Succesfull");
 
             //Todo: execute problemi halledilecek..
+
 
             String sql = "SELECT Username, Surname, PhoneNumber, TCNumber FROM users";
             ResultSet rs = command.executeQuery(sql);
