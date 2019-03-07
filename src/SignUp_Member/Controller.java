@@ -44,8 +44,7 @@ public class Controller {
             PreparedStatement preparedStatement = null;
             connection = DriverManager.getConnection(connectionString,username,password);
             command = connection.createStatement();
-            //command.execute("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin) Values"+
-            //   " ('Admin','123','Admin','Admin','5555555555','11111111111','abc123','14',1)");
+
 
             String mail = email.getText();
             String name = nameSurname.getText();
