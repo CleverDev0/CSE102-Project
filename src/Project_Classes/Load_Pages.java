@@ -26,5 +26,19 @@ public class Load_Pages {
         stage.setScene(new Scene(parent));
         stage.show();
     }
+    public void loadSignManager() throws Exception{
+        Parent parent= FXMLLoader.load(getClass().getResource("../SignUpManager/SignUpManager.fxml"));
+        Stage stage=new Stage(StageStyle.DECORATED);
+        stage.setTitle("Title");
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+    public void loadSignMember() throws Exception{
+        Parent parent= FXMLLoader.load(getClass().getResource("../SignUpMember/SignUpMember.fxml"));
+        Stage stage=new Stage(StageStyle.DECORATED);
+        stage.setTitle("Title");
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
 
     }
