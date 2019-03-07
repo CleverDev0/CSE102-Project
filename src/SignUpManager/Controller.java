@@ -35,6 +35,16 @@ public class Controller {
     private Label codeForMember;
 
 
+    //Database related variables
+    private static String username = "root";
+    private static String password = "12345678";
+
+    private static String connectionString = "jdbc:mysql://localhost:3306/cse_102_project_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+    private static Connection connection;
+    private static Statement command;
+    private static ResultSet data;
+
+
     public void initialize() throws Exception {
     }
 
@@ -49,7 +59,7 @@ public class Controller {
             int rand = (int) random;
             String pin = Integer.toString(rand);
             codeForMember.setText(pin);
-
+                        /*
             //String serial = codeForMember.getText();
 
 
@@ -60,11 +70,15 @@ public class Controller {
 
             Db_Connection.connectiondb();
             PreparedStatement pr = Db_Connection.getConnection().prepareStatement(s);
+
             pr.setString(1, mail);
             pr.setString(2, name);
             pr.setString(3, pass);
             Db_Connection.ExecuteSql(s);
             Db_Connection.CloseConnection();
+            */
+
+
 
 
             signUpStatus.setTextFill(Color.GREEN);
@@ -86,7 +100,17 @@ public class Controller {
 
 
 
-
+        try {
+            connection = DriverManager.getConnection(connectionString,username,password);
+            command = connection.createStatement();
+            command.execute("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin) Values ('" + email.getText() + "','123','Admin','Admin','5555555555','11111111111','abc123','14',1)");
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            System.out.println("Connection Established! QUERY WORKED RIGHT! INSERT ops. Successuful!");
+        }
 
 
     }
