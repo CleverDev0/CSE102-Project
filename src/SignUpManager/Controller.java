@@ -2,11 +2,17 @@ package SignUpManager;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
-
+import Db_Connection.Db_Connection;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.sql.*;
 
@@ -27,69 +33,77 @@ public class Controller {
     private Label codeForMember;
 
 
-    private static String username = "root";
-    private static String password = "";
-
-    private static String connectionString = "jdbc:mysql://localhost:3306/cse_102_project_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-    private static Connection connection;
-    private static Statement command;
-    private static ResultSet data;
-
-    public void createUsers(ActionEvent event){
+    public void initialize() throws Exception{
+    }
 
 
-        try {
-            connection = DriverManager.getConnection(connectionString,username,password);
-            command = connection.createStatement();
-            //command.execute("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin) Values"+
-                 //   " ('Admin','123','Admin','Admin','5555555555','11111111111','abc123','14',1)");
-
-            String mail = email.getText();
-            String name = nameSurname.getText();
-            String password = passwordField.getText();
+    public void createUsers(ActionEvent event) throws Exception{
 
 
+        ResultSet rs=null;
+
+        String s = "INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin) " +
+                "Values(?,?,?,'Admin','5555555555','11111111111','abc123','14',1)";
 
 
-            double random = (Math.random() * 10000);
-            int rand = (int) random;
-            String pin = Integer.toString(rand);
-            codeForMember.setText(pin);
-            String serial = codeForMember.getText();
+        String mail = email.getText();
+        String name = nameSurname.getText();
+        String pass = passwordField.getText();
 
-            command.execute("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin)" +
-                    " Values('asdasd','sadas', 'sadsad','','','','','',1)");
+        double random = (Math.random() * 10000);
+        int rand = (int) random;
+        String pin = Integer.toString(rand);
+        codeForMember.setText(pin);
+
+        //String serial = codeForMember.getText();
+
+
+        //preparedStatement.setString(4,serial);
+
+
+
+         Db_Connection.connectiondb();
+         PreparedStatement pr = Db_Connection.getConnection().prepareStatement(s);
+        pr.setString(1,mail);
+        pr.setString(2,name);
+        pr.setString(3,pass);
+        Db_Connection.ExecuteSql(s);
+        Db_Connection.CloseConnection();
+
+
+
+
+
+
+
+
+
+
 
             signUpStatus.setTextFill(Color.GREEN);
             signUpStatus.setText("Sign Up Succesfull");
 
             //Todo: execute problemi halledilecek..
 
-            String sql = "SELECT Username, Surname, PhoneNumber, TCNumber FROM users";
-            ResultSet rs = command.executeQuery(sql);
             // Veriler ayıklanır.
-            while(rs.next()){
-                // Sutunlara göre degerlerı alıyoruz
+        /*String sql = "SELECT Username, Surname, PhoneNumber, TCNumber FROM users";
+        ResultSet rs = conn.createStatement().executeQuery(sql);
+        // Veriler ayıklanır.
+        while(rs.next()){
+            // Sutunlara göre degerlerı alıyoruz
 
-                String adi = rs.getString("Username");
-                String soyadi = rs.getString("Surname");
-                String tc = rs.getString("PhoneNumber");
-                String phıne = rs.getString("TCNumber");
+            String adi = rs.getString("Username");
+            String soyadi = rs.getString("Surname");
+            String tc = rs.getString("PhoneNumber");
+            String phıne = rs.getString("TCNumber");
 
 // Verileri görüntüle - yaz
-                System.out.print(", Adı: " + adi);
-                System.out.println(", Soyadı: " + soyadi);
-                System.out.println(tc);
-                System.out.println(phıne);
+            System.out.print(", Adı: " + adi);
+            System.out.println(", Soyadı: " + soyadi);
+            System.out.println(tc);
+            System.out.println(phıne);
 
-            }
+        }*/
         }
-        catch (SQLException e) {
 
-            e.printStackTrace();
-        }
-        finally {
-            System.out.println("Connection Established! QUERY WORKED RIGHT! INSERT ops. Successuful!");
-        }
     }
-}

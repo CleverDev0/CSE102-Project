@@ -41,6 +41,7 @@ public class Controller {
 
 
         try {
+            PreparedStatement preparedStatement = null;
             connection = DriverManager.getConnection(connectionString,username,password);
             command = connection.createStatement();
             //command.execute("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin) Values"+
@@ -58,9 +59,14 @@ public class Controller {
             String pin = Integer.toString(rand);
             //codeForMember.setText(pin);
             //String serial = codeForMember.getText();
+            preparedStatement.setString(1,mail);
+            preparedStatement.setString(2,name);
+            preparedStatement.setString(3,password);
 
             command.execute("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin)" +
-                    " Values('asdasd','sadas', 'sadsad','','','','','',1)");
+                    " Values(?,?,?,'','','','','',1)");
+
+
 
             signUpStatus.setTextFill(Color.GREEN);
             signUpStatus.setText("Sign Up Succesfull");
