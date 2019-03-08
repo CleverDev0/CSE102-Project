@@ -23,7 +23,7 @@ public class Controller {
     private TextField email;
 
     @FXML
-    private TextField nameSurname;
+    private TextField nameField;
 
     @FXML
     private PasswordField passwordField;
@@ -34,11 +34,16 @@ public class Controller {
     @FXML
     private Label codeForMember;
 
+    @FXML
+    private TextField surname;
+
     //Todo: Member kodunu bir kere vermesini sağla!
+    //Todo: Eğer aynı isim-soyisim veya email giriş vasa kontrol ettir ve alert bastır. Sqlden veri çekilip kontrol edilecek!
     public void createUsers(ActionEvent event) throws Exception {
         try{
             String mail = email.getText();
-            String name = nameSurname.getText();
+            String name = nameField.getText();
+            String surnamee = surname.getText();
             String pass = passwordField.getText();
 
             double random = (Math.random() * 10000);
@@ -48,7 +53,7 @@ public class Controller {
             String serial = codeForMember.getText();
 
             String query = ("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin) Values"+
-                    " ('"+mail+"','"+name+"','"+pass+"','','','','"+serial+"','',1)");
+                    " ('"+mail+"','"+pass+"','"+name+"','"+surnamee+"','','','"+serial+"','',1)");
 
             //Çalışmayan yer
             /*PreparedStatement pr = Db_Connection.getConnection().prepareStatement(s);

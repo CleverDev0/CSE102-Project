@@ -10,8 +10,12 @@
       <VBox alignment="CENTER_RIGHT" layoutX="348.0" layoutY="25.0" prefHeight="298.0" prefWidth="223.0" spacing="15.0">
          <children>
             <TextField fx:id="email" promptText="E-Mail" />
-            <TextField fx:id="nameSurname" promptText="Name-Surname" />
-            <PasswordField fx:id="passwordField" promptText="Pasword" />
+            <TextField fx:id="nameField" promptText="Name" />
+            <TextField fx:id="surname" promptText="surname" />
+            <PasswordField fx:id="passwordField" prefHeight="27.0" prefWidth="223.0" promptText="Pasword">
+               <font>
+                  <Font size="12.0" />
+               </font></PasswordField>
             <Button mnemonicParsing="false" onAction="#createUsers" text="Kayıt Ol" />
             <Label fx:id="signUpStatus" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="215.0" />
          </children>

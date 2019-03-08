@@ -1,5 +1,6 @@
 package Db_Connection;
 
+import javax.print.attribute.ResolutionSyntax;
 import java.sql.*;
 
 public class Db_Connection {
@@ -49,6 +50,18 @@ public class Db_Connection {
         catch (Exception e){
             System.out.println(e.getMessage());
         }
+    }
+
+    public static ResultSet executeQuery(String s){
+        try{
+            Statement statement = getConnection().createStatement();
+            ResultSet resultSet = statement.executeQuery(s);
+            return resultSet;
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 
     public static Connection getConnection() {
