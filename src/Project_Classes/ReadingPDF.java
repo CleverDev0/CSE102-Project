@@ -34,7 +34,6 @@ public class ReadingPDF
             PDDocument pdDocument = PDDocument.load(uploadedFile);
             PDFTextStripper stripper = new PDFTextStripper();
             String readIBAN = stripper.getText(pdDocument);
-            Scanner input = new Scanner(uploadedFile);
             Pattern pattern = Pattern.compile(".*" + IBANofManager + ".*");
             Matcher matcher = pattern.matcher(readIBAN);
 
