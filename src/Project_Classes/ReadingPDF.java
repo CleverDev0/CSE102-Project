@@ -13,7 +13,7 @@ import org.apache.pdfbox.util.PDFTextStripper;
 public class ReadingPDF
 {
     private int fee; // Aidat tutarı / amount of fee
-    private String IBAN; // IBAN OF RECEIVER.
+    private String IBAN; // ALICININ IBANI.
     private int lineofIBAN; // hangi satırda IBAN bulunduğunu saklar.
     private int lineofAmount; // hangi satırda ödeme miktarı bulunduğunu saklar.
 
@@ -26,7 +26,7 @@ public class ReadingPDF
     }
     //TODO public int getDate(){} // Son ödeme tarihi eklenecek.
 
-    public boolean isIBANvalid(String filePath , String IBANofManager)
+    public boolean isIBANvalid(String filePath , String IBANofManager , int lineofIBAN)
     {
         try
         {
@@ -34,10 +34,14 @@ public class ReadingPDF
             PDDocument pdDocument = PDDocument.load(uploadedFile);
             PDFTextStripper stripper = new PDFTextStripper();
             String readIBAN = stripper.getText(pdDocument);
-            Pattern pattern = Pattern.compile(".*" + IBANofManager + ".*");
-            Matcher matcher = pattern.matcher(readIBAN);
+            Scanner input = new Scanner(readIBAN);
+            for(int i = 1 ; i<lineofIBAN ; i++)
+            {
+                input.nextLine();
+            }
+                return input.nextLine().matches(".*"+IBANofManager+".*");
 
-            return matcher.find();
+
         }
         catch(Exception ex)
         {
@@ -45,6 +49,8 @@ public class ReadingPDF
         }
         return false;
     }
+
+
 
 
 
