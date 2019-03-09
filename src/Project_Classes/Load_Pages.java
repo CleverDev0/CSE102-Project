@@ -41,4 +41,12 @@ public class Load_Pages {
         stage.show();
     }
 
+    public void loadLogin() throws Exception{
+        Parent parent= FXMLLoader.load(getClass().getResource("../Login_Page/login.fxml"));
+        Stage stage=new Stage(StageStyle.DECORATED);
+        stage.setTitle("Title");
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
     }

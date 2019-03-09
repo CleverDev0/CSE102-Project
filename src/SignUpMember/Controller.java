@@ -1,5 +1,6 @@
 package SignUpMember;
 
+import Db_Connection.Db_Connection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -14,7 +15,10 @@ public class Controller {
     private TextField email;
 
     @FXML
-    private TextField nameSurname;
+    private TextField memberName;
+
+    @FXML
+    private TextField memberSurname;
 
     @FXML
     private PasswordField passwordField;
@@ -27,78 +31,36 @@ public class Controller {
 
 
 
-
-
-    private static String username = "root";
-    private static String password = "12345678";
-
-    private static String connectionString = "jdbc:mysql://localhost:3306/cse_102_project_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-    private static Connection connection;
-    private static Statement command;
-    private static ResultSet data;
-
     public void createUsers(ActionEvent event){
-
-
-        try {
-            PreparedStatement preparedStatement = null;
-            connection = DriverManager.getConnection(connectionString,username,password);
-            command = connection.createStatement();
-
-
+        try{
             String mail = email.getText();
-            String name = nameSurname.getText();
-            String password = passwordField.getText();
-            String manaCode = managerCode.getText();
+            String name = memberName.getText();
+            String surnamee = memberSurname.getText();
+            String pass = passwordField.getText();
 
 
+            String serial = managerCode.getText();
 
+            String query = ("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin) Values"+
+                    " ('"+mail+"','"+pass+"','"+name+"','"+surnamee+"','','','"+serial+"','',0)");
 
-            double random = (Math.random() * 10000);
-            int rand = (int) random;
-            String pin = Integer.toString(rand);
-            //codeForMember.setText(pin);
-            //String serial = codeForMember.getText();
-            /*preparedStatement.setString(1,mail);
-            preparedStatement.setString(2,name);
-            preparedStatement.setString(3,password);*/
-
-            command.execute("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin)" +
-                    " Values('','','','','','','','',1)");
-
-
+            //Database
+            Db_Connection.connectiondb();
+            Db_Connection.ExecuteSql(query);
+            Db_Connection.CloseConnection();
 
             signUpStatus.setTextFill(Color.GREEN);
-            signUpStatus.setText("Sign Up Succesfull");
-
-            //Todo: execute problemi halledilecek..
+            signUpStatus.setText("Sign Up Succesful.");
 
 
-            String sql = "SELECT Username, Surname, PhoneNumber, TCNumber FROM users";
-            ResultSet rs = command.executeQuery(sql);
-            // Veriler ayıklanır.
-            while(rs.next()){
-                // Sutunlara göre degerlerı alıyoruz
+            //Yeni sayfa açıldığında eski sayfanın kalmaması için
+            //((Node)(event.getSource())).getScene().getWindow().hide();
 
-                String adi = rs.getString("Username");
-                String soyadi = rs.getString("Surname");
-                String tc = rs.getString("PhoneNumber");
-                String phıne = rs.getString("TCNumber");
 
-// Verileri görüntüle - yaz
-                System.out.print(", Adı: " + adi);
-                System.out.println(", Soyadı: " + soyadi);
-                System.out.println(tc);
-                System.out.println(phıne);
-
-            }
         }
-        catch (SQLException e) {
-
-            e.printStackTrace();
-        }
-        finally {
-            System.out.println("Connection Established! QUERY WORKED RIGHT! INSERT ops. Successuful!");
+        catch (Exception e){
+            signUpStatus.setTextFill(Color.RED);
+            signUpStatus.setText("Sign Up Unsuccesful");
         }
     }
 }

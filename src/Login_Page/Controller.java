@@ -4,6 +4,7 @@ import Db_Connection.Db_Connection;
 import Project_Classes.Load_Pages;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -42,11 +43,16 @@ public class Controller {
                     status.setTextFill(Color.GREEN);
                     status.setText("Login Succesfull");
                     result =1;
+
+                    Thread.sleep(2000);
+
                     Load_Pages load = new Load_Pages();
                     load.loadMain();
+                    ((Node)(event.getSource())).getScene().getWindow().hide();
                     break;
 
                     //Todo:User nesnesi oluşturulacak ve bilgiler buna atanacak..
+                    //Todo:Şifremi unuttum..
 
                 }
                 result = 2;
@@ -63,8 +69,9 @@ public class Controller {
         }
 
         rs.close();
+        System.out.println("ResultSet close");
         Db_Connection.CloseConnection();
-        System.out.println("kapandı");
+        System.out.println("DB Connection close");
 
     }
 

@@ -14,12 +14,9 @@ import java.io.IOException;
 public class Controller {
     public void loginBtn(ActionEvent event) throws Exception {
         Load_Pages load = new Load_Pages();
-        load.loadMain();
+        load.loadLogin();
         //Yeni sayfa açıldığında eski sayfanın kalmaması için
-        ((Node)(event.getSource())).getScene().getWindow().hide();
-
-
-        //Todo: Login sayfası yapılacak..
+        //((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
     public void signManager(ActionEvent event) throws Exception{

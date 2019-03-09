@@ -26,5 +26,5 @@ public class Main extends Application {
 
 
     }
-    //Todo: Login'de surname field eklenecek..
+
 }
