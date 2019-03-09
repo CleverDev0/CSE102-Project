@@ -50,8 +50,8 @@ public class ReadingPDF
         return false;
     }
 
-
-
+    //TODO: Bazı bankaların dekontunda IBAN boşluk karakteri içermiyor. Onları StringBuilder ile düzelt.
+    //TODO: Yöneticiden IBAN'I boşluk karakterli içerecek TRXX XXXX XXXX XXXX XXXX XXXX XX şeklinde istenmeli.
 
 
 
