@@ -52,7 +52,7 @@ public class Controller {
                     break;
 
                     //Todo:User nesnesi oluşturulacak ve bilgiler buna atanacak..
-                    //Todo:Şifremi unuttum..
+
 
                 }
                 result = 2;
@@ -73,6 +73,11 @@ public class Controller {
         Db_Connection.CloseConnection();
         System.out.println("DB Connection close");
 
+    }
+
+    public void rememberPassword(ActionEvent event) throws Exception{
+        Load_Pages load = new Load_Pages();
+        load.loadPasswordRemember();
     }
 
 }

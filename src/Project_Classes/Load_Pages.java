@@ -49,4 +49,12 @@ public class Load_Pages {
         stage.show();
     }
 
+    public void loadPasswordRemember() throws Exception{
+        Parent parent= FXMLLoader.load(getClass().getResource("../Password_Remember/PasswordRemember.fxml"));
+        Stage stage=new Stage(StageStyle.DECORATED);
+        stage.setTitle("Title");
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
     }
