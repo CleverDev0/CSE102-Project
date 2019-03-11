@@ -26,16 +26,19 @@ public class Controller {
     @FXML
     private Label status;
 
+    //New Password
     String uuid = UUID.randomUUID().toString();
     String newPassword = uuid.substring(0,6);
 
     public void remember(ActionEvent event) throws Exception{
         int result = 0;
 
+        //DB_Connection
         String sql = "SELECT username,phonenumber,serialnumber FROM users";
         Db_Connection.connectiondb();
         ResultSet rs = Db_Connection.executeQuery(sql);
 
+        //Check Values
         while(rs.next()){
             if (rs.getString("username").equals(mail.getText())){
                 if (rs.getString("phonenumber").equals(phoneNumber.getText())){
@@ -43,10 +46,11 @@ public class Controller {
                         status.setTextFill(javafx.scene.paint.Color.GREEN);
                         status.setText("New password:"+newPassword);
                         result =1;
-                        //String s = "UPDATE Users SET password="+newPassword+" where Username="+mail.getText();
-                        //Db_Connection.ExecuteSql(s);
 
-                        //Todo:Database'de password güncellemesi yapılacak
+                        //Update Password on DB
+                        String s = "UPDATE Users SET Password = '"+newPassword+"' WHERE Username = '"+mail.getText()+"'";
+                        Db_Connection.ExecuteSql(s);
+
                         break;
                     }
 
@@ -72,6 +76,7 @@ public class Controller {
             status.setText("Wrong Email!");
         }
 
+        //DB_Connection
         rs.close();
         System.out.println("ResultSet close");
         Db_Connection.CloseConnection();

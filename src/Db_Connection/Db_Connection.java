@@ -16,8 +16,6 @@ public class Db_Connection {
     public static Connection connectiondb() throws Exception {
         try {
              setConnection(DriverManager.getConnection(connectionString, username, password));
-
-            //command = connection.createStatement();
             //command.execute("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,
             // ApartmentNumber,IsAdmin) Values ('Admin','123','Admin','Admin','5555555555','11111111111','abc123','14',1)");
         } catch (
@@ -31,10 +29,8 @@ public class Db_Connection {
 
     public static boolean ExecuteSql(String s){
         try {
-            //connectiondb();
             Statement statement = getConnection().createStatement();
             statement.execute(s);
-            //CloseConnection();
             return true;
         }
         catch (Exception e){

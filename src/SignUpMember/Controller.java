@@ -34,18 +34,18 @@ public class Controller {
     public void createUsers(ActionEvent event){
         if(!isSıgnUp) {
             try {
+                //Get Values
                 String mail = email.getText();
                 String name = memberName.getText();
                 String surnamee = memberSurname.getText();
                 String pass = passwordField.getText();
-
-
                 String serial = managerCode.getText();
 
+                //Database Query
                 String query = ("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin) Values" +
                         " ('" + mail + "','" + pass + "','" + name + "','" + surnamee + "','','','" + serial + "','',0)");
 
-                //Database
+                //Database Connection
                 Db_Connection.connectiondb();
                 Db_Connection.ExecuteSql(query);
                 Db_Connection.CloseConnection();

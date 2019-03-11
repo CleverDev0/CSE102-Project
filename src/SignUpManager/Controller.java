@@ -51,6 +51,7 @@ public class Controller {
                 String surnamee = surname.getText();
                 String pass = passwordField.getText();
 
+                //Check Member Code Given
                 if (!memberCode){
                     String uuid = UUID.randomUUID().toString();
                     codeForMember.setText(uuid.substring(0,6));
@@ -58,10 +59,11 @@ public class Controller {
                 }
                 String serial = codeForMember.getText();
 
+                //Database Query
                 String query = ("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin) Values"+
                         " ('"+mail+"','"+pass+"','"+name+"','"+surnamee+"','','','"+serial+"','',1)");
 
-                //Database
+                //Database Connection
                 Db_Connection.connectiondb();
                 Db_Connection.ExecuteSql(query);
                 Db_Connection.CloseConnection();

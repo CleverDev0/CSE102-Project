@@ -31,11 +31,12 @@ public class Controller {
     public void login(ActionEvent event) throws Exception{
         int result = 0;
 
-
+        //Database
         String sql = "SELECT username,password FROM users";
         Db_Connection.connectiondb();
         ResultSet rs = Db_Connection.executeQuery(sql);
 
+        //Checking Values
         while(rs.next()){
             if (rs.getString("username").equals(mail.getText())){
                 if (rs.getString("password").equals(passwordField.getText())){
@@ -68,6 +69,7 @@ public class Controller {
             status.setText("Kullanıcı adı veya şifre geçersiz");
         }
 
+        //Database
         rs.close();
         System.out.println("ResultSet close");
         Db_Connection.CloseConnection();
