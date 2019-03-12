@@ -12,12 +12,12 @@ import org.apache.pdfbox.util.PDFTextStripper;
 
 public class ReadingPDF
 {
-    private int fee; // Aidat tutarı / amount of fee
+    private String fee; // Aidat tutarı / amount of fee
     private String IBAN; // ALICININ IBANI.
     private int lineofIBAN; // hangi satırda IBAN bulunduğunu saklar.
     private int lineofAmount; // hangi satırda ödeme miktarı bulunduğunu saklar.
 
-    public ReadingPDF (int fee , String IBAN , int lineofAmount , int lineofIBAN)
+    public ReadingPDF (String fee , String IBAN , int lineofAmount , int lineofIBAN)
     {
         this.fee=fee;
         this.IBAN=IBAN;
@@ -50,8 +50,33 @@ public class ReadingPDF
         return false;
     }
 
+
+    public boolean isPaid(String filePath , String fee , int lineofAmount) // String cinsinden girilen aidat değerinin ödenmiş olup olmadığına bakıyor.
+    {
+
+        try
+        {
+            File uploadedFile = new File(filePath);
+            PDDocument pdDocument = PDDocument.load(uploadedFile);
+            PDFTextStripper stripper = new PDFTextStripper();
+            String readFee = stripper.getText(pdDocument);
+            Scanner input = new Scanner(readFee);
+            for (int i = 1; i < lineofAmount; i++)
+            {
+                input.nextLine();
+            }
+
+            return input.nextLine().matches(".*" + fee + ".*");
+        }
+        catch (Exception ex)
+        {}
+        return false;
+    }
+
     //TODO: Bazı bankaların dekontunda IBAN boşluk karakteri içermiyor. Onları StringBuilder ile düzelt.
     //TODO: Yöneticiden IBAN'I boşluk karakterli içerecek TRXX XXXX XXXX XXXX XXXX XXXX XX şeklinde istenmeli.
+    //TODO: Parametre kullanmak yerine sabit değişken kullanıp sabit değişkenlere super() constructorlarıyla banka classlarına atama yap.
+    //TODO: (Yapılabiliyorsa) int cinsinden aidat alınsın. PDF'den okunan değeri inte dönüştürsün.
 
 
 
