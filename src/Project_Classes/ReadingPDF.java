@@ -3,8 +3,6 @@ package Project_Classes;
 import java.io.File;
 import java.io.IOException;
 import java.io.FileNotFoundException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.Scanner;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -12,21 +10,21 @@ import org.apache.pdfbox.util.PDFTextStripper;
 
 public class ReadingPDF
 {
-    private String fee; // Aidat tutarı / amount of fee
-    private String IBAN; // ALICININ IBANI.
+    private String tax; // Aidat tutarı
+    private String IBAN; // ALICININ (YÖNETİCİNİN) IBANI.
     private int lineofIBAN; // hangi satırda IBAN bulunduğunu saklar.
     private int lineofAmount; // hangi satırda ödeme miktarı bulunduğunu saklar.
 
-    public ReadingPDF (String fee , String IBAN , int lineofAmount , int lineofIBAN)
+    public ReadingPDF (String tax , String IBAN , int lineofAmount , int lineofIBAN)
     {
-        this.fee=fee;
+        this.tax=tax;
         this.IBAN=IBAN;
         this.lineofAmount = lineofAmount;
         this.lineofIBAN = lineofIBAN;
     }
     //TODO public int getDate(){} // Son ödeme tarihi eklenecek.
 
-    public boolean isIBANvalid(String filePath , String IBANofManager , int lineofIBAN)
+    public boolean correctIBAN(String filePath)
     {
         try
         {
@@ -39,11 +37,11 @@ public class ReadingPDF
             {
                 input.nextLine();
             }
-                return input.nextLine().matches(".*"+IBANofManager+".*");
+                return input.nextLine().matches(".*"+IBAN+".*");
 
 
         }
-        catch(Exception ex)
+        catch(Exception ex) //TODO: BİR SORUN MEYDANA GELDİ MESAJI VERİLSİN
         {
 
         }
@@ -51,7 +49,7 @@ public class ReadingPDF
     }
 
 
-    public boolean isPaid(String filePath , String fee , int lineofAmount) // String cinsinden girilen aidat değerinin ödenmiş olup olmadığına bakıyor.
+    public boolean checkTax(String filePath) // String cinsinden girilen aidat değerinin ödenmiş olup olmadığına bakıyor.
     {
 
         try
@@ -66,9 +64,9 @@ public class ReadingPDF
                 input.nextLine();
             }
 
-            return input.nextLine().matches(".*" + fee + ".*");
+            return input.nextLine().matches(".*" + tax + ".*");
         }
-        catch (Exception ex)
+        catch (Exception ex) //TODO: BİR SORUN MEYDANA GELDİ MESAJI VERİLSİN
         {}
         return false;
     }
@@ -81,3 +79,31 @@ public class ReadingPDF
 
 
 }
+
+class Vakifbank extends ReadingPDF
+{
+    public Vakifbank (String tax , String IBAN)
+    {
+        super(tax , IBAN , 13 , 11);
+    }
+}
+
+class Ziraatbank extends  ReadingPDF
+{
+    public Ziraatbank (String tax , String IBAN)
+    {
+        super(tax , IBAN , 20 , 17);
+    }
+}
+
+/*class Isbank extends ReadingPDF
+{
+    public Isbank(String tax , String IBAN)
+    {
+        super(tax , IBAN , );
+    }
+}*/
+
+//TODO: İŞBANKASI UYUMSUZLUK SORUNU GİDER.
+
+
