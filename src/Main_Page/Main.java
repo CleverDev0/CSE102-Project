@@ -42,6 +42,7 @@ public class Main extends Application {
 
         launch(args);
 
+        //kod bozmadan satır ekleme duası enter
 
     }
 }
