@@ -10,5 +10,8 @@
     <orderEntry type="library" name="mysql-connector-java-8.0.15" level="project" />
     <orderEntry type="library" name="pdfbox-1.8.16" level="project" />
     <orderEntry type="library" name="pdfbox-app-1.8.16" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-8.0.15 (2)" level="project" />
+    <orderEntry type="library" name="pdfbox-1.8.16 (2)" level="project" />
+    <orderEntry type="library" name="pdfbox-app-1.8.16 (2)" level="project" />
   </component>
 </module>
