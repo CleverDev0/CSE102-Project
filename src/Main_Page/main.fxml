@@ -52,7 +52,7 @@
                                           <Font name="Arial Rounded MT Bold" size="15.0" />
                                        </font>
                                     </Label>
-                                    <TextField layoutX="17.0" layoutY="159.0" prefHeight="59.0" prefWidth="397.0" promptText="İşlemi Onayla" style="-fx-background-color: #F2F1F1;" />
+                                    <TextField layoutX="17.0" layoutY="159.0" prefHeight="59.0" prefWidth="397.0" style="-fx-background-color: #F2F1F1;" />
                                     <Button layoutX="29.0" layoutY="249.0" mnemonicParsing="false" text="Ana Menüye Dön" />
                                     <Button layoutX="539.0" layoutY="249.0" mnemonicParsing="false" text="İşlemi Onayla" />
                                     <Button layoutX="659.0" layoutY="249.0" mnemonicParsing="false" text="İptal" />
