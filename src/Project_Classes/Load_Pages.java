@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class Load_Pages {
     public void loadMain() throws Exception{
-        Parent parent= FXMLLoader.load(getClass().getResource("../Main_Page/payments_manager.fxml"));
+        Parent parent= FXMLLoader.load(getClass().getResource("../Main_Page/main.fxml"));
         Stage stage=new Stage(StageStyle.DECORATED);
         stage.setTitle("Main Page");
         stage.setScene(new Scene(parent));
