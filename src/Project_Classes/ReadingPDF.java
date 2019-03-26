@@ -1,7 +1,8 @@
 package Project_Classes;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.text.PDFTextStripper;
+import org.apache.pdfbox.util.PDFTextStripper;
+//import org.apache.pdfbox.text.PDFTextStripper;
 
 import java.io.File;
 import java.util.Scanner;
