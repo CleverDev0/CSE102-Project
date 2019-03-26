@@ -2,6 +2,7 @@ package Login_Page;
 
 import Db_Connection.Db_Connection;
 import Project_Classes.Load_Pages;
+import Project_Classes.Users;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -26,13 +27,15 @@ public class Controller {
     @FXML
     private Label status;
 
+    public static Users kullanici;
+
 
 
     public void login(ActionEvent event) throws Exception{
         int result = 0;
-
+        Users user = new Users();
         //Database
-        String sql = "SELECT username,password FROM users";
+        String sql = "SELECT username,password,UserId FROM users";
         Db_Connection.connectiondb();
         ResultSet rs = Db_Connection.executeQuery(sql);
 
@@ -41,9 +44,21 @@ public class Controller {
             if (rs.getString("username").equals(mail.getText())){
                 if (rs.getString("password").equals(passwordField.getText())){
                     System.out.println("Girişiniz başarılı hoş geldiniz");
+                    String userData = "SELECT * FROM Users WHERE username = '"+mail.getText()+"'";
+                    //Bilgiler null olarak gidiyor ona bi bakalım
+                    ResultSet rs2 = Db_Connection.executeQuery(userData);
+                    while (rs2.next()) {
+                        user.setName(rs2.getString("username"));
+                        user.setPassword(rs2.getString("password"));
+                        setKullanici(user);
+                    }
+                    rs2.close();
+
                     status.setTextFill(Color.GREEN);
                     status.setText("Login Succesfull");
+
                     result =1;
+
 
                     Thread.sleep(2000);
 
@@ -60,6 +75,7 @@ public class Controller {
                 status.setText("Wrong Password");
 
             }
+
 
 
         }
@@ -81,4 +97,11 @@ public class Controller {
         load.loadPasswordRemember();
     }
 
+    public static Users getKullanici() {
+        return kullanici;
+    }
+
+    public void setKullanici(Users kullanici) {
+        this.kullanici = kullanici;
+    }
 }
