@@ -52,7 +52,6 @@ public class Controller {
                     ((Node)(event.getSource())).getScene().getWindow().hide();
                     break;
 
-                    //Todo:User nesnesi oluşturulacak ve bilgiler buna atanacak..
 
 
                 }
