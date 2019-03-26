@@ -5,16 +5,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="331.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SignUpMember.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SignUpMember.Controller">
    <children>
-      <VBox alignment="CENTER_RIGHT" layoutX="346.0" layoutY="42.0" prefHeight="302.0" prefWidth="223.0" spacing="15.0">
+      <VBox alignment="CENTER_RIGHT" layoutX="334.0" layoutY="42.0" prefHeight="316.0" prefWidth="235.0" spacing="15.0">
          <children>
-            <TextField fx:id="email" promptText="E-Mail" />
             <TextField fx:id="memberName" promptText="Name" />
             <TextField fx:id="memberSurname" promptText="Surname" />
+            <TextField fx:id="email" promptText="E-Mail" />
             <PasswordField fx:id="passwordField" promptText="Pasword" />
+            <TextField fx:id="phoneNumber" promptText="Phone Number" />
+            <TextField fx:id="TCNumber" promptText="TC Number" />
+            <TextField fx:id="apartmentNumber" promptText="Apartment Number" />
             <TextField fx:id="managerCode" promptText="Manager Code" />
-            <Button mnemonicParsing="false" onAction="#createUsers" text="Kayıt Ol" />
+            <Button mnemonicParsing="false" onAction="#createUsers" prefHeight="0.0" prefWidth="66.0" text="Kayıt Ol" />
             <Label fx:id="signUpStatus" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="215.0" />
          </children>
       </VBox>

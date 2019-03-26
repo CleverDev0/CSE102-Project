@@ -11,7 +11,7 @@ public class Main extends Application {
 
     //Database related variables
     private static String username = "root";
-    private static String password = "";
+    private static String password = "12345678";
 
     private static String connectionString = "jdbc:mysql://localhost:3306/cse_102_project_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     private static Connection connection;
@@ -20,7 +20,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../Start_Page/Start_Page.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../Main_Page/main.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root));
         //primaryStage.fullScreenProperty();
