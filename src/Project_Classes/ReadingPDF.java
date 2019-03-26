@@ -75,6 +75,7 @@ public class ReadingPDF
     //TODO: Yöneticiden IBAN'I boşluk karakterli içerecek TRXX XXXX XXXX XXXX XXXX XXXX XX şeklinde istenmeli.
     //TODO: Parametre kullanmak yerine sabit değişken kullanıp sabit değişkenlere super() constructorlarıyla banka classlarına atama yap.
     //TODO: (Yapılabiliyorsa) int cinsinden aidat alınsın. PDF'den okunan değeri inte dönüştürsün.
+    //TODO: ÖDEME ONAYLANDIKTAN SONRA MAKBUZ GÖNDER.
 
 
 
