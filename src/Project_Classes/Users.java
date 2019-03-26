@@ -12,7 +12,7 @@ public class Users {
     public String TCNumber;
     public String ManagerCode;
     public String ApartmentNumber;
-    public boolean isAdmin;
+    public boolean isAdmin; //TODO: Inferface olarak ayarlancak
 
     public Users() {
 
