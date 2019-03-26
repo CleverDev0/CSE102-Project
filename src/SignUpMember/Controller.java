@@ -1,6 +1,7 @@
 package SignUpMember;
 
 import Db_Connection.Db_Connection;
+import Project_Classes.Users;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -29,21 +30,32 @@ public class Controller {
     @FXML
     private Label signUpStatus;
 
+    @FXML
+            private TextField TCNumber;
+    @FXML
+            private TextField PhoneNumber;
+    @FXML
+            private TextField ApartmentNumber;
+
     boolean isSıgnUp = false;
 
     public void createUsers(ActionEvent event){
         if(!isSıgnUp) {
             try {
+                Users user = new Users();
+                user.Email = email.getText();
+                user.Name = memberName.getText();
+                user.Surname = memberSurname.getText();
+                user.Password = passwordField.getText();
+                user.ManagerCode = managerCode.getText();
+                user.TCNumber = TCNumber.getText();
+                user.ApartmentNumber = ApartmentNumber.getText();
+                user.PhoneNumber = PhoneNumber.getText();
                 //Get Values
-                String mail = email.getText();
-                String name = memberName.getText();
-                String surnamee = memberSurname.getText();
-                String pass = passwordField.getText();
-                String serial = managerCode.getText();
 
                 //Database Query
                 String query = ("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin) Values" +
-                        " ('" + mail + "','" + pass + "','" + name + "','" + surnamee + "','','','" + serial + "','',0)");
+                        " ('" + user.Email + "','" + user.Password + "','" + user.Name + "','" + user.Surname + "'  "+ user.PhoneNumber +",' " + user.TCNumber + "','','" + user.ManagerCode + "',' " + user.ApartmentNumber + "',0)");
 
                 //Database Connection
                 Db_Connection.connectiondb();
