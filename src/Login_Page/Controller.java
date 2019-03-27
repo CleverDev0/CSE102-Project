@@ -36,7 +36,8 @@ public class Controller {
         Users user = new Users();
 
         //Database
-        String sql = "SELECT username,password FROM users WHERE username='"+mail.getText()+"' and password='"+passwordField.getText()+"'";
+        String sql = "SELECT * FROM users WHERE username='"+mail.getText()+"' and password='"+passwordField.getText()+"'";
+
         Db_Connection.connectiondb();
         ResultSet rs = Db_Connection.executeQuery(sql);
 
@@ -44,7 +45,7 @@ public class Controller {
         while(rs.next()){
 
             String username= rs.getString("username");
-            String password= rs.getString("password");
+            String surname= rs.getString("surname");
             if (rs.getString("username").equals(mail.getText())){
 
                 if (rs.getString("password").equals(passwordField.getText())){
@@ -52,10 +53,12 @@ public class Controller {
                     status.setTextFill(Color.GREEN);
                     status.setText("Login Succesfull");
                     user.setName(username);
-                    user.setPassword(password);
+                    user.setSurname(surname);
                     result =1;
                     user.setUserId("2");
                     setKullanici(user);
+
+
 
                     Thread.sleep(2000);
 

@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="765.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="765.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main_Page.Controller">
     <tabs>
         <Tab text="Ödemeler">
             <content>
@@ -40,7 +40,7 @@
                                                 </Label>
                                                 <TextArea layoutX="14.0" layoutY="132.0" prefHeight="75.0" prefWidth="400.0" promptText="Notunuzu yazmak için tıklayın" />
                                                 <Button layoutX="23.0" layoutY="229.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="115.0" style="-fx-background-color: #6DD3FF;" text="Ana Menüye Dön" />
-                                                <Button layoutX="560.0" layoutY="231.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="95.0" style="-fx-background-color: #6DD3FF;" text="İşlemi Onayla" />
+                                                <Button layoutX="560.0" layoutY="231.0" mnemonicParsing="false" onAction="#deneme" prefHeight="29.0" prefWidth="95.0" style="-fx-background-color: #6DD3FF;" text="İşlemi Onayla" />
                                                 <Button layoutX="679.0" layoutY="230.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="49.0" style="-fx-background-color: #6DD3FF;" text="İptal" />
                                             </children>
                                         </AnchorPane>
@@ -183,6 +183,9 @@
                                 <Font name="Arial Black" size="12.0" />
                             </font>
                         </Label>
+                  <Label fx:id="nameSurname" layoutX="234.0" layoutY="76.0" prefHeight="17.0" prefWidth="108.0" />
+                  <Label fx:id="userID" layoutX="190.0" layoutY="108.0" prefHeight="17.0" prefWidth="26.0" />
+                  <Label layoutX="300.0" layoutY="108.0" prefHeight="17.0" prefWidth="26.0" />
                     </children></AnchorPane>
             </content>
         </Tab>

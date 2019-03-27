@@ -26,6 +26,8 @@ public class main extends Application {
         launch(args);
 
         System.out.println(getKullanici().getUserId());
+        System.out.println(getKullanici().getPassword());
+        System.out.println(getKullanici().getName());
 
 
     }
