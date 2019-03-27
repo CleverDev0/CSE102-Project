@@ -142,11 +142,7 @@
                                 </Tab>
                             </tabs>
                         </TabPane>
-                        <ImageView fitHeight="92.0" fitWidth="92.0" layoutX="26.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@CSE/images.png" />
-                            </image>
-                        </ImageView>
+
                         <TextField layoutY="1.0" prefHeight="27.0" prefWidth="765.0" text="ÖDEMELER - YÖNETİCİ">
                             <font>
                                 <Font name="Arial Rounded MT Bold" size="15.0" />
