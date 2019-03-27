@@ -7,7 +7,7 @@ import org.apache.pdfbox.util.PDFTextStripper;
 import java.io.File;
 import java.util.Scanner;
 
-public class ReadingPDF
+public abstract class ReadingPDF
 {
     private String tax; // Aidat tutarı
     private String IBAN; // ALICININ (YÖNETİCİNİN) IBANI.
@@ -96,14 +96,18 @@ class Ziraatbank extends  ReadingPDF
     }
 }
 
-/*class Isbank extends ReadingPDF
+class Isbank extends ReadingPDF
 {
     public Isbank(String tax , String IBAN)
     {
-        super(tax , IBAN , );
+        super(tax , IBAN , 14 , 12);
     }
-}*/
+}
 
 //TODO: İŞBANKASI UYUMSUZLUK SORUNU GİDER.
 
-
+class TEB extends ReadingPDF
+{
+    public TEB (String tax , String IBAN) { super (tax , IBAN , 9 , 7);}
+}
+//TODO: TEB doğru şekilde çalışıyor mu kontrol et.
