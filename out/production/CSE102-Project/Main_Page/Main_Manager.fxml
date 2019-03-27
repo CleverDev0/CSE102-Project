@@ -42,6 +42,7 @@
                                                 <Button layoutX="23.0" layoutY="229.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="115.0" style="-fx-background-color: #6DD3FF;" text="Ana Menüye Dön" />
                                                 <Button layoutX="560.0" layoutY="231.0" mnemonicParsing="false" onAction="#deneme" prefHeight="29.0" prefWidth="95.0" style="-fx-background-color: #6DD3FF;" text="İşlemi Onayla" />
                                                 <Button layoutX="679.0" layoutY="230.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="49.0" style="-fx-background-color: #6DD3FF;" text="İptal" />
+                                    <Label fx:id="field" layoutX="282.0" layoutY="50.0" prefHeight="36.0" prefWidth="449.0" />
                                             </children>
                                         </AnchorPane>
                                     </content>

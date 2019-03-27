@@ -45,26 +45,46 @@ public class Controller {
         while(rs.next()){
 
             String username= rs.getString("username");
-            String surname= rs.getString("surname");
+            String password= rs.getString("password");
+
             if (rs.getString("username").equals(mail.getText())){
 
                 if (rs.getString("password").equals(passwordField.getText())){
                     System.out.println("Girişiniz başarılı hoş geldiniz");
                     status.setTextFill(Color.GREEN);
                     status.setText("Login Succesfull");
-                    user.setName(username);
-                    user.setSurname(surname);
-                    result =1;
-                    user.setUserId("2");
-                    setKullanici(user);
-
-
 
                     Thread.sleep(2000);
 
-                    Load_Pages load = new Load_Pages();
-                    load.loadMain();
-                    ((Node)(event.getSource())).getScene().getWindow().hide();
+                    user.setEmail(username);
+                    user.setName(rs.getString("name"));
+                    user.setSurname(rs.getString("password"));
+                    user.setTCNumber(rs.getString("tcnumber"));
+                    user.setUserId("userid");
+                    user.setPhoneNumber(rs.getString("phonenumber"));
+                    user.setApartmentNumber(rs.getString("apartmentnumber"));
+                    user.setManagerCode(rs.getString("serialnumber"));
+                    if (rs.getString("isadmin").equals("1")){
+                        user.setAdmin(true);
+                    }else {
+                        user.setAdmin(false);
+                    }
+
+
+                    result =1;
+                    setKullanici(user);
+
+
+                    if (user.isAdmin() == true){
+                        //Todo:Admin sayfası yüklenecek
+                        Load_Pages.loadMain();
+                        ((Node)(event.getSource())).getScene().getWindow().hide();
+                    }else {
+                        //Todo: Member sayfası yüklenecek
+                    }
+
+
+
                     break;
 
 

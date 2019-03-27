@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -21,9 +22,11 @@ public class Controller {
     @FXML
     private Label userID;
 
+    @FXML
+    private Label field;
+
     public void deneme(ActionEvent event){
-        nameSurname.setText(getKullanici().getName()+getKullanici().getSurname());
-        userID.setText(getKullanici().getUserId());
+        field.setText(getKullanici().getName()+"  "+getKullanici().getSurname()+"  "+getKullanici().getPassword()+"  "+getKullanici().getUserId()+"  "+getKullanici().getApartmentNumber()+"  "+getKullanici().getEmail()+"  "+getKullanici().getManagerCode()+"  "+getKullanici().getPhoneNumber()+"  "+getKullanici().getTCNumber());
     }
 
 }

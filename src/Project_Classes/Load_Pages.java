@@ -8,46 +8,46 @@ import javafx.stage.StageStyle;
 
 
 public class Load_Pages {
-    public void loadMain() throws Exception{
-        Parent parent= FXMLLoader.load(getClass().getResource("../Main_Page/Main_Manager.fxml"));
+    public static void loadMain() throws Exception{
+        Parent parent= FXMLLoader.load(Load_Pages.class.getResource("../Main_Page/Main_Manager.fxml"));
         Stage stage=new Stage(StageStyle.DECORATED);
         stage.setTitle("Main Page");
         stage.setScene(new Scene(parent));
         stage.show();
     }
 
-    public void loadStart() throws Exception{
-        Parent parent= FXMLLoader.load(getClass().getResource("../Start_Page/Start_Page.fxml"));
+    public static void loadStart() throws Exception{
+        Parent parent= FXMLLoader.load(Load_Pages.class.getResource("../Start_Page/Start_Page.fxml"));
         Stage stage=new Stage(StageStyle.DECORATED);
         stage.setTitle("Title");
         stage.setScene(new Scene(parent));
         stage.show();
     }
-    public void loadSignManager() throws Exception{
-        Parent parent= FXMLLoader.load(getClass().getResource("../SignUpManager/SignUpManager.fxml"));
+    public static void loadSignManager() throws Exception{
+        Parent parent= FXMLLoader.load(Load_Pages.class.getResource("../SignUpManager/SignUpManager.fxml"));
         Stage stage=new Stage(StageStyle.DECORATED);
         stage.setTitle("Title");
         stage.setScene(new Scene(parent));
         stage.show();
     }
-    public void loadSignMember() throws Exception{
-        Parent parent= FXMLLoader.load(getClass().getResource("../SignUpMember/SignUpMember.fxml"));
-        Stage stage=new Stage(StageStyle.DECORATED);
-        stage.setTitle("Title");
-        stage.setScene(new Scene(parent));
-        stage.show();
-    }
-
-    public void loadLogin() throws Exception{
-        Parent parent= FXMLLoader.load(getClass().getResource("../Login_Page/login.fxml"));
+    public static void loadSignMember() throws Exception{
+        Parent parent= FXMLLoader.load(Load_Pages.class.getResource("../SignUpMember/SignUpMember.fxml"));
         Stage stage=new Stage(StageStyle.DECORATED);
         stage.setTitle("Title");
         stage.setScene(new Scene(parent));
         stage.show();
     }
 
-    public void loadPasswordRemember() throws Exception{
-        Parent parent= FXMLLoader.load(getClass().getResource("../Password_Remember/PasswordRemember.fxml"));
+    public static void loadLogin() throws Exception{
+        Parent parent= FXMLLoader.load(Load_Pages.class.getResource("../Login_Page/login.fxml"));
+        Stage stage=new Stage(StageStyle.DECORATED);
+        stage.setTitle("Title");
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
+    public static void loadPasswordRemember() throws Exception{
+        Parent parent= FXMLLoader.load(Load_Pages.class.getResource("../Password_Remember/PasswordRemember.fxml"));
         Stage stage=new Stage(StageStyle.DECORATED);
         stage.setTitle("Title");
         stage.setScene(new Scene(parent));
