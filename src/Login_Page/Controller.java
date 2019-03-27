@@ -29,36 +29,33 @@ public class Controller {
 
     public static Users kullanici;
 
-
+//TODO: ÖNCE KULLANIDAN BİGİLERİ AL SONRA SORGUYA ATIP KONTROL ET NULL DÖNERSE BÖYLE BİR KULLANICI YOK DE
 
     public void login(ActionEvent event) throws Exception{
         int result = 0;
         Users user = new Users();
+
         //Database
-        String sql = "SELECT username,password,UserId FROM users";
+        String sql = "SELECT username,password FROM users WHERE username='"+mail.getText()+"' and password='"+passwordField.getText()+"'";
         Db_Connection.connectiondb();
         ResultSet rs = Db_Connection.executeQuery(sql);
 
         //Checking Values
         while(rs.next()){
+
+            String username= rs.getString("username");
+            String password= rs.getString("password");
             if (rs.getString("username").equals(mail.getText())){
+
                 if (rs.getString("password").equals(passwordField.getText())){
                     System.out.println("Girişiniz başarılı hoş geldiniz");
-                    String userData = "SELECT * FROM Users WHERE username = '"+mail.getText()+"'";
-                    //Bilgiler null olarak gidiyor ona bi bakalım
-                    ResultSet rs2 = Db_Connection.executeQuery(userData);
-                    while (rs2.next()) {
-                        user.setName(rs2.getString("username"));
-                        user.setPassword(rs2.getString("password"));
-                        setKullanici(user);
-                    }
-                    rs2.close();
-
                     status.setTextFill(Color.GREEN);
                     status.setText("Login Succesfull");
-
+                    user.setName(username);
+                    user.setPassword(password);
                     result =1;
-
+                    user.setUserId("2");
+                    setKullanici(user);
 
                     Thread.sleep(2000);
 
