@@ -18,15 +18,12 @@
                                     <content>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                             <children>
-                                                <CheckBox layoutX="31.0" layoutY="20.0" mnemonicParsing="false" text="Aidat" />
-                                                <CheckBox layoutX="139.0" layoutY="20.0" mnemonicParsing="false" text="Dükkan" />
-                                                <CheckBox layoutX="269.0" layoutY="20.0" mnemonicParsing="false" text="Diğer" />
                                                 <Label layoutX="31.0" layoutY="58.0" text="Eklenecek Tutar :">
                                                     <font>
                                                         <Font name="Arial Rounded MT Bold" size="14.0" />
                                                     </font>
                                                 </Label>
-                                                <TextField layoutX="170.0" layoutY="54.0" prefHeight="25.0" prefWidth="84.0" />
+                                                <TextField fx:id="depositValue" layoutX="170.0" layoutY="54.0" prefHeight="25.0" prefWidth="84.0" />
                                                 <Label layoutX="265.0" layoutY="58.0" text="\$">
                                                     <font>
                                                         <Font name="Arial Rounded MT Bold" size="14.0" />
@@ -38,11 +35,15 @@
                                                         <Font name="Arial Rounded MT Bold" size="14.0" />
                                                     </font>
                                                 </Label>
-                                                <TextArea layoutX="14.0" layoutY="132.0" prefHeight="75.0" prefWidth="400.0" promptText="Notunuzu yazmak için tıklayın" />
+                                                <TextArea fx:id="depositNote" layoutX="14.0" layoutY="132.0" prefHeight="75.0" prefWidth="400.0" promptText="Notunuzu yazmak için tıklayın" />
                                                 <Button layoutX="23.0" layoutY="229.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="115.0" style="-fx-background-color: #6DD3FF;" text="Ana Menüye Dön" />
-                                                <Button layoutX="560.0" layoutY="231.0" mnemonicParsing="false" onAction="#deneme" prefHeight="29.0" prefWidth="95.0" style="-fx-background-color: #6DD3FF;" text="İşlemi Onayla" />
+                                                <Button layoutX="560.0" layoutY="231.0" mnemonicParsing="false" onAction="#deposit" prefHeight="29.0" prefWidth="95.0" style="-fx-background-color: #6DD3FF;" text="İşlemi Onayla" />
                                                 <Button layoutX="679.0" layoutY="230.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="49.0" style="-fx-background-color: #6DD3FF;" text="İptal" />
                                     <Label fx:id="field" layoutX="282.0" layoutY="50.0" prefHeight="36.0" prefWidth="449.0" />
+                                    <RadioButton fx:id="depositAidat" layoutX="45.0" layoutY="21.0" mnemonicParsing="false" text="Aidat" />
+                                    <RadioButton fx:id="depositDükkan" layoutX="138.0" layoutY="21.0" mnemonicParsing="false" text="Dükkan" />
+                                    <RadioButton fx:id="depositDiger" layoutX="226.0" layoutY="21.0" mnemonicParsing="false" text="Diğer" />
+                                    <Label fx:id="status" layoutX="153.0" layoutY="236.0" prefHeight="17.0" prefWidth="99.0" />
                                             </children>
                                         </AnchorPane>
                                     </content>
@@ -51,18 +52,18 @@
                                     <content>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                             <children>
-                                                <CheckBox layoutX="22.0" layoutY="14.0" mnemonicParsing="false" text="Elektrik" />
-                                                <CheckBox layoutX="119.0" layoutY="14.0" mnemonicParsing="false" text="Su" />
-                                                <CheckBox layoutX="208.0" layoutY="14.0" mnemonicParsing="false" text="Asansör" />
-                                                <CheckBox layoutX="309.0" layoutY="14.0" mnemonicParsing="false" text="Temizlik" />
-                                                <CheckBox layoutX="418.0" layoutY="14.0" mnemonicParsing="false" text="Bakım" />
-                                                <CheckBox layoutX="520.0" layoutY="14.0" mnemonicParsing="false" text="Diğer" />
+                                                <CheckBox fx:id="withdrawalElectric" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" text="Elektrik" />
+                                                <CheckBox fx:id="withdrawalWater" layoutX="119.0" layoutY="14.0" mnemonicParsing="false" text="Su" />
+                                                <CheckBox fx:id="withdrawalLift" layoutX="208.0" layoutY="14.0" mnemonicParsing="false" text="Asansör" />
+                                                <CheckBox fx:id="withdrawalCleaner" layoutX="309.0" layoutY="14.0" mnemonicParsing="false" text="Temizlik" />
+                                                <CheckBox fx:id="withdrawalService" layoutX="418.0" layoutY="14.0" mnemonicParsing="false" text="Bakım" />
+                                                <CheckBox fx:id="withdrawalOther" layoutX="520.0" layoutY="14.0" mnemonicParsing="false" text="Diğer" />
                                                 <Label layoutX="35.0" layoutY="58.0" text="Eklenecek Tutar :">
                                                     <font>
                                                         <Font name="Arial Rounded MT Bold" size="14.0" />
                                                     </font>
                                                 </Label>
-                                                <TextField layoutX="163.0" layoutY="54.0" prefHeight="25.0" prefWidth="95.0" />
+                                                <TextField fx:id="withdrawalValue" layoutX="163.0" layoutY="54.0" prefHeight="25.0" prefWidth="95.0" />
                                                 <Label layoutX="272.0" layoutY="58.0" text="\$">
                                                     <font>
                                                         <Font name="Arial Rounded MT Bold" size="14.0" />
@@ -74,9 +75,9 @@
                                                         <Font name="Arial Rounded MT Bold" size="14.0" />
                                                     </font>
                                                 </Label>
-                                                <TextArea layoutX="16.0" layoutY="142.0" prefHeight="75.0" prefWidth="398.0" promptText="Notunuzu yazmak için tıklayın." />
+                                                <TextArea fx:id="withDrawalNote" layoutX="16.0" layoutY="142.0" prefHeight="75.0" prefWidth="398.0" promptText="Notunuzu yazmak için tıklayın." />
                                                 <Button layoutX="38.0" layoutY="234.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="113.0" style="-fx-background-color: #6DD3FF;" text="Ana Menüye Dön" />
-                                                <Button layoutX="570.0" layoutY="234.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="96.0" style="-fx-background-color: #6DD3FF;" text="İşlemi Onayla" />
+                                                <Button layoutX="570.0" layoutY="234.0" mnemonicParsing="false" onAction="#deneme" prefHeight="30.0" prefWidth="96.0" style="-fx-background-color: #6DD3FF;" text="İşlemi Onayla" />
                                                 <Button layoutX="685.0" layoutY="234.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="46.0" style="-fx-background-color: #6DD3FF;" text="İptal" />
                                             </children>
                                         </AnchorPane>

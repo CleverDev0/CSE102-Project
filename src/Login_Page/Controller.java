@@ -6,9 +6,7 @@ import Project_Classes.Users;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 
 import java.sql.Connection;
@@ -53,17 +51,15 @@ public class Controller {
                     System.out.println("Girişiniz başarılı hoş geldiniz");
                     status.setTextFill(Color.GREEN);
                     status.setText("Login Succesfull");
-
-                    Thread.sleep(2000);
-
                     user.setEmail(username);
                     user.setName(rs.getString("name"));
-                    user.setSurname(rs.getString("password"));
+                    user.setSurname(rs.getString("surname"));
                     user.setTCNumber(rs.getString("tcnumber"));
-                    user.setUserId("userid");
+                    user.setUserId(rs.getString("UserId"));
                     user.setPhoneNumber(rs.getString("phonenumber"));
                     user.setApartmentNumber(rs.getString("apartmentnumber"));
                     user.setManagerCode(rs.getString("serialnumber"));
+
                     if (rs.getString("isadmin").equals("1")){
                         user.setAdmin(true);
                     }else {

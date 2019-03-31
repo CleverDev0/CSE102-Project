@@ -82,6 +82,9 @@ public class Controller {
                 signUpStatus.setTextFill(Color.RED);
                 signUpStatus.setText("Sign Up Unsuccesful");
             }
+        }else {
+            signUpStatus.setTextFill(Color.ORANGE);
+            signUpStatus.setText("You already signed up.");
         }
 
     }
