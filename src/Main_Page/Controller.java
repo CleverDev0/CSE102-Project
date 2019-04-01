@@ -64,7 +64,10 @@ public class Controller {
     private Label nameSurname;
 
     @FXML
-    private Label status;
+    private Label depositStatus;
+
+    @FXML
+    private Label withdrawalStatus;
 
     @FXML
     private Label field;
@@ -103,19 +106,57 @@ public class Controller {
             Db_Connection.ExecuteSql(query);
             Db_Connection.CloseConnection();
 
-            status.setTextFill(Color.GREEN);
-            status.setText("Succesful");
+            depositStatus.setTextFill(Color.GREEN);
+            depositStatus.setText("Succesful");
+
+
 
 
         }catch (Exception e){
-            status.setTextFill(Color.RED);
-            status.setText("UnSuccesful");
+            depositStatus.setTextFill(Color.RED);
+            depositStatus.setText("UnSuccesful");
         }
 
 
     }
 
-    public void withdrawal(ActionEvent event){}
+    public void withdrawal(ActionEvent event){
+        try{
+            Db_Connection.connectiondb();
+            int value = Integer.parseInt(withdrawalValue.getText());
+            String managerNotes = withDrawalNote.getText();
+            String asd = "";
+            String managerCode = getKullanici().getManagerCode();
+
+            if (withdrawalCleaner.isSelected()) {
+                asd = "temizlik";
+            } else if (withdrawalElectric.isSelected()) {
+                asd = "elektrik";
+            } else if (withdrawalLift.isSelected()) {
+                asd = "asansör";
+            } else if (withdrawalService.isSelected()) {
+                asd = "bakım";
+            } else if (withdrawalWater.isSelected()) {
+                asd = "su";
+            } else if (withdrawalOther.isSelected()) {
+                asd = "diger";
+            }
+
+            //Database Query
+            String query = ("INSERT INTO transactions (Description,Value,IsExpense,TransactionType,ManagerCode) Values" +
+                    " ('" + managerNotes + "','" + value + "','" + 1 + "','" + asd +"','"+managerCode+"')");
+
+            Db_Connection.ExecuteSql(query);
+            Db_Connection.CloseConnection();
+
+            withdrawalStatus.setTextFill(Color.GREEN);
+            withdrawalStatus.setText("Succesful");
+
+        }catch (Exception e){
+            withdrawalStatus.setTextFill(Color.RED);
+            withdrawalStatus.setText("UnSuccesful");
+        }
+    }
 
 
 

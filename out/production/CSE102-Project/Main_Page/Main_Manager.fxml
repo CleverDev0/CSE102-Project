@@ -43,7 +43,7 @@
                                     <RadioButton fx:id="depositAidat" layoutX="45.0" layoutY="21.0" mnemonicParsing="false" text="Aidat" />
                                     <RadioButton fx:id="depositDükkan" layoutX="138.0" layoutY="21.0" mnemonicParsing="false" text="Dükkan" />
                                     <RadioButton fx:id="depositDiger" layoutX="226.0" layoutY="21.0" mnemonicParsing="false" text="Diğer" />
-                                    <Label fx:id="status" layoutX="153.0" layoutY="236.0" prefHeight="17.0" prefWidth="99.0" />
+                                    <Label fx:id="depositStatus" layoutX="153.0" layoutY="236.0" prefHeight="17.0" prefWidth="99.0" />
                                             </children>
                                         </AnchorPane>
                                     </content>
@@ -76,9 +76,10 @@
                                                     </font>
                                                 </Label>
                                                 <TextArea fx:id="withDrawalNote" layoutX="16.0" layoutY="142.0" prefHeight="75.0" prefWidth="398.0" promptText="Notunuzu yazmak için tıklayın." />
-                                                <Button layoutX="38.0" layoutY="234.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="113.0" style="-fx-background-color: #6DD3FF;" text="Ana Menüye Dön" />
-                                                <Button layoutX="570.0" layoutY="234.0" mnemonicParsing="false" onAction="#deneme" prefHeight="30.0" prefWidth="96.0" style="-fx-background-color: #6DD3FF;" text="İşlemi Onayla" />
+                                                <Button layoutX="38.0" layoutY="234.0" mnemonicParsing="false" onAction="#deneme" prefHeight="30.0" prefWidth="113.0" style="-fx-background-color: #6DD3FF;" text="Ana Menüye Dön" />
+                                                <Button layoutX="570.0" layoutY="234.0" mnemonicParsing="false" onAction="#withdrawal" prefHeight="30.0" prefWidth="96.0" style="-fx-background-color: #6DD3FF;" text="İşlemi Onayla" />
                                                 <Button layoutX="685.0" layoutY="234.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="46.0" style="-fx-background-color: #6DD3FF;" text="İptal" />
+                                    <Label fx:id="withdrawalStatus" layoutX="174.0" layoutY="241.0" prefHeight="17.0" prefWidth="120.0" />
                                             </children>
                                         </AnchorPane>
                                     </content>
