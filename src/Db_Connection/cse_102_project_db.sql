@@ -11,7 +11,7 @@
  Target Server Version : 80015
  File Encoding         : utf-8
 
- Date: 03/31/2019 12:43:04 PM
+ Date: 04/03/2019 22:06:18 PM
 */
 
 SET NAMES utf8;
@@ -50,8 +50,10 @@ CREATE TABLE `transactions` (
   `IsExpense` tinyint(1) DEFAULT NULL,
   `TransactionType` varchar(12) COLLATE utf32_turkish_ci DEFAULT NULL,
   `ManagerCode` varchar(6) COLLATE utf32_turkish_ci DEFAULT NULL,
+  `DateTime` datetime DEFAULT NULL,
+  `tarih` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf32 COLLATE=utf32_turkish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf32 COLLATE=utf32_turkish_ci;
 
 -- ----------------------------
 --  Table structure for `users`
