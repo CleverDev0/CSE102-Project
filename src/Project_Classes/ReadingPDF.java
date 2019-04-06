@@ -1,5 +1,6 @@
 package Project_Classes;
 
+
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.util.PDFTextStripper;
 //import org.apache.pdfbox.text.PDFTextStripper;
@@ -82,6 +83,9 @@ public abstract class ReadingPDF
 
 class Vakifbank extends ReadingPDF
 {
+    private String tax;
+    private String IBAN;
+
     public Vakifbank (String tax , String IBAN)
     {
         super(tax , IBAN , 13 , 11);
@@ -90,14 +94,28 @@ class Vakifbank extends ReadingPDF
 
 class Ziraatbank extends  ReadingPDF
 {
+    private String tax;
+    private String IBAN;
     public Ziraatbank (String tax , String IBAN)
     {
-        super(tax , IBAN , 20 , 17);
+        super(tax , IBAN.replace(" " , "") , 20 , 17);
+        this.IBAN=IBAN.replace(" " , "");
+        this.tax=tax;
+    }
+
+    public void setTax(String tax) {
+        this.tax = tax;
+    }
+
+    public void setIBAN(String IBAN) {
+        this.IBAN = IBAN.replace(" " , "");
     }
 }
 
 class Isbank extends ReadingPDF
 {
+    private String tax;
+    private String IBAN;
     public Isbank(String tax , String IBAN)
     {
         super(tax , IBAN , 14 , 12);
@@ -108,6 +126,8 @@ class Isbank extends ReadingPDF
 
 class TEB extends ReadingPDF
 {
+    private String tax;
+    private String IBAN;
     public TEB (String tax , String IBAN) { super (tax , IBAN , 9 , 7);}
 }
 //TODO: TEB doğru şekilde çalışıyor mu kontrol et.
