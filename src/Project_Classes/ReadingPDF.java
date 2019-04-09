@@ -6,6 +6,7 @@ import org.apache.pdfbox.util.PDFTextStripper;
 //import org.apache.pdfbox.text.PDFTextStripper;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 public abstract class ReadingPDF
@@ -14,6 +15,8 @@ public abstract class ReadingPDF
     private String IBAN; // ALICININ (YÖNETİCİNİN) IBANI.
     private int lineofIBAN; // hangi satırda IBAN bulunduğunu saklar.
     private int lineofAmount; // hangi satırda ödeme miktarı bulunduğunu saklar.
+    private int lineofDate;
+    private int rowofDate;
 
     public ReadingPDF (String tax , String IBAN , int lineofAmount , int lineofIBAN)
     {
@@ -22,7 +25,8 @@ public abstract class ReadingPDF
         this.lineofAmount = lineofAmount;
         this.lineofIBAN = lineofIBAN;
     }
-    //TODO public int getDate(){} // Son ödeme tarihi eklenecek.
+    //TODO:public abstract String getDate(String filePath);
+
 
     public boolean correctIBAN(String filePath)
     {
@@ -71,10 +75,7 @@ public abstract class ReadingPDF
         return false;
     }
 
-    //TODO: Bazı bankaların dekontunda IBAN boşluk karakteri içermiyor. Onları StringBuilder ile düzelt.
-    //TODO: Yöneticiden IBAN'I boşluk karakterli içerecek TRXX XXXX XXXX XXXX XXXX XXXX XX şeklinde istenmeli.
-    //TODO: Parametre kullanmak yerine sabit değişken kullanıp sabit değişkenlere super() constructorlarıyla banka classlarına atama yap.
-    //TODO: (Yapılabiliyorsa) int cinsinden aidat alınsın. PDF'den okunan değeri inte dönüştürsün.
+    //TODO: Yöneticiden IBAN'I boşluk karakterli içerecek TRXX XXXX XXXX XXXX XXXX XXXX XX şeklinde istenmeli..
     //TODO: ÖDEME ONAYLANDIKTAN SONRA MAKBUZ GÖNDER.
 
 
@@ -85,10 +86,34 @@ class Vakifbank extends ReadingPDF
 {
     private String tax;
     private String IBAN;
+    private final int lineofDate = 9;
+    private int rowofDate = 4;
+
 
     public Vakifbank (String tax , String IBAN)
     {
         super(tax , IBAN , 13 , 11);
+    }
+
+    public String getDate(String filePath)
+    {
+        try {
+            File uploadedFile = new File(filePath);
+            PDDocument pdDocument = PDDocument.load(uploadedFile);
+            PDFTextStripper stripper = new PDFTextStripper();
+            String readDate = stripper.getText(pdDocument);
+            Scanner input = new Scanner(readDate);
+            for (int i = 1; i < lineofDate; i++) {
+                input.nextLine();
+            }
+            for (int i = 1; i < rowofDate; i++) {
+                input.next();
+            }
+
+            return input.next().replace("", "");
+        }catch(Exception ex){}
+        return "";
+
     }
 }
 
@@ -96,11 +121,35 @@ class Ziraatbank extends  ReadingPDF
 {
     private String tax;
     private String IBAN;
+    private final int lineofDate = 10;
+    private int rowofDate = 3;
+
     public Ziraatbank (String tax , String IBAN)
     {
         super(tax , IBAN.replace(" " , "") , 20 , 17);
         this.IBAN=IBAN.replace(" " , "");
         this.tax=tax;
+    }
+
+    public String getDate(String filePath)
+    {
+        try {
+            File uploadedFile = new File(filePath);
+            PDDocument pdDocument = PDDocument.load(uploadedFile);
+            PDFTextStripper stripper = new PDFTextStripper();
+            String readDate = stripper.getText(pdDocument);
+            Scanner input = new Scanner(readDate);
+            for (int i = 1; i < lineofDate; i++) {
+                input.nextLine();
+            }
+            for (int i = 1; i < rowofDate; i++) {
+                input.next();
+            }
+
+            return input.next().replace("", "");
+        }catch(Exception ex){}
+        return "";
+
     }
 
     public void setTax(String tax) {
@@ -122,7 +171,7 @@ class Isbank extends ReadingPDF
     }
 }
 
-//TODO: İŞBANKASI UYUMSUZLUK SORUNU GİDER.
+
 
 class TEB extends ReadingPDF
 {
