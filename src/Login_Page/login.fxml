@@ -8,13 +8,13 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="341.0" prefWidth="337.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login_Page.Controller">
    <children>
-      <VBox alignment="CENTER_RIGHT" layoutX="57.0" layoutY="79.0" prefHeight="248.0" prefWidth="223.0" spacing="15.0">
+      <VBox alignment="CENTER_RIGHT" layoutX="48.0" layoutY="78.0" prefHeight="248.0" prefWidth="241.0" spacing="15.0">
          <children>
             <TextField fx:id="mail" promptText="E-Mail" />
             <PasswordField fx:id="passwordField" promptText="Pasword" />
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#rememberPassword" prefHeight="27.0" prefWidth="118.0" style="-fx-background-color: transparent;" text="Şifremi Unuttum" textFill="#311ac6">
+                  <Button mnemonicParsing="false" onAction="#rememberPassword" prefHeight="27.0" prefWidth="152.0" style="-fx-background-color: transparent;" text="Forgotten Password?" textFill="#311ac6">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>

@@ -39,6 +39,8 @@ public class Controller {
 
     boolean isSıgnUp = false;
 
+    //Todo: Sistemde geçerli manager Code'u varsa kayıt olabilir. Yoksa geçersiz manager code uyarısı göster
+
     public void createUsers(ActionEvent event){
         if(!isSıgnUp) {
             try {

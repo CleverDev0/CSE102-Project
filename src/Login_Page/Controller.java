@@ -97,7 +97,7 @@ public class Controller {
         }
         if (result == 0){
             status.setTextFill(Color.RED);
-            status.setText("Kullanıcı adı veya şifre geçersiz");
+            status.setText("Invalid Password or Email");
         }
 
         //Database
