@@ -12,6 +12,10 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.Formatter;
 
 import static Login_Page.Controller.getKullanici;
 
@@ -71,6 +75,46 @@ public class Controller {
 
     @FXML
     private Label field;
+
+    @FXML
+    private TextField userTc;
+
+    @FXML
+    private TextField userName;
+
+    @FXML
+    private TextField userSurname;
+
+    @FXML
+    private TextField userNumber;
+
+    @FXML
+    private TextField userMail;
+
+    @FXML
+    private Label userApartmentCode;
+
+    @FXML
+    private Label apartmentAdress;
+
+    @FXML
+    private Label apartmentFloor;
+
+    @FXML
+    private Label apartmentMember;
+
+    @FXML
+    private Label apartmentManager;
+
+    @FXML
+    private Label apartmentBalance;
+
+    @FXML
+    private Label date;
+
+    public void baslanictaCalısacakMetodlar(ActionEvent event){
+        showPersonalInformation(event);
+    }
 
     public void deneme(ActionEvent event){
         field.setText(getKullanici().getName()+"  "
@@ -158,6 +202,33 @@ public class Controller {
         }
     }
 
+    public void showPersonalInformation(ActionEvent event){
+        userTc.setText(getKullanici().getTCNumber());
+        userName.setText(getKullanici().getName());
+        userSurname.setText(getKullanici().getSurname());
+        userNumber.setText(getKullanici().getPhoneNumber());
+        userMail.setText(getKullanici().getEmail());
+        userApartmentCode.setText(getKullanici().getManagerCode());
+    }
+
+    public void showApartmentInformation(ActionEvent event){
+        //Todo: DB'ye Apartments olarak table açılacak ve oradan bilgiler çekilip, işlemler oradan yapılacak
+    }
+
+    public void updateApartmentInformation(ActionEvent event){
+        //Todo: DB'ye Apartments olarak table açılacak ve oradan bilgiler çekilip, işlemler oradan yapılacak
+
+    }
+
+    public void updatePersonalInformation(ActionEvent event) throws Exception{
+        Db_Connection.connectiondb();
+        String s = "UPDATE Users SET Name = '"+userName.getText()+"', Surname = '"+userSurname.getText()+"', PhoneNumber = '"+userNumber.getText()+"', Username = '"+userMail.getText()+"'  WHERE TCNumber = '"+userTc.getText()+"'";
+        Db_Connection.ExecuteSql(s);
+        System.out.println("Işlem tamamlandı");
+        Db_Connection.CloseConnection();
+        System.out.println("DB kapandı");
+
+    }
 
 
 
