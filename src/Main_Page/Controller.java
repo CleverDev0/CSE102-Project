@@ -112,19 +112,19 @@ public class Controller {
     @FXML
     private Label date;
 
-    public void baslanictaCalısacakMetodlar(ActionEvent event){
+    public void baslanictaCalısacakMetodlar(ActionEvent event) {
         showPersonalInformation(event);
     }
 
-    public void deneme(ActionEvent event){
-        field.setText(getKullanici().getName()+"  "
-                +getKullanici().getSurname()+"  "
-                +getKullanici().getUserId()+"  "
-                +getKullanici().getApartmentNumber()+"  "
-                +getKullanici().getEmail()+"  "
-                +getKullanici().getManagerCode()+"  "
-                +getKullanici().getPhoneNumber()+"  "
-                +getKullanici().getTCNumber());
+    public void deneme(ActionEvent event) {
+        field.setText(getKullanici().getName() + "  "
+                + getKullanici().getSurname() + "  "
+                + getKullanici().getUserId() + "  "
+                + getKullanici().getApartmentNumber() + "  "
+                + getKullanici().getEmail() + "  "
+                + getKullanici().getManagerCode() + "  "
+                + getKullanici().getPhoneNumber() + "  "
+                + getKullanici().getTCNumber());
     }
 
     public void deposit(ActionEvent event) throws Exception {
@@ -145,7 +145,7 @@ public class Controller {
 
             //Database Query
             String query = ("INSERT INTO transactions (Description,Value,IsExpense,TransactionType,ManagerCode) Values" +
-                    " ('" + managerNotes + "','" + value + "','" + 1 + "','" + asd +"','"+managerCode+"')");
+                    " ('" + managerNotes + "','" + value + "','" + 1 + "','" + asd + "','" + managerCode + "')");
 
             Db_Connection.ExecuteSql(query);
             Db_Connection.CloseConnection();
@@ -154,9 +154,7 @@ public class Controller {
             depositStatus.setText("Succesful");
 
 
-
-
-        }catch (Exception e){
+        } catch (Exception e) {
             depositStatus.setTextFill(Color.RED);
             depositStatus.setText("UnSuccesful");
         }
@@ -164,8 +162,8 @@ public class Controller {
 
     }
 
-    public void withdrawal(ActionEvent event){
-        try{
+    public void withdrawal(ActionEvent event) {
+        try {
             Db_Connection.connectiondb();
             int value = Integer.parseInt(withdrawalValue.getText());
             String managerNotes = withDrawalNote.getText();
@@ -188,7 +186,7 @@ public class Controller {
 
             //Database Query
             String query = ("INSERT INTO transactions (Description,Value,IsExpense,TransactionType,ManagerCode) Values" +
-                    " ('" + managerNotes + "','" + value + "','" + 1 + "','" + asd +"','"+managerCode+"')");
+                    " ('" + managerNotes + "','" + value + "','" + 1 + "','" + asd + "','" + managerCode + "')");
 
             Db_Connection.ExecuteSql(query);
             Db_Connection.CloseConnection();
@@ -196,13 +194,13 @@ public class Controller {
             withdrawalStatus.setTextFill(Color.GREEN);
             withdrawalStatus.setText("Succesful");
 
-        }catch (Exception e){
+        } catch (Exception e) {
             withdrawalStatus.setTextFill(Color.RED);
             withdrawalStatus.setText("UnSuccesful");
         }
     }
 
-    public void showPersonalInformation(ActionEvent event){
+    public void showPersonalInformation(ActionEvent event) {
         userTc.setText(getKullanici().getTCNumber());
         userName.setText(getKullanici().getName());
         userSurname.setText(getKullanici().getSurname());
@@ -211,26 +209,24 @@ public class Controller {
         userApartmentCode.setText(getKullanici().getManagerCode());
     }
 
-    public void showApartmentInformation(ActionEvent event){
+    public void showApartmentInformation(ActionEvent event) {
         //Todo: DB'ye Apartments olarak table açılacak ve oradan bilgiler çekilip, işlemler oradan yapılacak
     }
 
-    public void updateApartmentInformation(ActionEvent event){
+    public void updateApartmentInformation(ActionEvent event) {
         //Todo: DB'ye Apartments olarak table açılacak ve oradan bilgiler çekilip, işlemler oradan yapılacak
 
     }
 
-    public void updatePersonalInformation(ActionEvent event) throws Exception{
+    public void updatePersonalInformation(ActionEvent event) throws Exception {
         Db_Connection.connectiondb();
-        String s = "UPDATE Users SET Name = '"+userName.getText()+"', Surname = '"+userSurname.getText()+"', PhoneNumber = '"+userNumber.getText()+"', Username = '"+userMail.getText()+"'  WHERE TCNumber = '"+userTc.getText()+"'";
+        String s = "UPDATE Users SET Name = '" + userName.getText() + "', Surname = '" + userSurname.getText() + "', PhoneNumber = '" + userNumber.getText() + "', Username = '" + userMail.getText() + "'  WHERE TCNumber = '" + userTc.getText() + "'";
         Db_Connection.ExecuteSql(s);
         System.out.println("Işlem tamamlandı");
         Db_Connection.CloseConnection();
         System.out.println("DB kapandı");
 
     }
-
-
 
 
 }

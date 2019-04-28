@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="838.0" prefWidth="1160.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="35.0" tabMinWidth="131.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <tabs>
+      <Tab text="Main">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="151.0" fitWidth="170.0" layoutX="15.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@CSE/images.png" />
+                     </image>
+                  </ImageView>
+                  <TextArea layoutX="199.0" layoutY="67.0" prefHeight="185.0" prefWidth="432.0" text="&#10;AD  SOYAD&#10;&#10;&#10;KAT : __           DAİRE : __">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </TextArea>
+                  <TextArea layoutX="654.0" layoutY="67.0" prefHeight="187.0" prefWidth="486.0" text="&#10;YÖNETİCİ IBAN:&#10;&#10;AİDAT DÖNEMİ:&#10;&#10;AİDAT ÜCRETİ:">
+                     <font>
+                        <Font name="Arial Black" size="18.0" />
+                     </font>
+                  </TextArea>
+                  <TextField layoutX="1.0" layoutY="1.0" prefHeight="51.0" prefWidth="1161.0" />
+                  <Label layoutX="1003.0" layoutY="11.0" text="27.03.2019">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="835.0" layoutY="98.0" prefHeight="29.0" prefWidth="303.0" style="-fx-background-color: #CDCDCD;" text="TR68 0001 0002 2627 0344 8350 05">
+                     <font>
+                        <Font name="Arial Black" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="835.0" layoutY="202.0" style="-fx-background-color: #CDCDCD;" text="000.00  ₺">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextArea layoutX="865.0" layoutY="314.0" prefHeight="466.0" prefWidth="273.0" />
+                  <Label layoutX="872.0" layoutY="292.0" text="Duyurular">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="1097.0" layoutY="52.0" text="19.39">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="18.0" layoutY="10.0" text="ANA MENÜ - MEMBER">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Slider layoutX="1131.0" layoutY="328.0" orientation="VERTICAL" prefHeight="452.0" prefWidth="14.0" />
+                  <TextField layoutX="32.0" layoutY="746.0" prefHeight="33.0" prefWidth="794.0" />
+                  <Label layoutX="38.0" layoutY="724.0" text="Adres">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="48.0" layoutY="292.0" text="Güncel Aidat Durumu">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextArea layoutX="23.0" layoutY="314.0" prefHeight="391.0" prefWidth="787.0" text="AİDAT ÜCRETİ:&#10;&#10;&#10;BİR SONRAKİ AİDAT DÖNEMİ:&#10;&#10;&#10;AİDAT ÖDENME DURUMU:">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </TextArea>
+                  <Label layoutX="213.0" layoutY="320.0" style="-fx-background-color: #CDCDCD;" text="000.00  ₺">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="371.0" layoutY="406.0" text="27.03.2019">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="337.0" layoutY="494.0" text="ÖDENDİ" textFill="#00ff1e">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="835.0" layoutY="154.0" text="27.03.2019">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Şikayet / Öneri / Arıza ">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField layoutX="1.0" layoutY="1.0" prefHeight="51.0" prefWidth="1161.0" />
+                  <Label layoutX="15.0" layoutY="12.0" text="ŞİKAYET / ÖNERİ / ARIZA BİLDİRİMİ - MEMBER">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="1003.0" layoutY="11.0" text="27.03.2019">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="151.0" fitWidth="170.0" layoutX="15.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@CSE/images.png" />
+                     </image>
+                  </ImageView>
+                  <TextArea layoutX="199.0" layoutY="67.0" prefHeight="185.0" prefWidth="432.0" style="-fx-border-color: #02B3FF; -fx-background-color: transparent;" text="&#10;AD  SOYAD&#10;&#10;&#10;KAT : __           DAİRE : __">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </TextArea>
+                  <TextArea layoutX="43.0" layoutY="391.0" prefHeight="299.0" prefWidth="960.0" promptText="Metninizi buraya yazınız.">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextArea>
+                  <Button layoutX="65.0" layoutY="703.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Ana Menüye Dön">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="763.0" layoutY="704.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Gönder">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="956.0" layoutY="703.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="İptal">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <TextArea layoutX="660.0" layoutY="67.0" prefHeight="188.0" prefWidth="486.0" text="&#10;YÖNETİCİ IBAN:&#10;&#10;AİDAT DÖNEMİ:&#10;&#10;AİDAT ÜCRETİ:">
+                     <font>
+                        <Font name="Arial Black" size="18.0" />
+                     </font>
+                  </TextArea>
+                  <Label layoutX="838.0" layoutY="202.0" style="-fx-background-color: #CDCDCD;" text="000.00  ₺">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="838.0" layoutY="101.0" prefHeight="29.0" prefWidth="303.0" style="-fx-background-color: #CDCDCD;" text="TR68 0001 0002 2627 0344 8350 05">
+                     <font>
+                        <Font name="Arial Black" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="836.0" layoutY="156.0" text="27.03.2019">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <RadioButton layoutX="76.0" layoutY="327.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="115.0" text="Şikayet">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton layoutX="291.0" layoutY="322.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="115.0" text="Öneri">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton layoutX="516.0" layoutY="321.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="173.0" text="Arıza Bildirimi">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Ödemeler">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TabPane layoutX="-1.0" layoutY="274.0" prefHeight="543.0" prefWidth="1159.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="35.0" tabMinWidth="216.0">
+                     <tabs>
+                        <Tab text="Aidat Öde">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="468.0" prefWidth="925.0">
+                                 <children>
+                                    <CheckBox layoutX="81.0" layoutY="125.0" mnemonicParsing="false" text="50.00₺">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <CheckBox layoutX="354.0" layoutY="125.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="201.0" text="Elden Ödendi">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <Label layoutX="46.0" layoutY="221.0" text="Yönetici Notu">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextArea layoutX="34.0" layoutY="254.0" prefHeight="115.0" prefWidth="571.0" promptText="Notunuzu yazmak için tıklayın">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </TextArea>
+                                    <Button layoutX="66.0" layoutY="387.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Ana Menüye Dön">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="764.0" layoutY="388.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="İşlemi Onayla">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="957.0" layoutY="387.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="İptal">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                    <ComboBox layoutX="81.0" layoutY="62.0" prefHeight="33.0" prefWidth="153.0" promptText="Dönem Seçiniz" />
+                                    <ComboBox layoutX="354.0" layoutY="62.0" prefHeight="33.0" prefWidth="153.0" promptText="Banka Seçiniz" />
+                                    <Button layoutX="83.0" layoutY="181.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Dekont Yükle">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+                  <ImageView fitHeight="151.0" fitWidth="170.0" layoutX="15.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@CSE/images.png" />
+                     </image>
+                  </ImageView>
+                  <TextField layoutX="1.0" layoutY="1.0" prefHeight="51.0" prefWidth="1161.0" text="ÖDEMELER - MEMBER">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </TextField>
+                  <TextArea layoutX="199.0" layoutY="67.0" prefHeight="185.0" prefWidth="432.0" style="-fx-background-color: transparent; -fx-border-color: #02B3FF;" text=" &#10;AD  SOYAD&#10;&#10;&#10;KAT : __           DAİRE : __">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </TextArea>
+                  <Label layoutX="990.0" layoutY="7.0" prefHeight="38.0" prefWidth="164.0" text="  27.03.2019">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <TextArea layoutX="660.0" layoutY="66.0" prefHeight="188.0" prefWidth="486.0" text="&#10;YÖNETİCİ IBAN:&#10;&#10;AİDAT DÖNEMİ:&#10;&#10;AİDAT ÜCRETİ:">
+                     <font>
+                        <Font name="Arial Black" size="18.0" />
+                     </font>
+                  </TextArea>
+                  <Label layoutX="836.0" layoutY="156.0" text="27.03.2019">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="843.0" layoutY="97.0" prefHeight="29.0" prefWidth="303.0" style="-fx-background-color: #CDCDCD;" text="TR68 0001 0002 2627 0344 8350 05">
+                     <font>
+                        <Font name="Arial Black" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="836.0" layoutY="202.0" style="-fx-background-color: #CDCDCD;" text="000.00  ₺">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Kat Mülkiyeti Kanunu">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField layoutX="1.0" layoutY="1.0" prefHeight="51.0" prefWidth="1161.0" />
+                  <Label layoutX="1003.0" layoutY="11.0" text="27.03.2019">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="18.0" layoutY="10.0" text="KAT MÜLKİYETİ KANUNU - MEMBER">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <TextArea layoutX="7.0" layoutY="274.0" prefHeight="404.0" prefWidth="1129.0" text="Kanun No. 5711 Kabul Tarihi: 14/11/2007&#10;&#10;MADDE 1- 23/6/1965 tarihli ve 634 sayılı Kat Mülkiyeti Kanununun 3 üncü maddesinin ikinci ve üçüncü fıkraları aşağıdaki şekilde değiştirilmiştir.&#10;&#10;“Kat mülkiyeti ve kat irtifakı, bu mülkiyete konu olan anagayrimenkulün bağımsız bölümlerinden her birinin konum ve büyüklüklerine göre hesaplanan değerleri ile oranlı olarak projesinde tahsis edilen arsa payının ortak mülkiyet esaslarına göre açıkça gösterilmesi suretiyle kurulur. Arsa paylarının bağımsız bölümlerin payları ile oranlı olarak tahsis edilmediği hallerde, her kat maliki veya kat irtifakı sahibi, arsa paylarının yeniden düzenlenmesi için mahkemeye başvurabilir. Bağımsız bölümlerden her birine bu fıkra uyarınca tahsis edilen arsa payı, o bölümlerin değerinde sonradan meydana gelen çoğalma veya azalma sebebiyle değiştirilemez. 44 üncü madde hükmü saklıdır.&#10;&#10;Kat irtifakı arsa payına bağlı bir irtifak çeşidi olup, yapı kullanma izin belgesi alındıktan sonra arsanın malikinin veya kat irtifakına sahip ortak maliklerin veya bunlardan birinin tapu idaresine yapacağı istem üzerine, bu Kanunda gösterilen şartlar uyarınca, kat mülkiyetine çevrilir.”&#10;&#10;MADDE 2- 634 sayılı Kanunun 4 üncü maddesinin birinci fıkrasının (a) bendine, “Temeller ve ana duvarlar,” ibaresinden sonra gelmek üzere “taşıyıcı sistemi oluşturan kiriş, kolon ve perde duvarlar ile taşıyıcı sistemin parçası diğer elemanlar,” ibaresi eklenmiştir.&#10;&#10;MADDE 3- 634 sayılı Kanunun 10 uncu maddesinin üçüncü fıkrası aşağıdaki şekilde değiştirilmiş ve maddeye aşağıdaki fıkra eklenmiştir.&#10;&#10;“Kat mülkiyeti kurulurken aynı katta birbirine bitişik bulunan aynı nevideki birden fazla bağımsız bölüm veya bir yapının otel, iş veya ticaret yeri gibi iktisadî açıdan veya kullanma bakımından bütünlük arz eden birden çok katı veya bölümü, kat mülkiyeti kütüğüne tek bağımsız bölüm olarak tescil edilebilir. Böyle bir tescilin yapılabilmesi için, buna uygun değişiklik projesinin ve yapı kullanma izin belgesinin Tapu Sicil Müdürlüğüne verilmiş olması gereklidir.”&#10;&#10;“Gelirinin ortak giderlere harcanması için veya başka bir amaçla ortak yararlanmaya tahsis edilen bağımsız bölümlerin malik hanesine, bunlardan yararlanan “bağımsız bölümlerin numaraları” yazılmak suretiyle kat mülkiyeti kütüğüne tescil edilir. Bu husus bağımsız bölümlerin beyanlar hanesinde gösterilir.”&#10;&#10;MADDE 4- 634 sayılı Kanunun 11 inci maddesi aşağıdaki şekilde değiştirilmiştir.&#10;&#10;“MADDE 11- Kat mülkiyeti ve kat irtifakı, Tapu Sicili Tüzüğüne göre tutulacak kat mülkiyeti kütüğüne tescil olunur. Bu Kanunda aksine hüküm olmadıkça, tescille ilgili genel hükümler, kat mülkiyeti kütüğüne yapılacak tescillerde de uygulanır.&#10;&#10;Henüz kadastrosu yapılmamış olan yerlerde kat mülkiyeti ve kat irtifakı, Tapu Sicili Tüzüğündeki formüle göre, ayrıca tutulacak Kat Mülkiyeti Zabıt Defterine tescil olunur.”&#10;&#10;MADDE 5- 634 sayılı Kanunun 12 nci maddesi aşağıdaki şekilde değiştirilmiştir.&#10;&#10;“MADDE 12- Kat mülkiyetinin kurulması için, anagayrimenkulün kat mülkiyetine çevrilmesi hususunda o gayrimenkulün maliki veya bütün paydaşlarının aşağıda yazılı belgeler ile birlikte tapu idaresinde istemde bulunması gerekir:&#10;&#10;a) Anagayrimenkulde, yapı veya yapıların dış cepheler ve iç taksimatı bağımsız bölüm, eklenti, ortak yerlerinin ölçüleri ve bağımsız bölümlerin konum ve büyüklüklerine göre hesaplanan değerleriyle oranlı arsa payları ve bağımsız bölümlerin yapı inşaat alanı da açıkça gösterilmek suretiyle, proje müellifi mimar tarafından yapılan ve anagayrimenkulün maliki veya bütün paydaşları tarafından imzalanan, yetkili kamu kurum ve kuruluşlarınca onaylanan mimarî proje ve birden çok yapılarda yerleşimlerini gösteren vaziyet plânı ile yapı kullanma izin belgesi.&#10;&#10;b) Bağımsız bölümlerin kullanılış tarzına, birden çok yapının varlığı halinde bu yapıların özelliğine göre 28 inci maddedeki esaslar çerçevesinde hazırlanmış, kat mülkiyetini kuran malik veya malikler tarafından imzalanmış bir yönetim plânı.&#10;&#10;c) Her bağımsız bölümün arsa payını, kat, daire, iş bürosu gibi nevini ve bunların birden başlayıp sıra ile giden numarasını, varsa eklentisini gösteren ve anagayrimenkulün maliki veya bütün paydaşları tarafından imzalanmış noterden tasdikli liste.”&#10;&#10;MADDE 6- 634 sayılı Kanunun 13 üncü maddesinin ikinci ve üçüncü fıkraları aşağıdaki şekilde değiştirilmiştir.&#10;&#10;“Sözleşme düzenlenince kat irtifakının kat mülkiyetine çevrilmesinde kat irtifakının kayıtlı olduğu kat mülkiyeti kütüğü sayfasındaki, doğrudan doğruya kat mülkiyetinin kurulması halinde ise anagayrimenkulün kayıtlı bulunduğu tapu kütüğü sayfasındaki mülkiyet hanesine “Bu gayrimenkulün mülkiyeti kat mülkiyetine çevrilmiştir.” ibaresi yazılarak, sayfa anagayrimenkulün leh ve aleyhine tesis edilecek irtifak hakları dışındaki işlemlere kapatılır ve kat mülkiyetine konu olan her bağımsız bölüm, kat mülkiyeti kütüğünün ayrı bir sayfasına o bölüme bağlı arsa payı ve anagayrimenkulün kayıtlı bulunduğu genel kütükteki pafta, ada, parsel, defter ve sayfa numaraları gösterilmek suretiyle tescil edilir; anagayrimenkulün kayıtlı bulunduğu genel kütük sayfasına da, bağımsız bölümlerin kat mülkiyeti kütüğündeki defter ve sayfa numaraları işlenmek suretiyle, kütükler arasında bağlantı sağlanır.&#10;&#10;Anagayrimenkulün sayfasında evvelce mevcut olan haklara ait sicil kaydı, irtifak hakları hariç, bağımsız bölümlerin kat mülkiyeti kütüğündeki sayfasına geçirilir. Anagayrimenkulün mülkiyetinin kat mülkiyetine çevrilmesinden sonra, anagayrimenkulün leh ve aleyhine tesis edilecek irtifak hakları da anagayrimenkulün tapu kütüğü sayfasına tescil edilir ve kat mülkiyeti kütüğünün beyanlar hanesinde belirtilir.”&#10;&#10;MADDE 7- 634 sayılı Kanunun 14 üncü maddesinin birinci fıkrası aşağıdaki şekilde değiştirilmiş ve maddeye aşağıdaki fıkra eklenmiştir.&#10;&#10;“Henüz yapı yapılmamış veya yapısı tamamlanmamış bir arsa üzerinde kat irtifakının kurulması ve tapu siciline tescil edilmesi için o arsanın malikinin veya bütün paydaşlarının buna ait istem ile birlikte 12 nci maddenin (a) bendine uygun olarak düzenlenen proje ve plân, (b) bendindeki yönetim plânı ile (c) bendindeki listeyi tapu idaresine vermeleri lazımdır. Kat mülkiyetine geçişte ayrıca yönetim plânı istenmez.”&#10;&#10;“Yapıları tamamlanmış olan kat irtifaklı anagayrimenkulde, yapı kullanma izin belgesinin alındığı tarihten itibaren bir yıl içinde kat mülkiyetine geçilmesi zorunludur. Belirtilen süre içinde kat irtifak hakkı sahiplerinden birinin veya varsa yöneticinin yazılı uyarısına rağmen, kat mülkiyetinin kurulması için tapu idaresine verilmesi gereken 12 nci maddede yazılı belgelerden eksik olanları tamamlamaktan veya imzalanması gerekenleri imzalamaktan kaçınan kat irtifak hakkı sahiplerinden her birine, kendine ait her bağımsız bölüm için, anagayrimenkul belediye sınırları içinde ise belediye, belediye sınırları dışında ise mülkî amir tarafından bin Türk Lirası idarî para cezası verilir.”&#10;&#10;MADDE 8- 634 sayılı Kanunun 19 uncu maddesinin ikinci fıkrası aşağıdaki şekilde değiştirilmiştir.&#10;&#10;“Kat maliklerinden biri, bütün kat maliklerinin beşte dördünün yazılı rızası olmadıkça anagayrimenkulün ortak yerlerinde inşaat, onarım ve tesisler, değişik renkte dış badana veya boya yaptıramaz. Ancak, ortak yer ve tesislerdeki bir bozukluğun anayapıya veya bağımsız bir bölüme veya bölümlere zarar verdiğinin ve acilen onarılması gerektiğinin veya anayapının güçlendirilmesinin zorunlu olduğunun mahkemece tespit edilmiş olması halinde, bu onarım ve güçlendirmenin projesine ve tekniğine uygun biçimde yapılması konusunda kat maliklerinin rızası aranmaz. Kat maliki kendi bağımsız bölümünde anayapıya zarar verecek nitelikte onarım, tesis ve değişiklik yapamaz. Tavan, taban veya duvar ile birbirine bağlantılı bulunan bağımsız bölümlerin bağlantılı yerlerinde, bu bölüm maliklerinin ortak rızası ile anayapıya zarar vermeyecek onarım, tesis ve değişiklik yapılabilir.”&#10;&#10;MADDE 9- 634 sayılı Kanunun 20 nci maddesinin birinci fıkrasının (b) bendinde yer alan “koruma” ibaresinden sonra gelmek üzere “, güçlendirme” ibaresi eklenmiş ve ikinci fıkrasında yer alan “yüzde on” ibaresi “yüzde beş” olarak değiştirilmiştir.&#10;&#10;MADDE 10- 634 sayılı Kanunun 22 nci maddesinin ikinci fıkrasının son cümlesi aşağıdaki şekilde değiştirilmiştir.&#10;&#10;“4721 sayılı Türk Medenî Kanununun 893 üncü maddesinin son fıkrası hükmü burada da uygulanır.”&#10;&#10;MADDE 11- 634 sayılı Kanunun 23 üncü maddesinin birinci fıkrasına “tesislerin yeniden yapılması” ibaresinden sonra gelmek üzere “ile yapı güvenliğiyle ilgili olarak yapılması gerekli görülen teknik incelemeler” ibaresi eklenmiştir.&#10;&#10;MADDE 12- 634 sayılı Kanunun 25 inci maddesinin ikinci ve dördüncü fıkraları aşağıdaki şekilde değiştirilmiştir.&#10;&#10;“Bu gibi bir kat maliki hakkında, bağımsız bölümün mülkiyetinin hükme en yakın tarihteki değeri o kat malikine ödenerek bu mülkiyetin diğer kat maliklerine, arsa payları oranında devredilmesi için davanın açılması, aksi kararlaştırılmış olmadıkça, diğer kat maliklerinin sayı ve arsa payı çoğunluğuyla karar vermesine bağlıdır. Bu karara rağmen kat maliklerinden bir kısmı bu davayı açmak istemezse, davayı öteki kat malikleri açar ve hâkim hüküm vermeden önce devir bedelinin ileride hak sahibine ödenmek üzere bankada üçer aylık vadeli hesaba yatırılması ve makbuzunun ibrazı için davacılara resen belirleyeceği uygun bir süre verir. Devir bedelinin süresi içinde yatırıldığına ilişkin belge ibraz edildiğinde ve davanın kabulü halinde hâkim, davalının bağımsız bölümünün mülkiyetinin davayı açmış olan kat maliklerine arsa payları oranında devredilmesine ve devir bedelinin işlemiş faiziyle birlikte davalıya ödenmesine karar verir.”&#10;&#10;“Bu maddedeki dava hakkı, devir konusunda kat maliklerince alınan dava açma kararının öğrenilmesi tarihinden başlayarak altı ay ve her halde dava hakkının doğumundan başlayarak beş yıl içinde kullanılmazsa veya dava sebebi ortadan kalkmışsa düşer.”&#10;&#10;MADDE 13- 634 sayılı Kanunun 26 ncı maddesinin ikinci fıkrası aşağıdaki şekilde değiştirilmiştir.&#10;&#10;“Kat irtifakı sahiplerinden biri kendine düşen borçları, noter aracılığıyla yapılan ihtara rağmen, bu ihtar tarihinden başlayarak iki ay içinde yerine getirmezse diğerlerinin yazılı istemi üzerine hâkim, onun arsa payının ve kat irtifakının hükme en yakın tarihteki değeri karşılığında, öteki paydaşlara, arsa payları oranında devrine karar verir.”&#10;&#10;MADDE 14- 634 sayılı Kanunun 29 uncu maddesinin birinci ve üçüncü fıkralarına aşağıdaki cümleler eklenmiştir.&#10;&#10;“Toplu yapılarda ise kurullar, en geç iki yılda bir defadan az olmamak üzere yönetim plânlarında gösterilen zamanlarda, böyle bir zaman gösterilmemişse, ikinci takvim yılının ilk ayı içinde toplanır.”&#10;&#10;“İlk toplantı ile ikinci toplantı arasında bırakılacak zaman yedi günden az olamaz.”&#10;&#10;MADDE 15- 634 sayılı Kanunun 30 uncu maddesinin ikinci fıkrası aşağıdaki şekilde değiştirilmiştir.&#10;&#10;“Yeter sayının sağlanamaması nedeniyle ilk toplantının yapılamaması halinde, ikinci toplantı, en geç onbeş gün sonra yapılır. Bu toplantıda karar yeter sayısı, katılanların salt çoğunluğudur.”&#10;&#10;MADDE 16- 634 sayılı Kanunun 31 inci maddesinin son fıkrası aşağıdaki şekilde değiştirilmiştir.&#10;&#10;“Kat maliklerinden biri, oyunu yetkili vekil eliyle kullanabilir. Bir kişi, oy sayısının yüzde beşinden fazlasını kullanmak üzere vekil tayin edilemez. Ancak, kırk ve daha az sayıdaki kat mülkiyetine tâbi taşınmazlarda bir kişi, en fazla iki kişiye vekâlet edebilir.”&#10;&#10;MADDE 17- 634 sayılı Kanunun 33 üncü maddesinin birinci ve üçüncü fıkraları aşağıdaki şekilde değiştirilmiştir.&#10;&#10;“Kat malikleri kurulunca verilen kararlar aleyhine, kurul toplantısına katılan ancak 32 nci madde hükmü gereğince aykırı oy kullanan her kat maliki karar tarihinden başlayarak bir ay içinde, toplantıya katılmayan her kat maliki kararı öğrenmesinden başlayarak bir ay içinde ve her halde karar tarihinden başlayarak altı ay içinde anagayrimenkulün bulunduğu yerdeki sulh mahkemesine iptal davası açabilir; kat malikleri kurulu kararlarının yok veya mutlak butlanla hükümsüz sayıldığı durumlarda süre koşulu aranmaz. Kat maliklerinden birinin yahut onun katından kira akdine, oturma hakkına veya başka bir sebebe dayanarak devamlı surette faydalanan kimsenin, borç ve yükümlerini yerine getirmemesi yüzünden zarar gören kat maliki veya kat malikleri, anagayrimenkulün bulunduğu yerin sulh mahkemesine başvurarak hâkimin müdahalesini isteyebilir.”&#10;&#10;“Tespit edilen süre içinde hâkimin kararını yerine getirmeyenlere, aynı mahkemece, ikiyüz elli Türk Lirasından ikibin Türk Lirasına kadar idarî para cezası verilir. 25 inci madde hükmü saklıdır.”&#10;&#10;MADDE 18- 634 sayılı Kanunun 34 üncü maddesinin son fıkrası aşağıdaki şekilde değiştirilmiştir.&#10;&#10;“Yöneticinin ad ve soyadı ile iş ve ev adresinin anagayrimenkulün kapısı yanına veya girişte görülecek bir yere çerçeve içinde asılması mecburidir. Bu yapılmazsa, yöneticiden veya yönetim kurulu üyelerinin her birine, ilgilinin başvurması üzerine aynı mahkemece, elli Türk Lirasından ikiyüzelli Türk Lirasına kadar idarî para cezası verilir.”&#10;&#10;MADDE 19- 634 sayılı Kanunun 38 inci maddesine aşağıdaki fıkra eklenmiştir.&#10;&#10;“Kat malikleri kurulu, ada temsilciler kurulu veya toplu yapı temsilciler kurulu kararlarının iptaline ilişkin davalar, kat maliklerini temsilen yöneticiye, toplu yapılarda ise ada temsilciler kurulu veya toplu yapı temsilciler kurulunca seçilen yöneticiye husumet yöneltilmesi suretiyle açılabilir. Yönetici, açılan davayı bütün kat maliklerine ve ada veya toplu yapı temsilciler kuruluna duyurur. Kurul kararının iptali halinde bu konudaki yargılama giderleri ortak giderlerden karşılanır.”&#10;&#10;MADDE 20- 634 sayılı Kanunun 47 nci maddesinin dördüncü fıkrasının son cümlesi aşağıdaki şekilde değiştirilmiştir.&#10;&#10;“Bildirmeyenlerin yeniden yaptırmak istemedikleri kabul olunur ve onların arsa payları, değeri karşılığında bölümlerini yeniden yaptırmak isteyenlere öncelikle devredilir.”&#10;&#10;MADDE 21- 634 sayılı Kanunun 54 üncü maddesinin birinci ve ikinci fıkraları aşağıdaki şekilde değiştirilmiştir.&#10;&#10;“İmar Kanunu hükümlerine göre ortaklaştırma halinde, ortaklaştırılan gayrimenkuller arasında kat mülkiyetine tâbi gayrimenkul varsa ve ortaklaştırma, 9/11/1985 tarihinden önce ise 6785 sayılı İmar Kanununun 46 ncı maddesi, bu tarihten sonra ise 3194 sayılı İmar Kanununun 16 ncı maddesi gereğince ortaklığın giderilmesi hususunda bütün malikler anlaştıkları takdirde, ortaklığın giderilmesi bu anlaşma hükümlerine göre yapılır.&#10;&#10;Böyle bir anlaşmaya varılamazsa, her gayrimenkulün ortaklaştırmadan önceki geçer değerleri, birinci fıkrada sözü geçen madde hükümlerine göre ortaklığı gidermekle görevli sulh mahkemesince ayrı ayrı takdir edilerek, bunlara Türkiye İstatistik Kurumunca yayımlanan üretici fiyat endeksi uygulanmak suretiyle her bir gayrimenkulün hükme en yakın tarih itibarıyla ulaştığı değerleri tespit edildikten sonra, bunlardan değeri en fazla olan gayrimenkulün malikine, öteki gayrimenkulleri bu değerle satın almasını teklife karar verilir ve bu teklif kabul edilip bedel ödenince ortaklık giderilmiş olur.”&#10;&#10;MADDE 22- 634 sayılı Kanuna 65 inci maddeden sonra gelmek üzere “Toplu Yapılara İlişkin Özel Hükümler” başlıklı “Dokuzuncu Bölüm” altında aşağıdaki maddeler eklenmiş, mevcut 66 ve 67 nci maddeler, 75 ve 76 ncı maddeler olarak teselsül ettirilmiştir.&#10;&#10;“DOKUZUNCU BÖLÜM&#10;&#10;Toplu Yapılara İlişkin Özel Hükümler&#10;&#10;Kapsam&#10;&#10;MADDE 66- Toplu yapı, bir veya birden çok imar parseli üzerinde, belli bir onaylı yerleşim plânına göre yapılmış veya yapılacak, alt yapı tesisleri, ortak kullanım yerleri, sosyal tesis ve hizmetler ile bunların yönetimi bakımından birbirleriyle bağlantılı birden çok yapıyı ifade eder.&#10;&#10;Toplu yapı kapsamındaki imar parsellerinin bitişik veya komşu olmaları şarttır. Ancak bu parseller arasında kalan ve imar plânına göre yol, meydan, yeşil alan, park, otopark gibi kamuya ayrılan yerler için bu şart aranmaz. Toplu yapı kapsamındaki her imar parseli, kat irtifakının veya kat mülkiyetinin tesisinde ayrı ayrı dikkate alınır. Ancak, toplu yapı birden fazla imar parselini içeriyorsa, münferit parseller üzerinde toplu yapı hükümlerine tâbi olacak şekilde kat mülkiyeti ilişkisi kurulamaz.&#10;&#10;Yapılar tamamlandıkça, tamamlanan yapılara ilişkin kat irtifakları kat mülkiyetine çevrilebilir.&#10;&#10;Ortak yerler&#10;&#10;MADDE 67- Toplu yapı kapsamında olup, bütünüyle bu kapsamdaki bağımsız bölümlerin ortak kullanma ve faydalanmasına tahsis edilmiş bulunan parsellerin malik hanesine, tahsis edildikleri toplu yapı kapsamındaki diğer parsellerin ada, parsel, blok ve bağımsız bölüm numaraları gösterilmek suretiyle tapu siciline kaydedilir ve bu suretle tahsis edildikleri parsellerde bulunan bağımsız bölümlerin ortak yeri olur.&#10;&#10;Toplu yapı kapsamında bulunan birden çok yapının ortak sosyal ve alt yapı tesisleri bulundukları parsel veya yapıya bakılmaksızın, tahsis edildikleri bağımsız bölümlerin ortak yeri sayılır.&#10;&#10;Vaziyet plân ve projeleri&#10;&#10;MADDE 68- Toplu yapılarda; yapıların konumları, ortak nitelikteki yerler ve tesisler, bunların kullanılış amaç ve şekilleri, toplu yapı kapsamındaki parsel veya parsellerin tamamını kapsayacak şekilde, bir bütün olarak ilgili makamlarca onaylanmış imar plânı hükümlerine uygun olarak hazırlanmış vaziyet plânında ve projelerde belirtilir.&#10;&#10;Kamuya ayrılan yerlerin düzenlenmesi, işletilmesi ve bakımı, bu konuda yetkili kamu kurumu ile mutabakat sağlanması hâlinde, kamunun kullanımını kısıtlamamak şartıyla toplu yapı yönetimince üstlenilebilir.&#10;&#10;Toplu yapı uygulamasında, kat mülkiyetinin ve kat irtifakının tesisine, aranacak belgelere, tapuda yapılacak işlemlere ilişkin hususlar, Bayındırlık ve İskân Bakanlığınca hazırlanacak bir yönetmelikle düzenlenir.&#10;&#10;Yönetim&#10;&#10;MADDE 69- Toplu yapı kapsamında bulunan parsel ve parsellerdeki birden çok bağımsız bölümü kapsayan ana yapıda ortak yerleri bulunan blok yapıların her biri, kendi sorunlarına ve yalnız o bloğa ait ortak yerlere ilişkin olarak, o blokta bulunan bağımsız bölüm maliklerinden oluşan blok kat malikleri kurulunca yönetilir. Bir parselde blok niteliğinde olmayan yapılar varsa veya bu nitelikteki yapılarla blok yapılar aynı parselde yer alıyorsa, kendi sorunlarına ve o parsele ait ortak yerlere ilişkin olarak, o parselde bulunan bağımsız bölüm maliklerinden oluşan kat malikleri kurulunca yönetilir. Yönetim plânında blokların ve blok niteliğinde olmayan yapıların idare tarzı ayrıca belirtilir.&#10;&#10;Bir adada birden çok parsel yer alıyorsa, adayı oluşturan parsellere ait ortak yerler, o adada bulunan bağımsız bölüm maliklerinden oluşan ada kat malikleri kurulunca yönetilir ve yönetim tarzı, kanunların emredici hükümleri saklı kalmak şartıyla, bu kurul tarafından kararlaştırılır. Bu yetki, yönetim plânında ada temsilciler kuruluna verilebilir. Yönetim plânında başka türlü düzenlenmemişse, ada temsilciler kurulu, blok yapılarda her blokta bulunan bağımsız bölüm maliklerince seçilen blok yöneticileri ve blok niteliğinde olmayan yapıların bağımsız bölüm maliklerince seçilen temsilcilerden oluşur. Ada temsilciler kurulu üyelerinin sayısı ve nasıl seçileceği toplu yapının özelliği dikkate alınarak yönetim plânında belirtilir. Ada temsilciler kurulunda bu yöneticiler ve temsilciler yönettikleri ve temsil ettikleri bağımsız bölüm sayısı kadar oy hakkına sahiptirler.&#10;&#10;Toplu yapı kapsamındaki ortak yapı, yer ve tesisler, bu kapsamda yer alan bağımsız bölüm maliklerinden oluşan toplu yapı kat malikleri kurulunca yönetilir ve yönetim tarzı, kanunların emredici hükümleri saklı kalmak şartıyla, bu kurul tarafından kararlaştırılır. Bu yetki, yönetim plânında toplu yapı temsilciler kuruluna verilebilir. Yönetim plânında başka türlü düzenlenmemişse, toplu yapı temsilciler kurulu, blok yapılarda her blokta bulunan bağımsız bölüm maliklerince seçilen blok yöneticileri ve blok niteliğinde olmayan yapıların bağımsız bölüm maliklerince seçilen temsilcilerden oluşur. Toplu yapı temsilciler kurulu üyelerinin sayısı ve nasıl seçileceği toplu yapının özelliği dikkate alınarak yönetim plânında belirtilir. Toplu yapı temsilciler kurulunda bu yöneticiler ve temsilciler yönettikleri ve temsil ettikleri bağımsız bölüm sayısı kadar oy hakkına sahiptirler.&#10;&#10;Yönetim plânı ve değiştirilmesi&#10;&#10;MADDE 70- Toplu yapı kapsamındaki yapı ve yerler için tamamını kapsayan bir tek yönetim plânı düzenlenir. Yönetim plânı, toplu yapı kapsamındaki bütün kat maliklerini bağlar. Yönetim plânının değiştirilebilmesi için, toplu yapı temsilciler kurulu üyelerinin temsil ettikleri bağımsız bölümlerin tamsayısının beşte dördünün oyu şarttır.&#10;&#10;Geçici yönetimle ilgili yönetim plânı hükümleri, toplu yapı alanındaki bağımsız bölüm maliklerinin beşte dördünün oylarıyla değiştirilebilir.&#10;&#10;Yönetici ve denetçi atama&#10;&#10;MADDE 71- Yönetim plânında başka türlü düzenlenmedikçe, blok kat malikleri kurulu blok için, blok niteliğinde olmayan yapıların yer aldığı parseldeki kat malikleri kendilerine özgülenen ortak yer ve tesisler için, toplu yapı temsilciler kurulu ise toplu yapı kapsamındaki bütün ortak yapı, yer ve tesisler için yönetici ve denetçi atar.&#10;&#10;Blok yöneticisi ve denetçisi, bloktaki kat maliklerinin; blok niteliğinde olmayan yapıların ortak yer ve tesisleri için yönetici ve denetçi, bu yapılardaki kat maliklerinin sayı ve arsa payı bakımından çoğunluğu tarafından seçilir. Toplu yapı kapsamındaki bütün ortak yapı, yer ve tesisler için yönetici ve denetçi ise, toplu yapı temsilciler kuruluna katılan yönetici ve temsilcilerin, yönettikleri ve temsil ettikleri bağımsız bölüm sayısının salt çoğunluğunun oyu ile atanır.&#10;&#10;Ortak giderlere katılma&#10;&#10;MADDE 72- Toplu yapı kapsamındaki belli bir yapıya veya yapıların sadece birkaçındaki kat maliklerinin ortak kullanım ve yararlanmasına tahsis edilmiş ortak yer ve tesislere ilişkin ortak giderler, o yapılardaki kat malikleri tarafından, bütün bağımsız bölümlerin ortak kullanım ve yararlanmasına tahsis edilmiş tesis ve yerlere ilişkin ortak giderler ise bütün kat malikleri tarafından karşılanır.&#10;&#10;Blok kat malikleri, toplu yapı temsilcileri ve geçici yönetim kurulu kararları, 2004 sayılı İcra ve İflas Kanununun 68 inci maddesinin birinci fıkrasında belirtilen belgelerden sayılır.&#10;&#10;Kat malikleri, toplu yapı kapsamındaki ortak yapı, yer ve tesisler üzerindeki kullanma hakkından vazgeçmek veya bunların başka bir parselde veya kamuya ait alanlarda bulunduğunu veya bağımsız bölümlerinin veya kendilerinin durumu dolayısıyla bunlardan faydalanmaya lüzum ve ihtiyaç bulunmadığını ileri sürmek suretiyle toplu yapı ortak gider payını ve toplanacak avansı ödemekten kaçınamazlar.&#10;&#10;Geçici yönetim&#10;&#10;MADDE 73- Yönetim plânında toplu yapı temsilciler kurulu oluşuncaya kadar, bu kurulun görevlerini üstlenmek, yetkilerini kullanmak ve kurulun oluşması için gerekli girişim ve çağrılarda bulunmak üzere, bir geçici yönetim kurulması öngörülebilir. Bu takdirde yönetim plânında geçici yönetimin nasıl oluşacağına ve ne zamana kadar devam edeceğine ilişkin hükümlere yer verilir. Geçici yönetim en geç toplu yapının bitimini izleyen bir yıl sonrasına kadar devam edebilir. Bu süre, her halde toplu yapı kapsamındaki ilk yapı ruhsatının alınmasından itibaren on yıl geçmekle sona erer.&#10;&#10;Uygulanacak diğer hükümler&#10;&#10;MADDE 74- Bu bölümde öngörülen özel hükümler saklı kalmak kaydıyla, bu Kanunda yer alan bütün hükümler, toplu yapılar hakkında da aynen veya kıyas yoluyla tatbik edilir.”&#10;&#10;MADDE 23- 634 sayılı Kanuna aşağıdaki geçici madde eklenmiştir.&#10;&#10;“GEÇİCİ MADDE 1- Bu Kanunun yürürlüğe girdiği tarihten önce kat irtifakı kurulmuş ve üzerindeki yapılar tamamlanıp yapı kullanma belgesi alınmış bulunan anagayrimenkullerde, Kanunun yürürlüğe girdiği tarihten itibaren en geç iki yıl içinde kat mülkiyetine geçilmesi zorunludur. Bu anagayrimenkullerde yapı kullanma izninin alındığı tarihten itibaren tahakkuk eden vergi, resim ve harçlar kat mülkiyetine geçiş işlemleri sırasında cezasız olarak tahsil edilir. Belirtilen süre içinde kat irtifak hakkı sahiplerinden birinin veya varsa yöneticinin, kat mülkiyetinin kurulması için gerekli olan belgelerden eksik olanların tamamlanması için diğer kat irtifak hakkı sahiplerinden her birine yazılı bildirimde bulunmasına rağmen, gereğini yerine getirmeyen kat irtifak hakkı sahiplerinden her birine, anagayrimenkul belediye sınırları içinde ise belediye, belediye sınırları dışında ise mülkî amir tarafından bin Türk Lirası idarî para cezası verilir.”&#10;&#10;MADDE 24- 634 sayılı Kanunun 18 inci maddesinin son fıkrası ile ek 3 üncü maddesi yürürlükten kaldırılmıştır.&#10;&#10;GEÇİCİ MADDE 1- Bu Kanun gereğince hazırlanması gereken yönetmelik, Kanunun yürürlüğe girdiği tarihten itibaren altı ay içinde hazırlanır.&#10;&#10;GEÇİCİ MADDE 2- 13/4/1983 tarihli ve 2814 sayılı Kanunun yürürlüğe girdiği tarihten önce kat irtifakı kurulmuş binalarda yönetim plânı olmasa dahi 12 nci madde hükümlerine göre kat mülkiyeti kurulur.&#10;&#10;GEÇİCİ MADDE 3- Bu Kanunun yürürlüğe girmesinden önce kurulan toplu yapılara ait yönetim plânları, yürürlük tarihinden itibaren en geç altı ay içinde bu Kanun hükümlerine uyarlanır. Yönetim plânında bu yönde değişiklik yapılması için mevcut kat malikleri kurulunun salt çoğunluğu yeterlidir. Mevcut toplu yapı yönetimleri, yönetim plânı değişip buna göre yönetici seçilene kadar geçici yönetim olarak görevini sürdürür. Toplu yapı yöneticisi seçimi, en geç yönetim plânının değişimini takip eden üç ay içinde yapılır.&#10;&#10;MADDE 25- Bu Kanun yayımı tarihinde yürürlüğe girer.&#10;&#10;MADDE 26- Bu Kanun hükümlerini Bakanlar Kurulu yürütür.">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font>
+                  </TextArea>
+                  <ScrollBar layoutX="1138.0" layoutY="272.0" orientation="VERTICAL" prefHeight="406.0" prefWidth="16.0" />
+                  <ScrollBar layoutX="7.0" layoutY="678.0" prefHeight="16.0" prefWidth="1130.0" />
+                  <Button layoutX="65.0" layoutY="703.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Ana Menüye Dön">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="151.0" fitWidth="170.0" layoutX="15.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@CSE/images.png" />
+                     </image>
+                  </ImageView>
+                  <TextArea layoutX="199.0" layoutY="67.0" prefHeight="185.0" prefWidth="432.0" style="-fx-border-color: #02B3FF; -fx-background-color: transparent;" text="&#10;AD  SOYAD&#10;&#10;&#10;KAT : __           DAİRE : __">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </TextArea>
+                  <TextArea layoutX="652.0" layoutY="66.0" prefHeight="188.0" prefWidth="486.0" text="&#10;YÖNETİCİ IBAN:&#10;&#10;AİDAT DÖNEMİ:&#10;&#10;AİDAT ÜCRETİ:">
+                     <font>
+                        <Font name="Arial Black" size="18.0" />
+                     </font>
+                  </TextArea>
+                  <Label layoutX="834.0" layoutY="202.0" style="-fx-background-color: #CDCDCD;" text="000.00  ₺">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="834.0" layoutY="95.0" prefHeight="29.0" prefWidth="303.0" style="-fx-background-color: #CDCDCD;" text="TR68 0001 0002 2627 0344 8350 05">
+                     <font>
+                        <Font name="Arial Black" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="828.0" layoutY="156.0" text="27.03.2019">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Fatura Sorgulama">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField layoutX="1.0" layoutY="1.0" prefHeight="51.0" prefWidth="1161.0" />
+                  <TextArea layoutX="199.0" layoutY="67.0" prefHeight="185.0" prefWidth="432.0" text="&#10;AD  SOYAD&#10;&#10;&#10;KAT : __           DAİRE : __">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </TextArea>
+                  <ImageView fitHeight="151.0" fitWidth="170.0" layoutX="15.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@CSE/images.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="1003.0" layoutY="11.0" text="27.03.2019">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="18.0" layoutY="10.0" text="KULLANICI BİLGİLERİ - MEMBER">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <WebView layoutX="199.0" layoutY="264.0" prefHeight="521.0" prefWidth="896.0" />
+                  <TextArea layoutX="652.0" layoutY="66.0" prefHeight="188.0" prefWidth="486.0" text="&#10;YÖNETİCİ IBAN:&#10;&#10;AİDAT DÖNEMİ:&#10;&#10;AİDAT ÜCRETİ:">
+                     <font>
+                        <Font name="Arial Black" size="18.0" />
+                     </font>
+                  </TextArea>
+                  <Label layoutX="835.0" layoutY="156.0" text="27.03.2019">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="835.0" layoutY="97.0" prefHeight="29.0" prefWidth="303.0" style="-fx-background-color: #CDCDCD;" text="TR68 0001 0002 2627 0344 8350 05">
+                     <font>
+                        <Font name="Arial Black" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="835.0" layoutY="202.0" style="-fx-background-color: #CDCDCD;" text="000.00  ₺">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Duyurular / Mesajlar">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="151.0" fitWidth="170.0" layoutX="15.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@CSE/images.png" />
+                     </image>
+                  </ImageView>
+                  <TextField layoutX="1.0" layoutY="1.0" prefHeight="51.0" prefWidth="1161.0" />
+                  <Label layoutX="1003.0" layoutY="11.0" text="27.03.2019">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="18.0" layoutY="10.0" text="DUYURULAR / MESAJLAR - MEMBER">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <TextArea layoutX="199.0" layoutY="67.0" prefHeight="185.0" prefWidth="432.0" style="-fx-border-color: #02B3FF; -fx-background-color: transparent;" text="&#10;AD  SOYAD&#10;&#10;&#10;KAT : __           DAİRE : __">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </TextArea>
+                  <Button layoutX="65.0" layoutY="703.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Ana Menüye Dön">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <TextArea layoutX="38.0" layoutY="310.0" prefHeight="374.0" prefWidth="520.0" style="-fx-border-color: black;">
+                     <padding>
+                        <Insets left="10.0" top="10.0" />
+                     </padding>
+                  </TextArea>
+                  <TextArea layoutX="600.0" layoutY="310.0" prefHeight="374.0" prefWidth="520.0" style="-fx-border-color: black;" AnchorPane.topAnchor="308.0">
+                     <padding>
+                        <Insets left="10.0" top="10.0" />
+                     </padding>
+                  </TextArea>
+                  <Label layoutX="50.0" layoutY="282.0" text="DUYURULAR">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="612.0" layoutY="282.0" text="MESAJLAR">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextArea layoutX="51.0" layoutY="496.0" prefHeight="186.0" prefWidth="505.0" promptText="Duyuru eklemek için tıklayın.">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" right="5.0" />
+                     </padding>
+                  </TextArea>
+                  <TextArea layoutX="613.0" layoutY="495.0" prefHeight="185.0" prefWidth="505.0" promptText="Mesaj eklemek için tıklayın.">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" right="5.0" />
+                     </padding>
+                  </TextArea>
+                  <TextArea layoutX="652.0" layoutY="66.0" prefHeight="188.0" prefWidth="486.0" text="&#10;YÖNETİCİ IBAN:&#10;&#10;AİDAT DÖNEMİ:&#10;&#10;AİDAT ÜCRETİ:">
+                     <font>
+                        <Font name="Arial Black" size="18.0" />
+                     </font>
+                  </TextArea>
+                  <Label layoutX="835.0" layoutY="156.0" text="27.03.2019">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="835.0" layoutY="97.0" prefHeight="29.0" prefWidth="303.0" style="-fx-background-color: #CDCDCD;" text="TR68 0001 0002 2627 0344 8350 05">
+                     <font>
+                        <Font name="Arial Black" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="835.0" layoutY="210.0" style="-fx-background-color: #CDCDCD;" text="000.00  ₺">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Apartman Bilgileri">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="151.0" fitWidth="170.0" layoutX="15.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@CSE/images.png" />
+                     </image>
+                  </ImageView>
+                  <TextField layoutX="1.0" layoutY="1.0" prefHeight="51.0" prefWidth="1161.0" />
+                  <Label layoutX="18.0" layoutY="10.0" text="APARTMAN BİLGİLERİ - YÖNETİCİ">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <TextArea layoutX="665.0" layoutY="67.0" prefHeight="185.0" prefWidth="432.0" text="&#10;BU AYKİ GÜNCEL GELİR :&#10;&#10;&#10;BU AYKİ GÜNCEL GİDER :">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </TextArea>
+                  <TextArea layoutX="199.0" layoutY="67.0" prefHeight="185.0" prefWidth="432.0" text="&#10;AD  SOYAD&#10;&#10;&#10;KAT : __           DAİRE : __">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </TextArea>
+                  <Label layoutX="970.0" layoutY="104.0" style="-fx-background-color: #CDCDCD;" text="000.00  ₺">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="970.0" layoutY="190.0" style="-fx-background-color: #CDCDCD;" text="000.00  ₺">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="1003.0" layoutY="11.0" text="27.03.2019">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="62.0" layoutY="325.0" text="ADRES : ">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="62.0" layoutY="416.0" text="KAT SAYISI : ">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="62.0" layoutY="477.0" text="DAİRE SAYISI : ">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextArea layoutX="153.0" layoutY="303.0" prefHeight="66.0" prefWidth="565.0" />
+                  <TextField layoutX="192.0" layoutY="416.0" />
+                  <TextField layoutX="210.0" layoutY="477.0" />
+                  <Label layoutX="62.0" layoutY="538.0" text="YÖNETİCİ : ">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="179.0" layoutY="538.0" prefHeight="25.0" prefWidth="252.0" />
+                  <Label layoutX="62.0" layoutY="599.0" text="KASA BİLGİSİ : ">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="218.0" layoutY="599.0" prefHeight="25.0" prefWidth="121.0" />
+                  <Label layoutX="350.0" layoutY="599.0" text="₺">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="65.0" layoutY="703.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Ana Menüye Dön" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Kullanıcı Bilgileri">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField layoutX="1.0" layoutY="1.0" prefHeight="51.0" prefWidth="1161.0" />
+                  <ImageView fitHeight="151.0" fitWidth="170.0" layoutX="15.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@CSE/images.png" />
+                     </image>
+                  </ImageView>
+                  <TextArea layoutX="199.0" layoutY="67.0" prefHeight="185.0" prefWidth="432.0" text="&#10;AD  SOYAD&#10;&#10;&#10;KAT : __           DAİRE : __">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </TextArea>
+                  <TextArea layoutX="665.0" layoutY="67.0" prefHeight="185.0" prefWidth="432.0" text="&#10;BU AYKİ GÜNCEL GELİR :&#10;&#10;&#10;BU AYKİ GÜNCEL GİDER :">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </TextArea>
+                  <Label layoutX="1003.0" layoutY="11.0" text="27.03.2019">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="970.0" layoutY="104.0" style="-fx-background-color: #CDCDCD;" text="000.00  ₺">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="970.0" layoutY="190.0" style="-fx-background-color: #CDCDCD;" text="000.00  ₺">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="18.0" layoutY="10.0" text="FATURA SORGULAMA - YÖNETİCİ">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="91.0" layoutY="390.0" text="AD : ">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="91.0" layoutY="454.0" text="SOYAD : ">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="91.0" layoutY="582.0" text="E- POSTA : ">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="91.0" layoutY="646.0" text="APARTMAN KODU : ">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="91.0" layoutY="326.0" text="T.C : ">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="91.0" layoutY="518.0" text="TELEFON : ">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="65.0" layoutY="703.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Ana Menüye Dön" />
+                  <TextField layoutX="142.0" layoutY="325.0" prefHeight="30.0" prefWidth="224.0" />
+                  <TextField layoutX="142.0" layoutY="389.0" prefHeight="30.0" prefWidth="250.0" />
+                  <TextField layoutX="180.0" layoutY="453.0" prefHeight="30.0" prefWidth="250.0" />
+                  <TextField layoutX="199.0" layoutY="517.0" prefHeight="30.0" prefWidth="224.0" />
+                  <TextField layoutX="195.0" layoutY="581.0" prefHeight="30.0" prefWidth="300.0" />
+                  <TextField layoutX="274.0" layoutY="645.0" prefHeight="30.0" prefWidth="224.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>

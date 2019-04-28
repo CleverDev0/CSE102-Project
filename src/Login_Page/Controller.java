@@ -29,25 +29,25 @@ public class Controller {
 
 //TODO: ÖNCE KULLANIDAN BİGİLERİ AL SONRA SORGUYA ATIP KONTROL ET NULL DÖNERSE BÖYLE BİR KULLANICI YOK DE
 
-    public void login(ActionEvent event) throws Exception{
+    public void login(ActionEvent event) throws Exception {
         int result = 0;
         Users user = new Users();
 
         //Database
-        String sql = "SELECT * FROM users WHERE username='"+mail.getText()+"' and password='"+passwordField.getText()+"'";
+        String sql = "SELECT * FROM users WHERE username='" + mail.getText() + "' and password='" + passwordField.getText() + "'";
 
         Db_Connection.connectiondb();
         ResultSet rs = Db_Connection.executeQuery(sql);
 
         //Checking Values
-        while(rs.next()){
+        while (rs.next()) {
 
-            String username= rs.getString("username");
-            String password= rs.getString("password");
+            String username = rs.getString("username");
+            String password = rs.getString("password");
 
-            if (rs.getString("username").equals(mail.getText())){
+            if (rs.getString("username").equals(mail.getText())) {
 
-                if (rs.getString("password").equals(passwordField.getText())){
+                if (rs.getString("password").equals(passwordField.getText())) {
                     System.out.println("Girişiniz başarılı hoş geldiniz");
                     status.setTextFill(Color.GREEN);
                     status.setText("Login Succesfull");
@@ -60,30 +60,26 @@ public class Controller {
                     user.setApartmentNumber(rs.getString("apartmentnumber"));
                     user.setManagerCode(rs.getString("serialnumber"));
 
-                    if (rs.getString("isadmin").equals("1")){
+                    if (rs.getString("isadmin").equals("1")) {
                         user.setAdmin(true);
-                    }else {
+                    } else {
                         user.setAdmin(false);
                     }
 
 
-                    result =1;
+                    result = 1;
                     setKullanici(user);
 
 
-                    if (user.isAdmin() == true){
-                        //Todo:Admin sayfası yüklenecek
-                        Load_Pages.loadMain();
-                        ((Node)(event.getSource())).getScene().getWindow().hide();
-                    }else {
-                        //Todo: Member sayfası yüklenecek
+                    if (user.isAdmin() == true) {
+                        Load_Pages.loadMainManager();
+                        ((Node) (event.getSource())).getScene().getWindow().hide();
+                    } else {
+                        Load_Pages.loadMainMember();
+                        ((Node) (event.getSource())).getScene().getWindow().hide();
                     }
 
-
-
                     break;
-
-
 
                 }
                 result = 2;
@@ -92,10 +88,9 @@ public class Controller {
 
             }
 
-
-
         }
-        if (result == 0){
+
+        if (result == 0) {
             status.setTextFill(Color.RED);
             status.setText("Invalid Password or Email");
         }
@@ -108,7 +103,7 @@ public class Controller {
 
     }
 
-    public void rememberPassword(ActionEvent event) throws Exception{
+    public void rememberPassword(ActionEvent event) throws Exception {
         Load_Pages load = new Load_Pages();
         load.loadPasswordRemember();
     }

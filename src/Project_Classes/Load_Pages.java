@@ -8,8 +8,16 @@ import javafx.stage.StageStyle;
 
 
 public class Load_Pages {
-    public static void loadMain() throws Exception{
+    public static void loadMainManager() throws Exception{
         Parent parent= FXMLLoader.load(Load_Pages.class.getResource("../Main_Page/Main_Manager.fxml"));
+        Stage stage=new Stage(StageStyle.DECORATED);
+        stage.setTitle("Main Page");
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
+    public static void loadMainMember() throws Exception{
+        Parent parent= FXMLLoader.load(Load_Pages.class.getResource("../Main_Page/Main_Member.fxml"));
         Stage stage=new Stage(StageStyle.DECORATED);
         stage.setTitle("Main Page");
         stage.setScene(new Scene(parent));
