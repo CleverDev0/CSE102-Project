@@ -5,9 +5,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="331.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SignUpManager.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="417.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SignUpManager.Controller">
    <children>
-      <VBox alignment="CENTER_RIGHT" layoutX="348.0" layoutY="25.0" prefHeight="298.0" prefWidth="223.0" spacing="15.0">
+      <VBox alignment="CENTER_RIGHT" layoutX="352.0" layoutY="25.0" prefHeight="383.0" prefWidth="234.0" spacing="15.0">
          <children>
             <TextField fx:id="email" promptText="E-Mail" />
             <TextField fx:id="nameField" promptText="Name" />
@@ -16,6 +16,9 @@
                <font>
                   <Font size="12.0" />
                </font></PasswordField>
+            <TextField fx:id="apartmentNumber" promptText="Apartment Number" />
+            <TextField fx:id="TCNumber" promptText="TC Number" />
+            <TextField fx:id="phoneNumber" promptText="Phone Number" />
             <Button mnemonicParsing="false" onAction="#createUsers" text="Kayıt Ol" />
             <Label fx:id="signUpStatus" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="215.0" />
          </children>
@@ -26,7 +29,7 @@
          </font>
       </Text>
       <Text layoutX="46.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" wrappingWidth="205.7490234375" />
-      <Text layoutX="46.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Code For Member:" wrappingWidth="119.130859375" />
+      <Text fill="RED" layoutX="46.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Code For Member:" wrappingWidth="119.130859375" />
       <Label fx:id="codeForMember" layoutX="173.0" layoutY="258.0" prefHeight="17.0" prefWidth="58.0" />
    </children>
 </Pane>

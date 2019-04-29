@@ -106,31 +106,6 @@
                         <Font name="Arial Rounded MT Bold" size="25.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="151.0" fitWidth="170.0" layoutX="15.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@CSE/images.png" />
-                     </image>
-                  </ImageView>
-                  <TextArea layoutX="199.0" layoutY="67.0" prefHeight="185.0" prefWidth="432.0" style="-fx-border-color: #02B3FF; -fx-background-color: transparent;" text="&#10;AD  SOYAD&#10;&#10;&#10;KAT : __           DAİRE : __">
-                     <font>
-                        <Font name="Arial Black" size="20.0" />
-                     </font>
-                  </TextArea>
-                  <TextArea layoutX="665.0" layoutY="67.0" prefHeight="185.0" prefWidth="432.0" style="-fx-background-color: transparent; -fx-border-color: #02B3FF;" text="&#10;BU AYKİ GÜNCEL GELİR :&#10;&#10;&#10;BU AYKİ GÜNCEL GİDER :">
-                     <font>
-                        <Font name="Arial Black" size="20.0" />
-                     </font>
-                  </TextArea>
-                  <Label layoutX="970.0" layoutY="104.0" style="-fx-background-color: #CDCDCD;" text="000.00  ₺">
-                     <font>
-                        <Font name="Arial Black" size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="970.0" layoutY="190.0" style="-fx-background-color: #CDCDCD;" text="000.00  ₺">
-                     <font>
-                        <Font name="Arial Black" size="20.0" />
-                     </font>
-                  </Label>
                   <Button layoutX="65.0" layoutY="703.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Ana Menüye Dön">
                      <font>
                         <Font size="16.0" />
@@ -599,131 +574,10 @@
             </AnchorPane>
          </content>
       </Tab>
-      <Tab text="Apartman Bilgileri">
+      <Tab text="Kullanıcı/Apartman Bilgileri">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <TextField layoutX="1.0" layoutY="1.0" prefHeight="51.0" prefWidth="1161.0" />
-                  <Label layoutX="18.0" layoutY="10.0" text="APARTMAN BİLGİLERİ - YÖNETİCİ">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="25.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="1003.0" layoutY="11.0" text="27.03.2019">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="25.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="62.0" layoutY="322.0" text="ADRES : ">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="63.0" layoutY="361.0" text="KAT SAYISI : ">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="61.0" layoutY="407.0" text="DAİRE SAYISI : ">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="63.0" layoutY="453.0" text="YÖNETİCİ : ">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="64.0" layoutY="492.0" text="KASA BİLGİSİ : ">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Button layoutX="65.0" layoutY="703.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Ana Menüye Dön" />
-                  <Label fx:id="apartmentAdress" layoutX="223.0" layoutY="316.0" prefHeight="34.0" prefWidth="541.0">
-                     <font>
-                        <Font size="19.0" />
-                     </font></Label>
-                  <Label fx:id="apartmentFloor" layoutX="221.0" layoutY="354.0" prefHeight="34.0" prefWidth="541.0">
-                     <font>
-                        <Font size="19.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="apartmentMember" layoutX="221.0" layoutY="401.0" prefHeight="34.0" prefWidth="541.0">
-                     <font>
-                        <Font size="19.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="apartmentManager" layoutX="222.0" layoutY="448.0" prefHeight="34.0" prefWidth="541.0">
-                     <font>
-                        <Font size="19.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="apartmentBalance" layoutX="226.0" layoutY="486.0" prefHeight="34.0" prefWidth="541.0">
-                     <font>
-                        <Font size="19.0" />
-                     </font>
-                  </Label>
-                  <Line endX="1068.0" layoutX="89.0" layoutY="252.0" startX="-100.0" />
-                  <Label layoutX="719.0" layoutY="93.0" prefHeight="33.0" prefWidth="249.0">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="723.0" layoutY="147.0" prefHeight="33.0" prefWidth="249.0">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="518.0" layoutY="145.0" prefHeight="48.0" prefWidth="204.0" text="Bu ayki güncel gider:">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="517.0" layoutY="91.0" prefHeight="48.0" prefWidth="204.0" text="Bu ayki güncel gelir:">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="334.0" layoutY="153.0" prefHeight="33.0" prefWidth="64.0">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="256.0" layoutY="152.0" prefHeight="33.0" prefWidth="64.0" text="Daire:">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="159.0" layoutY="152.0" prefHeight="33.0" prefWidth="64.0">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="234.0" layoutY="101.0" prefHeight="33.0" prefWidth="249.0">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="109.0" layoutY="152.0" prefHeight="33.0" prefWidth="64.0" text="Kat:">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="109.0" layoutY="93.0" prefHeight="48.0" prefWidth="129.0" text="Ad-Soyad:">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-         </content>
-      </Tab>
-      <Tab text="Kullanıcı Bilgileri">
-         <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <TextField layoutX="1.0" layoutY="1.0" prefHeight="51.0" prefWidth="1161.0" />
                   <Label fx:id="date" layoutX="803.0" layoutY="11.0" prefHeight="31.0" prefWidth="335.0">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="25.0" />
@@ -734,43 +588,8 @@
                         <Font name="Arial Rounded MT Bold" size="25.0" />
                      </font>
                   </Label>
-                  <Label layoutX="91.0" layoutY="390.0" text="AD : ">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="91.0" layoutY="454.0" text="SOYAD : ">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="91.0" layoutY="582.0" text="E- POSTA : ">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="91.0" layoutY="646.0" text="APARTMAN KODU : ">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="91.0" layoutY="326.0" text="T.C : ">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="91.0" layoutY="518.0" text="TELEFON : ">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Button layoutX="65.0" layoutY="703.0" mnemonicParsing="false" onAction="#showPersonalInformation" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Kişisel Bilgileri Göster" />
-                  <TextField fx:id="userTc" layoutX="263.0" layoutY="322.0" prefHeight="30.0" prefWidth="250.0" />
-                  <TextField fx:id="userName" layoutX="264.0" layoutY="382.0" prefHeight="30.0" prefWidth="248.0" />
-                  <TextField fx:id="userSurname" layoutX="264.0" layoutY="450.0" prefHeight="30.0" prefWidth="250.0" />
-                  <TextField fx:id="userNumber" layoutX="266.0" layoutY="514.0" prefHeight="30.0" prefWidth="249.0" />
-                  <TextField fx:id="userMail" layoutX="267.0" layoutY="573.0" prefHeight="30.0" prefWidth="248.0" />
-                  <Button layoutX="371.0" layoutY="703.0" mnemonicParsing="false" onAction="#updatePersonalInformation" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Güncelle" />
+                  <Button layoutX="612.0" layoutY="579.0" mnemonicParsing="false" onAction="#showPersonalInformation" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Kişisel Bilgileri Göster" />
+                  <Button layoutX="846.0" layoutY="580.0" mnemonicParsing="false" onAction="#updatePersonalInformation" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Güncelle" />
                   <Label layoutX="279.0" layoutY="645.0">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="18.0" />
@@ -832,6 +651,120 @@
                         <Font size="19.0" />
                      </font>
                   </Label>
+                  <HBox layoutX="119.0" layoutY="263.0" prefHeight="301.0" prefWidth="895.0">
+                     <children>
+                        <HBox prefHeight="291.0" prefWidth="478.0">
+                           <children>
+                              <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="291.0" prefWidth="164.0" spacing="30.0">
+                                 <children>
+                                    <Label text="ADRES : ">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="KAT SAYISI : ">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="DAİRE SAYISI : ">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="YÖNETİCİ : ">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="KASA BİLGİSİ : ">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="291.0" prefWidth="312.0" spacing="16.0">
+                                 <children>
+                                    <Label fx:id="apartmentAdress" prefHeight="34.0" prefWidth="541.0" text="asd">
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="apartmentFloor" prefHeight="35.0" prefWidth="205.0" text="asd">
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="apartmentMember" prefHeight="34.0" prefWidth="541.0" text="asd">
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="apartmentManager" prefHeight="34.0" prefWidth="541.0" text="asd">
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="apartmentBalance" prefHeight="34.0" prefWidth="541.0" text="asd">
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="417.0" prefWidth="411.0">
+                           <children>
+                              <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="417.0" prefWidth="267.0" spacing="25.0">
+                                 <children>
+                                    <Label text="T.C : ">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="AD : ">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="SOYAD : ">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="TELEFON : ">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="E- POSTA : ">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="APARTMAN KODU : ">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="417.0" prefWidth="312.0" spacing="16.0">
+                                 <children>
+                                    <TextField fx:id="userTc" prefHeight="30.0" prefWidth="250.0" />
+                                    <TextField fx:id="userName" prefHeight="30.0" prefWidth="248.0" />
+                                    <TextField fx:id="userSurname" prefHeight="30.0" prefWidth="250.0" />
+                                    <TextField fx:id="userNumber" prefHeight="30.0" prefWidth="249.0" />
+                                    <TextField fx:id="userMail" prefHeight="30.0" prefWidth="248.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <Line endX="1068.0" layoutX="100.0" layoutY="50.0" startX="-100.0" />
                </children>
             </AnchorPane>
          </content>
