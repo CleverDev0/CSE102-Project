@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="838.0" prefWidth="1160.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="35.0" tabMinWidth="131.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="838.0" prefWidth="1160.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="35.0" tabMinWidth="131.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main_Page.Member_Controller">
   <tabs>
       <Tab text="Main">
          <content>
@@ -111,7 +111,7 @@
                         <Font name="Arial Rounded MT Bold" size="25.0" />
                      </font>
                   </Label>
-                  <TextArea layoutX="94.0" layoutY="351.0" prefHeight="299.0" prefWidth="960.0" promptText="Metninizi buraya yazınız.">
+                  <TextArea fx:id="feedbackText" layoutX="94.0" layoutY="351.0" prefHeight="299.0" prefWidth="960.0" promptText="Metninizi buraya yazınız. (En fazla )">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -121,7 +121,7 @@
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button layoutX="736.0" layoutY="686.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Gönder">
+                  <Button layoutX="736.0" layoutY="686.0" mnemonicParsing="false" onAction="#sendFeedback" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Gönder">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -131,17 +131,17 @@
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <RadioButton layoutX="120.0" layoutY="287.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="115.0" text="Şikayet">
+                  <RadioButton fx:id="complaint" layoutX="120.0" layoutY="287.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="115.0" text="Şikayet">
                      <font>
                         <Font size="21.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton layoutX="292.0" layoutY="286.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="115.0" text="Öneri">
+                  <RadioButton fx:id="suggestion" layoutX="292.0" layoutY="286.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="115.0" text="Öneri">
                      <font>
                         <Font size="21.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton layoutX="451.0" layoutY="283.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="173.0" text="Arıza Bildirimi">
+                  <RadioButton fx:id="breakdown" layoutX="451.0" layoutY="283.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="173.0" text="Arıza Bildirimi">
                      <font>
                         <Font size="21.0" />
                      </font>
@@ -198,6 +198,11 @@
                      </font>
                   </Label>
                   <Line endX="1068.0" layoutX="100.0" layoutY="70.0" startX="-100.0" />
+                  <Label fx:id="feedbackStatus" layoutX="437.0" layoutY="695.0" prefHeight="34.0" prefWidth="240.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </content>

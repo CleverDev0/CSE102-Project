@@ -1,5 +1,6 @@
 package SignUpManager;
 
+import Project_Classes.CustomExceptions;
 import Project_Classes.Load_Pages;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -38,51 +39,72 @@ public class Controller {
     @FXML
     private TextField surname;
 
+    @FXML
+    private TextField phoneNumber;
+
+    @FXML
+    private TextField tcNumber;
+
+    @FXML
+    private TextField apartmentNumber;
+
+
     public boolean memberCode = false;
     boolean isSıgnUp = false;
 
-
-    //Todo: Eğer aynı isim-soyisim veya email giriş vasa kontrol ettir ve alert bastır. Sqlden veri çekilip kontrol edilecek!
     public void createUsers(ActionEvent event) throws Exception {
-        if (!isSıgnUp){
-            try{
+        if (!isSıgnUp) {
+            try {
+                Db_Connection.connectiondb();
+
                 String mail = email.getText();
                 String name = nameField.getText();
                 String surnamee = surname.getText();
-                String pass = passwordField.getText();
 
-                //Check Member Code Given
-                if (!memberCode){
-                    String uuid = UUID.randomUUID().toString();
-                    codeForMember.setText(uuid.substring(0,6));
-                    memberCode = true;
+                //Database
+                String sql = "SELECT username FROM users WHERE username='" + email.getText() + "'";
+                ResultSet rs = Db_Connection.executeQuery(sql);
+                if (rs.next()) {
+                    System.out.println("böyle kullancı var");
+                    throw new CustomExceptions();
+                } else {
+
+                    String pass = passwordField.getText();
+                    String phone = phoneNumber.getText();
+                    String tc = tcNumber.getText();
+                    String apartNumber = apartmentNumber.getText();
+
+                    //Check Member Code Given
+                    if (!memberCode) {
+                        String uuid = UUID.randomUUID().toString();
+                        codeForMember.setText(uuid.substring(0, 6));
+                        memberCode = true;
+                    }
+
+                    String serial = codeForMember.getText();
+                    System.out.println(tc);
+
+                    //Database Query
+                    String query = ("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin) Values" +
+                            " ('" + mail + "','" + pass + "','" + name + "','" + surnamee + "','" + phone + "','" + tc + "','" + serial + "','" + apartNumber + "',1)");
+
+                    //Database Connection
+                    Db_Connection.ExecuteSql(query);
+                    Db_Connection.CloseConnection();
+
+                    signUpStatus.setTextFill(Color.GREEN);
+                    signUpStatus.setText("Sign Up Succesful.");
+                    isSıgnUp = true;
                 }
-                String serial = codeForMember.getText();
 
-                //Database Query
-                String query = ("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin) Values"+
-                        " ('"+mail+"','"+pass+"','"+name+"','"+surnamee+"','','','"+serial+"','',1)");
-
-                //Database Connection
-                Db_Connection.connectiondb();
-                Db_Connection.ExecuteSql(query);
-                Db_Connection.CloseConnection();
-
-                signUpStatus.setTextFill(Color.GREEN);
-                signUpStatus.setText("Sign Up Succesful.");
-                isSıgnUp = true;
-
-
-                //Yeni sayfa açıldığında eski sayfanın kalmaması için
-                //((Node)(event.getSource())).getScene().getWindow().hide();
-
-
-            }
-            catch (Exception e){
+            } catch (CustomExceptions e) {
+                signUpStatus.setTextFill(Color.RED);
+                signUpStatus.setText("There is a user same username");
+            } catch (Exception e) {
                 signUpStatus.setTextFill(Color.RED);
                 signUpStatus.setText("Sign Up Unsuccesful");
             }
-        }else {
+        } else {
             signUpStatus.setTextFill(Color.ORANGE);
             signUpStatus.setText("You already signed up.");
         }

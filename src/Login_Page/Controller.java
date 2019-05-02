@@ -98,8 +98,6 @@ public class Controller {
         //Database
         rs.close();
         System.out.println("ResultSet close");
-        Db_Connection.CloseConnection();
-        System.out.println("DB Connection close");
 
     }
 

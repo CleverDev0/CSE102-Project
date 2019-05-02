@@ -26,28 +26,35 @@ public class Member_Controller {
     @FXML
     private Label feedbackStatus;
 
+    boolean status = false;
+    int type;
+
     public void sendFeedback(ActionEvent event) {
         try {
-            Db_Connection.getConnection();
-            if (complaint.isSelected()) {
-                String type = "complaint";
-            } else if (suggestion.isSelected()) {
-                String type = "suggestion";
-            } else if (breakdown.isSelected()) {
-                String type = "breakdown";
+            if (complaint.isSelected() && !suggestion.isSelected() && !breakdown.isSelected()) {
+                type = 1;
+                status = true;
+            } else if (suggestion.isSelected() && !complaint.isSelected() && !breakdown.isSelected()) {
+                type = 2;
+                status = true;
+            } else if (breakdown.isSelected() && !suggestion.isSelected() && !complaint.isSelected()) {
+                type = 3;
+                status = true;
             } else {
                 feedbackStatus.setTextFill(Color.RED);
                 feedbackStatus.setText("Unsuccesful. Please check feedback types.");
             }
 
-            /*String query = ("INSERT INTO transactions (Description,Value,IsExpense,TransactionType,ManagerCode) Values" +
-                    " ('" + managerNotes + "','" + value + "','" + 1 + "','" + asd + "','" + managerCode + "')");*//*
+            if (status) {
+                String query = ("INSERT INTO feedback (feedbackType,message,managerCode) Values" +
+                        " ('" + type + "','" + feedbackText.getText() + "','" + getKullanici().getManagerCode() + "')");
 
-            Db_Connection.ExecuteSql(query);
-            Db_Connection.CloseConnection();*/
-            //Todo:Db'ye işlenecek
+                Db_Connection.ExecuteSql(query);
+                feedbackStatus.setTextFill(Color.GREEN);
+                feedbackStatus.setText("Succesful. Feedback sended.");
 
 
+            }
         } catch (Exception exception) {
             feedbackStatus.setTextFill(Color.RED);
             feedbackStatus.setText("Unsuccesful. Please check your connection.");

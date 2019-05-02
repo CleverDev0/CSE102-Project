@@ -12,10 +12,13 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Formatter;
+import java.util.List;
 
 import static Login_Page.Controller.getKullanici;
 
@@ -111,6 +114,11 @@ public class Controller {
 
     @FXML
     private Label date;
+
+    @FXML
+    private ListView<String> feedbackType;
+
+
 
     public void baslanictaCalısacakMetodlar(ActionEvent event) {
         showPersonalInformation(event);
@@ -228,5 +236,8 @@ public class Controller {
 
     }
 
+    public void getFeedback(ActionEvent event) throws Exception{
+        //Eklenecek
+    }
 
 }

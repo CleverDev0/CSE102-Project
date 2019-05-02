@@ -16,9 +16,9 @@
                <font>
                   <Font size="12.0" />
                </font></PasswordField>
-            <TextField fx:id="apartmentNumber" promptText="Apartment Number" />
-            <TextField fx:id="TCNumber" promptText="TC Number" />
+            <TextField fx:id="tcNumber" promptText="TC Number" />
             <TextField fx:id="phoneNumber" promptText="Phone Number" />
+            <TextField fx:id="apartmentNumber" promptText="Apartment Number" />
             <Button mnemonicParsing="false" onAction="#createUsers" text="Kayıt Ol" />
             <Label fx:id="signUpStatus" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="215.0" />
          </children>

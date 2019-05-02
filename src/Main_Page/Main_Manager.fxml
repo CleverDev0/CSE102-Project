@@ -106,7 +106,7 @@
                         <Font name="Arial Rounded MT Bold" size="25.0" />
                      </font>
                   </Label>
-                  <Button layoutX="65.0" layoutY="703.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Ana Menüye Dön">
+                  <Button layoutX="65.0" layoutY="703.0" mnemonicParsing="false" onAction="#getFeedback" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Ana Menüye Dön">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -121,6 +121,12 @@
                         <Font size="16.0" />
                      </font>
                   </Button>
+                  <HBox layoutX="67.0" layoutY="125.0" prefHeight="530.0" prefWidth="1034.0">
+                     <children>
+                        <ListView prefHeight="200.0" prefWidth="200.0" />
+                        <ListView prefHeight="530.0" prefWidth="835.0" />
+                     </children>
+                  </HBox>
                </children>
             </AnchorPane>
          </content>

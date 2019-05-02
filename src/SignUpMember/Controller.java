@@ -1,6 +1,7 @@
 package SignUpMember;
 
 import Db_Connection.Db_Connection;
+import Project_Classes.CustomExceptions;
 import Project_Classes.Users;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,63 +17,73 @@ public class Controller {
     private TextField email;
 
     @FXML
-    private TextField memberName;
-
-    @FXML
-    private TextField memberSurname;
+    private TextField nameField;
 
     @FXML
     private PasswordField passwordField;
 
     @FXML
-    private TextField managerCode;
-
-    @FXML
     private Label signUpStatus;
 
     @FXML
-            private TextField TCNumber;
+    private TextField managerCode;
+
     @FXML
-            private TextField PhoneNumber;
+    private TextField surname;
+
     @FXML
-            private TextField ApartmentNumber;
+    private TextField phoneNumber;
+
+    @FXML
+    private TextField tcNumber;
+
+    @FXML
+    private TextField apartmentNumber;
 
     boolean isSıgnUp = false;
 
-    //Todo: Sistemde geçerli manager Code'u varsa kayıt olabilir. Yoksa geçersiz manager code uyarısı göster
-
-    public void createUsers(ActionEvent event){
-        if(!isSıgnUp) {
+    public void createUsers(ActionEvent event) {
+        if (!isSıgnUp) {
             try {
-                Users user = new Users();
-                user.Email = email.getText();
-                user.Name = memberName.getText();
-                user.Surname = memberSurname.getText();
-                user.Password = passwordField.getText();
-                user.ManagerCode = managerCode.getText();
-                user.TCNumber = TCNumber.getText();
-                user.ApartmentNumber = ApartmentNumber.getText();
-                user.PhoneNumber = PhoneNumber.getText();
-                //Get Values
-
-                //Database Query
-                String query = ("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin) Values" +
-                        " ('" + user.Email + "','" + user.Password + "','" + user.Name + "','" + user.Surname + "'  "+ user.PhoneNumber +",' " + user.TCNumber + "','','" + user.ManagerCode + "',' " + user.ApartmentNumber + "',0)");
-
-                //Database Connection
                 Db_Connection.connectiondb();
-                Db_Connection.ExecuteSql(query);
-                Db_Connection.CloseConnection();
-
-                signUpStatus.setTextFill(Color.GREEN);
-                signUpStatus.setText("Sign Up Succesful.");
-                isSıgnUp = true;
+                System.out.println(managerCode.getText());
+                ResultSet rs = Db_Connection.executeQuery("SELECT serialNumber FROM users WHERE serialNumber='" + managerCode.getText() + "'");
+                if (rs.next()) {
 
 
-                //Yeni sayfa açıldığında eski sayfanın kalmaması için
-                //((Node)(event.getSource())).getScene().getWindow().hide();
+                    String mail = email.getText();
+                    String name = nameField.getText();
+                    String surnamee = surname.getText();
 
+                    ResultSet rs2 = Db_Connection.executeQuery("SELECT username FROM users WHERE username='" + email.getText() + "'");
+                    if (rs2.next()) {
+                        throw new CustomExceptions("There is a user same username");
+                    } else {
+                        String pass = passwordField.getText();
+                        String phone = phoneNumber.getText();
+                        String tc = tcNumber.getText();
+                        String apartNumber = apartmentNumber.getText();
 
+                        //Database Query
+                        String query = ("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin) Values" +
+                                " ('" + mail + "','" + pass + "','" + name + "','" + surnamee + "','" + phone + "','" + tc + "','" + managerCode.getText() + "','" + apartNumber + "',0)");
+
+                        //Database Connection
+
+                        Db_Connection.ExecuteSql(query);
+                        Db_Connection.CloseConnection();
+
+                        signUpStatus.setTextFill(Color.GREEN);
+                        signUpStatus.setText("Sign Up Succesful.");
+                        isSıgnUp = true;
+                    }
+                } else {
+                    throw new CustomExceptions("Invalid Manager Code");
+                }
+
+            } catch (CustomExceptions exceptions) {
+                signUpStatus.setTextFill(Color.RED);
+                signUpStatus.setText(exceptions.getMessage());
             } catch (Exception e) {
                 signUpStatus.setTextFill(Color.RED);
                 signUpStatus.setText("Sign Up Unsuccesful");
