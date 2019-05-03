@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 
 import static Login_Page.Controller.getKullanici;
@@ -25,6 +26,39 @@ public class Member_Controller {
 
     @FXML
     private Label feedbackStatus;
+
+    @FXML
+    private TextField userTC;
+
+    @FXML
+    private TextField userName;
+
+    @FXML
+    private TextField userSurname;
+
+    @FXML
+    private TextField userPNumber;
+
+    @FXML
+    private TextField userEmail;
+
+   public void showPersonalInformation (ActionEvent event) {
+       userTC.setText(getKullanici().getTCNumber());
+       userName.setText(getKullanici().getName());
+       userSurname.setText(getKullanici().getSurname());
+       userPNumber.setText(getKullanici().getPhoneNumber());
+       userEmail.setText(getKullanici().getEmail());
+   }
+
+   public void updatePersonalInformation (ActionEvent event) throws Exception {
+
+       Db_Connection.connectiondb();
+       String s = "UPDATE Users SET Name = '" + userName.getText() + "', Surname = '" + userSurname.getText() + "', PhoneNumber = '" + userPNumber.getText() + "', Email = '" + userEmail.getText() + "' WHERE TCnumber = '" + userTC.getText() + "'";
+       Db_Connection.ExecuteSql(s);
+       System.out.println("Islem tamamlandi.");
+       Db_Connection.CloseConnection();
+       System.out.println("DB kapandi.");
+   }
 
     boolean status = false;
     int type;
