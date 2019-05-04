@@ -217,6 +217,7 @@ public class Controller {
         userApartmentCode.setText(getKullanici().getManagerCode());
     }
 
+
     public void showApartmentInformation(ActionEvent event) {
         //Todo: DB'ye Apartments olarak table açılacak ve oradan bilgiler çekilip, işlemler oradan yapılacak
     }
@@ -228,7 +229,7 @@ public class Controller {
 
     public void updatePersonalInformation(ActionEvent event) throws Exception {
         Db_Connection.connectiondb();
-        String s = "UPDATE Users SET Name = '" + userName.getText() + "', Surname = '" + userSurname.getText() + "', PhoneNumber = '" + userNumber.getText() + "', Username = '" + userMail.getText() + "'  WHERE TCNumber = '" + userTc.getText() + "'";
+        String s = "UPDATE Users SET Name = '" + userName.getText() + "', Surname = '" + userSurname.getText() + "', PhoneNumber = '" + userNumber.getText() + "', UserEmail = '" + userMail.getText() + "'  WHERE TCNumber = '" + userTc.getText() + "'";
         Db_Connection.ExecuteSql(s);
         System.out.println("Işlem tamamlandı");
         Db_Connection.CloseConnection();
