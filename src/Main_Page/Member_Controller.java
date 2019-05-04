@@ -42,26 +42,25 @@ public class Member_Controller {
     @FXML
     private TextField userEmail;
 
-   public void showPersonalInformation (ActionEvent event) {
-       userTC.setText(getKullanici().getTCNumber());
-       userName.setText(getKullanici().getName());
-       userSurname.setText(getKullanici().getSurname());
-       userPNumber.setText(getKullanici().getPhoneNumber());
-       userEmail.setText(getKullanici().getEmail());
-   }
-
-   public void updatePersonalInformation (ActionEvent event) throws Exception {
-
-       Db_Connection.connectiondb();
-       String s = "UPDATE Users SET Name = '" + userName.getText() + "', Surname = '" + userSurname.getText() + "', PhoneNumber = '" + userPNumber.getText() + "', Email = '" + userEmail.getText() + "' WHERE TCnumber = '" + userTC.getText() + "'";
-       Db_Connection.ExecuteSql(s);
-       System.out.println("Islem tamamlandi.");
-       Db_Connection.CloseConnection();
-       System.out.println("DB kapandi.");
-   }
-
     boolean status = false;
     int type;
+
+    public void showPersonalInformation (ActionEvent event) {
+        userTC.setText(getKullanici().getTCNumber());
+        userName.setText(getKullanici().getName());
+        userSurname.setText(getKullanici().getSurname());
+        userPNumber.setText(getKullanici().getPhoneNumber());
+        userEmail.setText(getKullanici().getEmail());
+    }
+
+    public void updatePersonalInformation (ActionEvent event) throws Exception {
+        Db_Connection.connectiondb();
+        String s = "UPDATE Users SET Name = '" + userName.getText() + "', Surname = '" + userSurname.getText() + "', PhoneNumber = '" + userPNumber.getText() + "', Email = '" + userEmail.getText() + "' WHERE TCnumber = '" + userTC.getText() + "'";
+        Db_Connection.ExecuteSql(s);
+        System.out.println("Islem tamamlandi.");
+        Db_Connection.CloseConnection();
+        System.out.println("DB kapandi.");
+    }
 
     public void sendFeedback(ActionEvent event) {
         try {
@@ -95,6 +94,4 @@ public class Member_Controller {
         }
 
     }
-
-
 }
