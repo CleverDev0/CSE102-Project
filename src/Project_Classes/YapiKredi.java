@@ -6,16 +6,13 @@ import org.apache.pdfbox.util.PDFTextStripper;
 import java.io.File;
 import java.util.Scanner;
 
-public class Isbank extends ReadingPDF
+public class YapiKredi extends ReadingPDF
 {
     private String tax;
     private String IBAN;
-    private final int lineofDate = 7;
-    private final int rowofDate = 1;
-    public Isbank(String tax , String IBAN)
-    {
-        super(tax , IBAN , 14 , 12);
-    }
+    private final int lineofDate = 5;
+    private final int rowofDate = 3;
+    public YapiKredi (String tax , String IBAN){ super (tax , IBAN.replace(" " , "") ,  7,13 );}
     public String getDate(String filePath)
     {
         try {
@@ -31,7 +28,7 @@ public class Isbank extends ReadingPDF
                 input.next();
             }
 
-            return input.next().replace("", "");
+            return input.next().replace(":", "");
         }catch(Exception ex){}
         return "";
 

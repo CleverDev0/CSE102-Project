@@ -45,13 +45,13 @@
                         <Font name="Arial Rounded MT Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Label layoutX="18.0" layoutY="10.0" text="ANA MENÜ - MEMBER">
+                  <Label layoutX="18.0" layoutY="10.0" text="MAIN MENU - MEMBER">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="25.0" />
                      </font>
                   </Label>
                   <TextField layoutX="32.0" layoutY="746.0" prefHeight="33.0" prefWidth="628.0" />
-                  <Label layoutX="38.0" layoutY="724.0" text="Adres">
+                  <Label layoutX="38.0" layoutY="724.0" text="Adress">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="18.0" />
                      </font>
@@ -59,26 +59,6 @@
                   <Label layoutX="48.0" layoutY="292.0" text="Güncel Aidat Durumu">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <TextArea layoutX="23.0" layoutY="314.0" prefHeight="391.0" prefWidth="631.0" text="AİDAT ÜCRETİ:&#10;&#10;&#10;BİR SONRAKİ AİDAT DÖNEMİ:&#10;&#10;&#10;AİDAT ÖDENME DURUMU:">
-                     <font>
-                        <Font name="Arial Black" size="20.0" />
-                     </font>
-                  </TextArea>
-                  <Label layoutX="213.0" layoutY="320.0" style="-fx-background-color: #CDCDCD;" text="000.00  ₺">
-                     <font>
-                        <Font name="Arial Black" size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="371.0" layoutY="406.0" text="27.03.2019">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="25.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="337.0" layoutY="494.0" text="ÖDENDİ" textFill="#00ff1e">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="25.0" />
                      </font>
                   </Label>
                   <Line endX="1068.0" layoutX="100.0" layoutY="233.0" startX="-100.0" />
@@ -133,15 +113,53 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
+                  <VBox layoutX="282.0" layoutY="314.0" prefHeight="178.0" prefWidth="173.0" spacing="100.0">
+                     <children>
+                        <Label style="-fx-background-color: #CDCDCD;" text="000.00  ₺">
+                           <font>
+                              <Font name="Arial Black" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label text="27.03.2019">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="isPaid" text="PAID" textFill="#00ff1e">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="56.0" layoutY="314.0" prefHeight="178.0" prefWidth="173.0" spacing="100.0">
+                     <children>
+                        <Label style="-fx-background-color: #CDCDCD;" text="Tax:">
+                           <font>
+                              <Font name="Arial Black" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label text="Date">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label text="PAYMENT STATUS">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
                </children>
             </AnchorPane>
          </content>
       </Tab>
-      <Tab text="Şikayet / Öneri / Arıza ">
+      <Tab text="Complain/Offering/Maltfunction">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <Label layoutX="15.0" layoutY="12.0" text="ŞİKAYET / ÖNERİ / ARIZA BİLDİRİMİ - MEMBER">
+                  <Label layoutX="15.0" layoutY="12.0" text="Complain/Offering/Maltfunction - MEMBER">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="25.0" />
                      </font>
@@ -151,7 +169,7 @@
                         <Font name="Arial Rounded MT Bold" size="25.0" />
                      </font>
                   </Label>
-                  <TextArea fx:id="feedbackText" layoutX="94.0" layoutY="351.0" prefHeight="299.0" prefWidth="960.0" promptText="Metninizi buraya yazınız. (En fazla 200 karakter)">
+                  <TextArea fx:id="feedbackText" layoutX="94.0" layoutY="351.0" prefHeight="299.0" prefWidth="960.0" promptText="Enter yout text here(Max 200 character)">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -166,17 +184,17 @@
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <RadioButton fx:id="complaint" layoutX="120.0" layoutY="287.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="115.0" text="Şikayet">
+                  <RadioButton fx:id="complaint" layoutX="120.0" layoutY="287.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="115.0" text="Complain">
                      <font>
                         <Font size="21.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton fx:id="suggestion" layoutX="292.0" layoutY="286.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="115.0" text="Öneri">
+                  <RadioButton fx:id="suggestion" layoutX="292.0" layoutY="286.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="115.0" text="Offering">
                      <font>
                         <Font size="21.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton fx:id="breakdown" layoutX="451.0" layoutY="283.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="173.0" text="Arıza Bildirimi">
+                  <RadioButton fx:id="breakdown" layoutX="451.0" layoutY="283.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="173.0" text="Maltfunction">
                      <font>
                         <Font size="21.0" />
                      </font>
@@ -242,22 +260,22 @@
             </AnchorPane>
          </content>
       </Tab>
-      <Tab text="Ödemeler">
+      <Tab text="Payments">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
                   <TabPane layoutX="-1.0" layoutY="274.0" prefHeight="543.0" prefWidth="1159.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="35.0" tabMinWidth="216.0">
                      <tabs>
-                        <Tab text="Aidat Öde">
+                        <Tab text="Paying Tax">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="468.0" prefWidth="925.0">
                                  <children>
-                                    <CheckBox layoutX="354.0" layoutY="125.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="201.0" text="Elden Ödendi">
+                                    <CheckBox layoutX="354.0" layoutY="125.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="201.0" text="Paid in Person">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </CheckBox>
-                                    <Label layoutX="46.0" layoutY="221.0" text="Yönetici Notu">
+                                    <Label layoutX="46.0" layoutY="221.0" text="Manager Note">
                                        <font>
                                           <Font name="Arial Rounded MT Bold" size="20.0" />
                                        </font>
@@ -267,7 +285,7 @@
                                           <Font size="16.0" />
                                        </font>
                                     </TextArea>
-                                    <Button layoutX="764.0" layoutY="388.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="İşlemi Onayla">
+                                    <Button layoutX="764.0" layoutY="388.0" mnemonicParsing="false" onAction="#confrimPayment" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="İşlemi Onayla">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -278,12 +296,17 @@
                                        </font>
                                     </Button>
                                     <ComboBox layoutX="81.0" layoutY="62.0" prefHeight="33.0" prefWidth="153.0" promptText="Dönem Seçiniz" />
-                                    <ComboBox fx:id="bankBox" layoutX="354.0" layoutY="62.0" prefHeight="33.0" prefWidth="153.0" promptText="Banka Seçiniz" />
-                                    <Button fx:id="uploadFile" layoutX="83.0" layoutY="181.0" mnemonicParsing="false" onAction="#fileProceccing" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Dekont Yükle">
+                                    <ComboBox fx:id="bankBox" layoutX="354.0" layoutY="62.0" prefHeight="33.0" prefWidth="153.0" promptText="Choose Bank" />
+                                    <Button fx:id="uploadFile" layoutX="354.0" layoutY="201.0" mnemonicParsing="false" onAction="#fileProceccing" prefHeight="40.0" prefWidth="179.0" style="-fx-background-color: #6DD3FF;" text="Select e-receipt File">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
                                     </Button>
+                                    <Label fx:id="paymentStatus" layoutX="9.0" layoutY="142.0" prefHeight="27.0" prefWidth="335.0">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
                                  </children>
                               </AnchorPane>
                            </content>
@@ -356,7 +379,7 @@
             </AnchorPane>
          </content>
       </Tab>
-      <Tab text="Kat Mülkiyeti Kanunu">
+      <Tab text="Property Law">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>

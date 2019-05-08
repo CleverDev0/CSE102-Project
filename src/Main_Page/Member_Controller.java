@@ -1,7 +1,11 @@
 package Main_Page;
 
 import Db_Connection.Db_Connection;
+import Login_Page.Controller;
 import Project_Classes.Isbank;
+import Project_Classes.Vakifbank;
+import Project_Classes.YapiKredi;
+import Project_Classes.Ziraatbank;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,6 +17,7 @@ import javafx.stage.FileChooser;
 
 import java.io.File;
 import java.net.URL;
+import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
 import static Login_Page.Controller.getKullanici;
@@ -51,10 +56,19 @@ public class Member_Controller implements Initializable {
     @FXML
     private ComboBox<String> bankBox;
 
-    ObservableList<String> bankList = FXCollections.observableArrayList("Isbank" , "TEB" , "Vakifbank" , "Ziraatbank" , "Other");
+    @FXML
+    private Label paymentStatus;
+
+    @FXML
+    private Label isPaid;
+
+    ObservableList<String> bankList = FXCollections.observableArrayList("Isbank" , "YapiKredi" , "Vakifbank" , "Ziraatbank" , "Other/Paid in Person");
 
     boolean status = false;
     int type;
+    boolean confrimPayment=false;
+    boolean paidinPerson;
+    String date;
 
     public void showPersonalInformation (ActionEvent event) {
         userTC.setText(getKullanici().getTCNumber());
@@ -111,18 +125,6 @@ public class Member_Controller implements Initializable {
         bankBox.setItems(bankList);
     }
 
-    public void fileProceccing(ActionEvent event) throws Exception{
-        Db_Connection.connectiondb();
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PDF Files" , "*.pdf"));
-        File file = fileChooser.showOpenDialog(null);
-        switch (bankBox.getValue()) {
-            case "Isbank":
-                Isbank isbank = new Isbank("5" , "");
-                //TODO: IBAN ve Tax bilgisini yöneticiden al System.out.println(isbank.checkTax(file.getAbsolutePath()));
-                break;
-
-        }
 
 
     }

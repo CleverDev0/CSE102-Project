@@ -482,7 +482,7 @@
             </AnchorPane>
          </content>
       </Tab>
-      <Tab onSelectionChanged="#checkBill" text="INVOICE INQUIRY">
+      <Tab text="INVOICE INQUIRY">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
