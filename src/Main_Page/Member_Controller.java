@@ -70,6 +70,14 @@ public class Member_Controller implements Initializable {
     boolean paidinPerson;
     String date;
 
+
+    public void onPageLoad() {
+        final ToggleGroup group = new ToggleGroup();
+        complaint.setToggleGroup(group);
+        suggestion.setToggleGroup(group);
+        breakdown.setToggleGroup(group);
+    }
+
     public void showPersonalInformation (ActionEvent event) {
         userTC.setText(getKullanici().getTCNumber());
         userName.setText(getKullanici().getName());

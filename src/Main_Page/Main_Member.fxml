@@ -155,7 +155,11 @@
             </AnchorPane>
          </content>
       </Tab>
+<<<<<<< HEAD
       <Tab text="Complain/Offering/Maltfunction">
+=======
+      <Tab onSelectionChanged="#onPageLoad" text="Şikayet / Öneri / Arıza ">
+>>>>>>> f50098972803a55a870b7dc5498a1405a678a1b5
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
