@@ -482,7 +482,7 @@
             </AnchorPane>
          </content>
       </Tab>
-      <Tab onSelectionChanged="#checkBill" text="INVOICE INQUIRY">
+      <Tab text="INVOICE INQUIRY">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -491,7 +491,7 @@
             </AnchorPane>
          </content>
       </Tab>
-      <Tab text="ANNOUNCEMENTS/MESSAGES">
+      <Tab onSelectionChanged="#MessageLoaded" text="ANNOUNCEMENTS/MESSAGES">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -505,27 +505,17 @@
                         <Font name="Arial Rounded MT Bold" size="25.0" />
                      </font>
                   </Label>
-                  <TextArea layoutX="38.0" layoutY="310.0" prefHeight="374.0" prefWidth="520.0" style="-fx-border-color: black;">
-                     <padding>
-                        <Insets left="10.0" top="10.0" />
-                     </padding>
-                  </TextArea>
-                  <TextArea layoutX="600.0" layoutY="310.0" prefHeight="374.0" prefWidth="520.0" style="-fx-border-color: black;" AnchorPane.topAnchor="308.0">
-                     <padding>
-                        <Insets left="10.0" top="10.0" />
-                     </padding>
-                  </TextArea>
-                  <Label layoutX="50.0" layoutY="282.0" text="DUYURULAR">
+                  <Label layoutX="50.0" layoutY="282.0" text="ANNOUNCEMENTS">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="612.0" layoutY="282.0" text="MESAJLAR">
+                  <Label layoutX="612.0" layoutY="282.0" text="MESSAGES">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="20.0" />
                      </font>
                   </Label>
-                  <TextArea layoutX="51.0" layoutY="606.0" prefHeight="74.0" prefWidth="505.0" promptText="Duyuru eklemek için tıklayın.">
+                  <TextArea fx:id="txtAnnouncement" layoutX="51.0" layoutY="606.0" prefHeight="74.0" prefWidth="505.0" promptText="Write your announcement here...">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -533,7 +523,7 @@
                         <Insets bottom="5.0" right="5.0" />
                      </padding>
                   </TextArea>
-                  <TextArea layoutX="613.0" layoutY="614.0" prefHeight="66.0" prefWidth="505.0" promptText="Mesaj eklemek için tıklayın.">
+                  <TextArea layoutX="613.0" layoutY="614.0" prefHeight="66.0" prefWidth="505.0" promptText="Write your message here...">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -593,6 +583,17 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
+                  <ListView fx:id="lstAnnouncements" layoutX="52.0" layoutY="317.0" prefHeight="279.0" prefWidth="503.0" />
+                  <Button fx:id="btnShowAnnouncements" layoutX="128.0" layoutY="705.0" mnemonicParsing="false" onAction="#loadAnnouncements" text="Show Announcements" />
+                  <Button fx:id="btnShowMessages" layoutX="860.0" layoutY="700.0" mnemonicParsing="false" text="Show Messages" />
+                  <Button fx:id="btnAddAnnouncement" layoutX="323.0" layoutY="704.0" mnemonicParsing="false" onAction="#addAnnouncement" text="Add Announcement" />
+                  <HBox layoutX="594.0" layoutY="316.0" prefHeight="291.0" prefWidth="519.0">
+                     <children>
+                        <ListView fx:id="lstSenderId" prefHeight="291.0" prefWidth="74.0" />
+                        <ListView fx:id="lstMessages" prefHeight="291.0" prefWidth="442.0" />
+                     </children>
+                  </HBox>
+                  <ComboBox fx:id="cmbUser" layoutX="672.0" layoutY="700.0" prefWidth="150.0" />
                </children>
             </AnchorPane>
          </content>
