@@ -6,7 +6,15 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
+<<<<<<< HEAD
+=======
+import javafx.scene.web.WebView;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+>>>>>>> c7ef8ed57892b72c28e66f489a3c76e6aac3e403
 
 import java.sql.ResultSet;
 
@@ -25,22 +33,22 @@ public class Controller {
     private RadioButton depositDiger;
 
     @FXML
-    private CheckBox withdrawalElectric;
+    private RadioButton withdrawalElectric;
 
     @FXML
-    private CheckBox withdrawalWater;
+    private RadioButton withdrawalWater;
 
     @FXML
-    private CheckBox withdrawalLift;
+    private RadioButton withdrawalLift;
 
     @FXML
-    private CheckBox withdrawalCleaner;
+    private RadioButton withdrawalCleaner;
 
     @FXML
-    private CheckBox withdrawalService;
+    private RadioButton withdrawalService;
 
     @FXML
-    private CheckBox withdrawalOther;
+    private RadioButton withdrawalOther;
 
     @FXML
     private TextField depositValue;
@@ -61,10 +69,16 @@ public class Controller {
     private Label nameSurname;
 
     @FXML
-    private Label depositStatus;
+    private ImageView depositStatusImage;
 
     @FXML
-    private Label withdrawalStatus;
+    private Label depositStatusText;
+
+    @FXML
+    private Label withdrawalStatusText;
+
+    @FXML
+    private ImageView withdrawalStatusImage;
 
     @FXML
     private Label field;
@@ -106,8 +120,22 @@ public class Controller {
     private Label date;
 
     @FXML
+    private WebView webViewId;
+
+    @FXML
     private ListView<String> feedbackType;
 
+    @FXML
+    private ListView<String> feedbackMessage;
+
+    @FXML
+    private ListView<String> feedbackSender;
+
+
+    //ObserveList For Feedback Lister
+    ObservableList<String> feedbackTypeList = FXCollections.observableArrayList();
+    ObservableList<String> feedbackMessageList = FXCollections.observableArrayList();
+    ObservableList<String> feedbackSenderList = FXCollections.observableArrayList();
 
 
     public void baslanictaCalısacakMetodlar(ActionEvent event) {
@@ -127,12 +155,21 @@ public class Controller {
 
     public void deposit(ActionEvent event) throws Exception {
         try {
+            int balance = 0;
             Db_Connection.connectiondb();
+
+            //Get Balance
+            ResultSet rs = Db_Connection.executeQuery("SELECT balance FROM Building where managerCode ='"+getKullanici().getManagerCode()+"'");
+            if (rs.next()){
+                balance = Integer.parseInt(rs.getString("balance"));
+            }
+
             int value = Integer.parseInt(depositValue.getText());
             String managerNotes = depositNote.getText();
             String asd = "";
             String managerCode = getKullanici().getManagerCode();
 
+            //Explain Deposit
             if (depositAidat.isSelected()) {
                 asd = "aidat";
             } else if (depositDükkan.isSelected()) {
@@ -140,21 +177,26 @@ public class Controller {
             } else if (depositDiger.isSelected()) {
                 asd = "diger";
             }
+            int newBalance = balance + value;
 
-            //Database Query
+            //Write Transactions on DB
             String query = ("INSERT INTO transactions (Description,Value,IsExpense,TransactionType,ManagerCode) Values" +
-                    " ('" + managerNotes + "','" + value + "','" + 1 + "','" + asd + "','" + managerCode + "')");
-
+                    " ('" + managerNotes + "','" + value + "','" + 0 + "','" + asd + "','" + managerCode + "')");
             Db_Connection.ExecuteSql(query);
-            Db_Connection.CloseConnection();
 
-            depositStatus.setTextFill(Color.GREEN);
-            depositStatus.setText("Succesful");
+            //Update Balance
+            String s = "UPDATE Building SET balance = '"+newBalance+"' WHERE managerCode = '"+getKullanici().getManagerCode()+"'";
+            Db_Connection.ExecuteSql(s);
+
+            Image image = new Image(getClass().getResourceAsStream("../Project_IMG/successfull.png"));
+            depositStatusImage.setImage(image);
+
+            Db_Connection.CloseConnection();
 
 
         } catch (Exception e) {
-            depositStatus.setTextFill(Color.RED);
-            depositStatus.setText("UnSuccesful");
+            withdrawalStatusText.setTextFill(Color.RED);
+            withdrawalStatusText.setText("Unsuccesfull..");
         }
 
 
@@ -162,7 +204,14 @@ public class Controller {
 
     public void withdrawal(ActionEvent event) {
         try {
+            int balance = 0;
             Db_Connection.connectiondb();
+
+            ResultSet rs = Db_Connection.executeQuery("SELECT balance FROM Building where managerCode ='"+getKullanici().getManagerCode()+"'");
+            if (rs.next()){
+                balance = Integer.parseInt(rs.getString("balance"));
+            }
+
             int value = Integer.parseInt(withdrawalValue.getText());
             String managerNotes = withDrawalNote.getText();
             String asd = "";
@@ -182,19 +231,25 @@ public class Controller {
                 asd = "diger";
             }
 
+            int newBalance = balance - value;
+
             //Database Query
             String query = ("INSERT INTO transactions (Description,Value,IsExpense,TransactionType,ManagerCode) Values" +
                     " ('" + managerNotes + "','" + value + "','" + 1 + "','" + asd + "','" + managerCode + "')");
-
             Db_Connection.ExecuteSql(query);
-            Db_Connection.CloseConnection();
 
-            withdrawalStatus.setTextFill(Color.GREEN);
-            withdrawalStatus.setText("Succesful");
+            //Update Balance
+            String s = "UPDATE Building SET balance = '"+newBalance+"' WHERE managerCode = '"+getKullanici().getManagerCode()+"'";
+            Db_Connection.ExecuteSql(s);
+
+            Image image = new Image(getClass().getResourceAsStream("../Project_IMG/successfull.png"));
+            withdrawalStatusImage.setImage(image);
+
+
 
         } catch (Exception e) {
-            withdrawalStatus.setTextFill(Color.RED);
-            withdrawalStatus.setText("UnSuccesful");
+            withdrawalStatusText.setTextFill(Color.RED);
+            withdrawalStatusText.setText("Unsuccesfull..");
         }
     }
 
@@ -227,8 +282,26 @@ public class Controller {
 
     }
 
-    public void getFeedback(ActionEvent event) throws Exception{
-        //Eklenecek
+    public void getFeedback(ActionEvent event) throws Exception {
+
+        Db_Connection.connectiondb();
+        String sql = "SELECT feedbacktype,message,userid FROM feedback WHERE managerCode='" + getKullanici().getManagerCode() + "'";
+        ResultSet rs = Db_Connection.executeQuery(sql);
+        while (rs.next()) {
+            feedbackTypeList.add(rs.getString("feedbacktype"));
+            feedbackMessageList.add(rs.getString("message"));
+            ResultSet user = Db_Connection.executeQuery("Select name,surname FROM users WHERE userId = '" + rs.getString("userId") + "'");
+            while (user.next()) {
+                feedbackSenderList.add(user.getString("name") + " " + user.getString("surname"));
+            }
+        }
+        feedbackType.setItems(feedbackTypeList);
+        feedbackMessage.setItems(feedbackMessageList);
+        feedbackSender.setItems(feedbackSenderList);
+    }
+
+    public void checkBill() {
+        webViewId.getEngine().load("https://www.faturaodemeislemleri.com/");
     }
 
 }
