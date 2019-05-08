@@ -331,8 +331,6 @@ public class Controller {
         }
     }
 
-<<<<<<< HEAD
-=======
     public void loadAnnouncements() throws Exception {
         String sql = "SELECT * FROM Announcements";
         Db_Connection.connectiondb();
@@ -378,7 +376,14 @@ public class Controller {
         }
         cmbUser.setItems(userList);
     }
->>>>>>> f50098972803a55a870b7dc5498a1405a678a1b5
 
+    public void showAlert (ActionEvent event) throws Exception{
+        Db_Connection.connectiondb();
+        String s = "SELECT userID FROM dues WHERE isPaid = 0 ";
+        Db_Connection.ExecuteSql(s);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Members paid in person");
+        alert.setContentText(s);
+    }
 
 }
