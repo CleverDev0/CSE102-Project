@@ -44,22 +44,11 @@
                         <Font size="30.0" />
                      </font>
                   </Label>
-<<<<<<< HEAD
                   <TextField layoutX="70.0" layoutY="727.0" prefHeight="40.0" prefWidth="631.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20; -fx-border-image-width: 3; -fx-padding: 4; -fx-background-color: transparent;" />
                   <Label layoutX="115.0" layoutY="695.0" text="Adres" textFill="#ffad00">
                      <font>
                         <Font size="20.0" />
-=======
-                  <Label layoutX="18.0" layoutY="10.0" text="MAIN MENU - MEMBER">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="25.0" />
-                     </font>
-                  </Label>
-                  <TextField layoutX="32.0" layoutY="746.0" prefHeight="33.0" prefWidth="628.0" />
-                  <Label layoutX="38.0" layoutY="724.0" text="Adress">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="18.0" />
->>>>>>> d7f7d43b258d96f9f787eeea32154193c96a5a12
+
                      </font>
                   </Label>
                   <Label layoutX="115.0" layoutY="270.0" text="Güncel Aidat Durumu" textFill="#ffad00">
@@ -67,7 +56,6 @@
                         <Font size="25.0" />
                      </font>
                   </Label>
-<<<<<<< HEAD
                   <TextArea layoutX="70.0" layoutY="314.0" prefHeight="350.0" prefWidth="631.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20; -fx-border-width: 3; -fx-padding: 4; -fx-background-color: transparent; -fx-background-radius: 20;" text="&#10;&#10;AİDAT ÜCRETİ :&#10;&#10;&#10;BİR SONRAKİ AİDAT DÖNEMİ :&#10;&#10;&#10;AİDAT ÖDENME DURUMU :">
                      <font>
                         <Font name="Arial Black" size="20.0" />
@@ -88,9 +76,7 @@
                         <Font name="Arial Rounded MT Bold" size="25.0" />
                      </font>
                   </Label>
-=======
->>>>>>> d7f7d43b258d96f9f787eeea32154193c96a5a12
-                  <Line endX="1068.0" layoutX="100.0" layoutY="233.0" startX="-100.0" />
+                   <Line endX="1068.0" layoutX="100.0" layoutY="233.0" startX="-100.0" />
                   <Line endX="1068.0" layoutX="100.0" layoutY="70.0" startX="-100.0" />
                   <Label layoutX="70.0" layoutY="103.0" prefHeight="35.0" prefWidth="170.0" text="Name - Surname :" textFill="#ffad00">
                      <font>
@@ -184,23 +170,12 @@
             </AnchorPane>
          </content>
       </Tab>
-<<<<<<< HEAD
-      <Tab text="Şikayet / Öneri / Arıza ">
-=======
-<<<<<<< HEAD
       <Tab text="Complain/Offering/Maltfunction">
-=======
-      <Tab onSelectionChanged="#onPageLoad" text="Şikayet / Öneri / Arıza ">
->>>>>>> f50098972803a55a870b7dc5498a1405a678a1b5
->>>>>>> d7f7d43b258d96f9f787eeea32154193c96a5a12
+
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #eeeeee;">
                <children>
-<<<<<<< HEAD
                   <Label layoutX="18.0" layoutY="13.0" text="ŞİKAYET / ÖNERİ / ARIZA BİLDİRİMİ - MEMBER" textFill="#57ad68">
-=======
-                  <Label layoutX="15.0" layoutY="12.0" text="Complain/Offering/Maltfunction - MEMBER">
->>>>>>> d7f7d43b258d96f9f787eeea32154193c96a5a12
                      <font>
                         <Font size="30.0" />
                      </font>
@@ -210,11 +185,7 @@
                         <Font name="Arial Rounded MT Bold" size="25.0" />
                      </font>
                   </Label>
-<<<<<<< HEAD
                   <TextArea fx:id="feedbackText" layoutX="82.0" layoutY="341.0" prefHeight="305.0" prefWidth="963.0" promptText="Metninizi buraya yazınız. (En fazla 200 karakter)" style="-fx-border-color: #6DD3FF; -fx-border-width: 3; -fx-border-radius: 20; -fx-background-color: transparent; -fx-padding: 4; -fx-background-radius: 20;">
-=======
-                  <TextArea fx:id="feedbackText" layoutX="94.0" layoutY="351.0" prefHeight="299.0" prefWidth="960.0" promptText="Enter yout text here(Max 200 character)">
->>>>>>> d7f7d43b258d96f9f787eeea32154193c96a5a12
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -229,29 +200,17 @@
                         <Font size="16.0" />
                      </font>
                   </Button>
-<<<<<<< HEAD
                   <RadioButton fx:id="complaint" layoutX="113.0" layoutY="287.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="122.0" style="-fx-background-color: #eeeeee; -fx-border-radius: 100; -fx-border-width: 3; -fx-label-padding: 3;" text="Şikayet" textFill="#ffad00">
-=======
-                  <RadioButton fx:id="complaint" layoutX="120.0" layoutY="287.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="115.0" text="Complain">
->>>>>>> d7f7d43b258d96f9f787eeea32154193c96a5a12
                      <font>
                         <Font size="21.0" />
                      </font>
                   </RadioButton>
-<<<<<<< HEAD
                   <RadioButton fx:id="suggestion" layoutX="292.0" layoutY="287.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="122.0" style="-fx-background-color: #eeeeee; -fx-border-radius: 100; -fx-border-width: 3; -fx-label-padding: 3;" text="Öneri" textAlignment="CENTER" textFill="#ffad00">
-=======
-                  <RadioButton fx:id="suggestion" layoutX="292.0" layoutY="286.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="115.0" text="Offering">
->>>>>>> d7f7d43b258d96f9f787eeea32154193c96a5a12
                      <font>
                         <Font size="21.0" />
                      </font>
                   </RadioButton>
-<<<<<<< HEAD
                   <RadioButton fx:id="breakdown" layoutX="473.0" layoutY="287.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="180.0" style="-fx-background-color: #eeeeee; -fx-border-radius: 100; -fx-border-width: 3; -fx-label-padding: 3;" text="Arıza Bildirimi" textAlignment="CENTER" textFill="#ffad00">
-=======
-                  <RadioButton fx:id="breakdown" layoutX="451.0" layoutY="283.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="173.0" text="Maltfunction">
->>>>>>> d7f7d43b258d96f9f787eeea32154193c96a5a12
                      <font>
                         <Font size="21.0" />
                      </font>
@@ -327,20 +286,12 @@
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="468.0" prefWidth="925.0">
                                  <children>
-<<<<<<< HEAD
                                     <CheckBox layoutX="354.0" layoutY="110.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="201.0" text="Elden Ödendi" textFill="#ffad00">
-=======
-                                    <CheckBox layoutX="354.0" layoutY="125.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="201.0" text="Paid in Person">
->>>>>>> d7f7d43b258d96f9f787eeea32154193c96a5a12
                                        <font>
                                           <Font size="20.0" />
                                        </font>
                                     </CheckBox>
-<<<<<<< HEAD
                                     <Label layoutX="90.0" layoutY="215.0" text="Yönetici Notu" textFill="#ffad00">
-=======
-                                    <Label layoutX="46.0" layoutY="221.0" text="Manager Note">
->>>>>>> d7f7d43b258d96f9f787eeea32154193c96a5a12
                                        <font>
                                           <Font name="Arial Rounded MT Bold" size="20.0" />
                                        </font>
@@ -350,11 +301,7 @@
                                           <Font size="16.0" />
                                        </font>
                                     </TextArea>
-<<<<<<< HEAD
                                     <Button layoutX="764.0" layoutY="388.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF; -fx-background-radius: 15;" text="İşlemi Onayla">
-=======
-                                    <Button layoutX="764.0" layoutY="388.0" mnemonicParsing="false" onAction="#confrimPayment" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="İşlemi Onayla">
->>>>>>> d7f7d43b258d96f9f787eeea32154193c96a5a12
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -364,15 +311,9 @@
                                           <Font size="16.0" />
                                        </font>
                                     </Button>
-<<<<<<< HEAD
                                     <ComboBox layoutX="81.0" layoutY="45.0" prefHeight="40.0" prefWidth="153.0" promptText="Dönem Seçiniz" style="-fx-background-radius: 20; -fx-background-color: #ffad00;" />
                                     <ComboBox fx:id="bankBox" layoutX="354.0" layoutY="45.0" prefHeight="40.0" prefWidth="153.0" promptText="Banka Seçiniz" style="-fx-background-radius: 20; -fx-background-color: #ffad00;" />
                                     <Button fx:id="uploadFile" layoutX="83.0" layoutY="150.0" mnemonicParsing="false" onAction="#fileProceccing" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF; -fx-background-radius: 15;" text="Dekont Yükle">
-=======
-                                    <ComboBox layoutX="81.0" layoutY="62.0" prefHeight="33.0" prefWidth="153.0" promptText="Dönem Seçiniz" />
-                                    <ComboBox fx:id="bankBox" layoutX="354.0" layoutY="62.0" prefHeight="33.0" prefWidth="153.0" promptText="Choose Bank" />
-                                    <Button fx:id="uploadFile" layoutX="354.0" layoutY="201.0" mnemonicParsing="false" onAction="#fileProceccing" prefHeight="40.0" prefWidth="179.0" style="-fx-background-color: #6DD3FF;" text="Select e-receipt File">
->>>>>>> d7f7d43b258d96f9f787eeea32154193c96a5a12
                                        <font>
                                           <Font size="16.0" />
                                        </font>
