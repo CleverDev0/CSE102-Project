@@ -16,7 +16,7 @@ public class Controller {
         Load_Pages load = new Load_Pages();
         load.loadLogin();
         //Yeni sayfa açıldığında eski sayfanın kalmaması için
-        //((Node)(event.getSource())).getScene().getWindow().hide();
+        ((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
     public void signManager(ActionEvent event) throws Exception{
