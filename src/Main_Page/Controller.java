@@ -377,5 +377,13 @@ public class Controller {
         cmbUser.setItems(userList);
     }
 
+    public void showAlert (ActionEvent event) throws Exception{
+        Db_Connection.connectiondb();
+        String s = "SELECT userID FROM dues WHERE isPaid = 0 ";
+        Db_Connection.ExecuteSql(s);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Members paid in person");
+        alert.setContentText(s);
+    }
 
 }

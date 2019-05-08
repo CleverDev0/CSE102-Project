@@ -11,7 +11,7 @@ public class Ziraatbank extends  ReadingPDF
     private String tax;
     private String IBAN;
     private final int lineofDate = 10;
-    private final   int rowofDate = 3;
+    private final int rowofDate = 3;
 
     public Ziraatbank (String tax , String IBAN)
     {

@@ -15,8 +15,6 @@ public abstract class ReadingPDF
     private String IBAN; // ALICININ (YÖNETİCİNİN) IBANI.
     private int lineofIBAN; // hangi satırda IBAN bulunduğunu saklar.
     private int lineofAmount; // hangi satırda ödeme miktarı bulunduğunu saklar.
-    private int lineofDate;
-    private int rowofDate;
 
     public ReadingPDF (String tax , String IBAN , int lineofAmount , int lineofIBAN)
     {
@@ -45,7 +43,7 @@ public abstract class ReadingPDF
 
 
         }
-        catch(Exception ex) //TODO: BİR SORUN MEYDANA GELDİ MESAJI VERİLSİN
+        catch(Exception ex)
         {
 
         }
@@ -53,7 +51,7 @@ public abstract class ReadingPDF
     }
 
 
-    public boolean checkTax(String filePath) // String cinsinden girilen aidat değerinin ödenmiş olup olmadığına bakıyor.
+    public boolean checkTax(String filePath)
     {
 
         try
@@ -70,24 +68,11 @@ public abstract class ReadingPDF
 
             return input.nextLine().matches(".*" + tax + ".*");
         }
-        catch (Exception ex) //TODO: BİR SORUN MEYDANA GELDİ MESAJI VERİLSİN
+        catch (Exception ex)
         {}
         return false;
     }
 
-    //TODO: Yöneticiden IBAN'I boşluk karakterli içerecek TRXX XXXX XXXX XXXX XXXX XXXX XX şeklinde istenmeli..
-    //TODO: ÖDEME ONAYLANDIKTAN SONRA MAKBUZ GÖNDER.
-
 
 
 }
-
-
-
-
-
-
-
-
-
-//TODO: TEB doğru şekilde çalışıyor mu kontrol et.
