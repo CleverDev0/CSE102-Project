@@ -3,6 +3,10 @@
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<<<<<<< HEAD
+=======
+<?import javafx.scene.image.*?>
+>>>>>>> e089fef0f90cc80bb5d61d77ebedacbf7b3d41d9
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
@@ -31,7 +35,11 @@
   <tabs>
       <Tab text="Main">
          <content>
+<<<<<<< HEAD
             <AnchorPane  minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+=======
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+>>>>>>> e089fef0f90cc80bb5d61d77ebedacbf7b3d41d9
                <children>
                   <TextField layoutX="1.0" layoutY="1.0" prefHeight="51.0" prefWidth="1161.0" />
                   <Label layoutX="1003.0" layoutY="11.0" text="27.03.2019">
@@ -277,8 +285,8 @@
                                        </font>
                                     </Button>
                                     <ComboBox layoutX="81.0" layoutY="62.0" prefHeight="33.0" prefWidth="153.0" promptText="Dönem Seçiniz" />
-                                    <ComboBox layoutX="354.0" layoutY="62.0" prefHeight="33.0" prefWidth="153.0" promptText="Banka Seçiniz" />
-                                    <Button layoutX="83.0" layoutY="181.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Dekont Yükle">
+                                    <ComboBox fx:id="bankBox" layoutX="354.0" layoutY="62.0" prefHeight="33.0" prefWidth="153.0" promptText="Banka Seçiniz" />
+                                    <Button fx:id="uploadFile" layoutX="83.0" layoutY="181.0" mnemonicParsing="false" onAction="#fileProceccing" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #6DD3FF;" text="Dekont Yükle">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -379,7 +387,11 @@
             </AnchorPane>
          </content>
       </Tab>
+<<<<<<< HEAD
       <Tab  text="Fatura Sorgulama">
+=======
+      <Tab text="Fatura Sorgulama">
+>>>>>>> e089fef0f90cc80bb5d61d77ebedacbf7b3d41d9
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>

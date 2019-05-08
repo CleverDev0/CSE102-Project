@@ -1,17 +1,23 @@
 package Main_Page;
 
 import Db_Connection.Db_Connection;
+import Project_Classes.Isbank;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
+
+import java.io.File;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import static Login_Page.Controller.getKullanici;
 
-public class Member_Controller {
+public class Member_Controller implements Initializable {
     @FXML
     private RadioButton complaint;
 
@@ -41,6 +47,11 @@ public class Member_Controller {
 
     @FXML
     private TextField userEmail;
+
+    @FXML
+    private ComboBox<String> bankBox;
+
+    ObservableList<String> bankList = FXCollections.observableArrayList("Isbank" , "TEB" , "Vakifbank" , "Ziraatbank" , "Other");
 
     boolean status = false;
     int type;
@@ -94,4 +105,26 @@ public class Member_Controller {
         }
 
     }
+
+    @Override
+    public void initialize (URL location , ResourceBundle resourceBundle){
+        bankBox.setItems(bankList);
+    }
+
+    public void fileProceccing(ActionEvent event) throws Exception{
+        Db_Connection.connectiondb();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PDF Files" , "*.pdf"));
+        File file = fileChooser.showOpenDialog(null);
+        switch (bankBox.getValue()) {
+            case "Isbank":
+                Isbank isbank = new Isbank("5" , "");
+                //TODO: IBAN ve Tax bilgisini yöneticiden al System.out.println(isbank.checkTax(file.getAbsolutePath()));
+                break;
+
+        }
+
+
+    }
 }
+

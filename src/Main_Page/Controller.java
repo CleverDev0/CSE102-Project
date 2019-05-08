@@ -12,7 +12,11 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
+<<<<<<< HEAD
 import javafx.scene.web.WebView;
+=======
+import javafx.stage.FileChooser;
+>>>>>>> e089fef0f90cc80bb5d61d77ebedacbf7b3d41d9
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
