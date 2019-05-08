@@ -9,12 +9,9 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
-<<<<<<< HEAD
-=======
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
->>>>>>> c7ef8ed57892b72c28e66f489a3c76e6aac3e403
 
 import java.sql.ResultSet;
 
@@ -130,6 +127,15 @@ public class Controller {
 
     @FXML
     private ListView<String> feedbackSender;
+
+    public ListView<String> lstAnnouncements;
+    public ListView lstMessages;
+    public Button btnShowAnnouncements;
+    public Button btnShowMessages;
+    public Button btnAddAnnouncement;
+    public TextArea txtAnnouncement;
+    public ListView lstSenderId;
+    public ComboBox cmbUser;
 
 
     //ObserveList For Feedback Lister
@@ -303,5 +309,73 @@ public class Controller {
     public void checkBill() {
         webViewId.getEngine().load("https://www.faturaodemeislemleri.com/");
     }
+
+
+    public void onPageLoad() {
+        final ToggleGroup group = new ToggleGroup();
+        depositAidat.setToggleGroup(group);
+        depositDiger.setToggleGroup(group);
+        depositDükkan.setToggleGroup(group);
+
+    }
+
+    public void addAnnouncement() throws Exception {
+        if(txtAnnouncement.getText() != null) {
+            String query = ("INSERT INTO Announcements (AnnouncementDescription) Values" + "( '" + txtAnnouncement.getText() + "')");
+            Db_Connection.ExecuteSql(query);
+            Db_Connection.CloseConnection();
+            loadAnnouncements();
+        }
+        else {
+            System.out.println("Announcement cant be empty!");
+        }
+    }
+
+    public void loadAnnouncements() throws Exception {
+        String sql = "SELECT * FROM Announcements";
+        Db_Connection.connectiondb();
+        ResultSet rs = Db_Connection.executeQuery(sql);
+        ObservableList<String> items = FXCollections.observableArrayList();
+        assert rs != null;
+        while (rs.next()) {
+            items.add(rs.getString("AnnouncementDescription"));
+        }
+        lstAnnouncements.setItems(items);
+    }
+
+    public void loadMessages() throws Exception {
+        String sql = "SELECT SenderId FROM Messages";
+        Db_Connection.connectiondb();
+        ResultSet rs = Db_Connection.executeQuery(sql);
+        ObservableList<Integer> senderList = FXCollections.observableArrayList();
+        assert rs != null;
+        while (rs.next()) {
+            senderList.add(rs.getInt("SenderId"));
+        }
+        lstSenderId.setItems(senderList);
+        String sql1 = "SELECT Message FROM Messages";
+        Db_Connection.connectiondb();
+        ResultSet rs1 = Db_Connection.executeQuery(sql1);
+        ObservableList<String> messageList = FXCollections.observableArrayList();
+        assert rs1 != null;
+        while (rs1.next()) {
+            messageList.add(rs1.getString("Message"));
+        }
+        lstMessages.setItems(messageList);
+    }
+
+
+    public void MessageLoaded() throws Exception {
+        String sql = "SELECT Name,Surname FROM Users";
+        Db_Connection.connectiondb();
+        ResultSet rs = Db_Connection.executeQuery(sql);
+        ObservableList<String> userList = FXCollections.observableArrayList();
+        assert rs != null;
+        while (rs.next()) {
+            userList.add(rs.getString("Name") + " " + rs.getString("Surname"));
+        }
+        cmbUser.setItems(userList);
+    }
+
 
 }
