@@ -12,11 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
-<<<<<<< HEAD
 import javafx.scene.web.WebView;
-=======
-import javafx.stage.FileChooser;
->>>>>>> e089fef0f90cc80bb5d61d77ebedacbf7b3d41d9
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -81,10 +77,16 @@ public class Controller {
     private Label nameSurname;
 
     @FXML
-    private ImageView depositStatus;
+    private ImageView depositStatusImage;
 
     @FXML
-    private Label withdrawalStatus;
+    private Label depositStatusText;
+
+    @FXML
+    private Label withdrawalStatusText;
+
+    @FXML
+    private ImageView withdrawalStatusImage;
 
     @FXML
     private Label field;
@@ -195,13 +197,14 @@ public class Controller {
             Db_Connection.ExecuteSql(s);
 
             Image image = new Image(getClass().getResourceAsStream("../Project_IMG/successfull.png"));
-            depositStatus.setImage(image);
+            depositStatusImage.setImage(image);
 
             Db_Connection.CloseConnection();
 
 
         } catch (Exception e) {
-            System.out.println(e);
+            withdrawalStatusText.setTextFill(Color.RED);
+            withdrawalStatusText.setText("Unsuccesfull..");
         }
 
 
@@ -247,14 +250,14 @@ public class Controller {
             String s = "UPDATE Building SET balance = '"+newBalance+"' WHERE managerCode = '"+getKullanici().getManagerCode()+"'";
             Db_Connection.ExecuteSql(s);
 
-            withdrawalStatus.setTextFill(Color.GREEN);
-            withdrawalStatus.setText("Succesful");
+            Image image = new Image(getClass().getResourceAsStream("../Project_IMG/successfull.png"));
+            withdrawalStatusImage.setImage(image);
 
-            Db_Connection.CloseConnection();
+
 
         } catch (Exception e) {
-            withdrawalStatus.setTextFill(Color.RED);
-            withdrawalStatus.setText("UnSuccesful");
+            withdrawalStatusText.setTextFill(Color.RED);
+            withdrawalStatusText.setText("Unsuccesfull..");
         }
     }
 
