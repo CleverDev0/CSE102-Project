@@ -18,11 +18,6 @@ import java.sql.ResultSet;
 import static Login_Page.Controller.getKullanici;
 
 public class Controller {
-
-    public Button btnSendMessage;
-    public ComboBox cmbRecieverList;
-    public ListView lstAnnouncementsManager;
-    public TextArea txtMessage;
     //Todo:Değişken isimleri kontrol edilip düzelecenecek!
 
     @FXML
@@ -147,44 +142,6 @@ public class Controller {
     ObservableList<String> feedbackTypeList = FXCollections.observableArrayList();
     ObservableList<String> feedbackMessageList = FXCollections.observableArrayList();
     ObservableList<String> feedbackSenderList = FXCollections.observableArrayList();
-    ObservableList<String> announcementList = FXCollections.observableArrayList();
-    ObservableList<String> nameList = FXCollections.observableArrayList();
-    ObservableList<String> messageList = FXCollections.observableArrayList();
-
-    public void onSocialTabOpened() throws Exception {
-        loadAnnouncements();
-        getMessages();
-        setRecieverList();
-    }
-
-    public void getMessages() throws Exception {
-        Db_Connection.connectiondb();
-        ResultSet messages = Db_Connection.executeQuery("SELECT * FROM Messages where RecieverId ='" +getKullanici().userId+"'");
-        while (messages.next())
-            messageList.add(messages.getString("Message"));
-        lstMessages.setItems(messageList);
-    }
-
-    public void sendMessage() throws Exception {
-        try {
-            Db_Connection.connectiondb();
-            String Query = "INSERT INTO Messages (SenderId,RecieverId,RecieverName,Message) VALUES" + "('" + getKullanici().userId + "','"+"1"+"','"+ cmbRecieverList.getValue() + "','" + txtMessage.getText() + "')";
-            Db_Connection.ExecuteUpdate(Query);
-            getMessages();
-            Db_Connection.CloseConnection();
-        }
-        catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    public void setRecieverList() throws Exception {
-        Db_Connection.connectiondb();
-        ResultSet rs = Db_Connection.executeQuery("SELECT Name,Surname FROM USERS");
-        while (rs.next())
-            nameList.add(rs.getString("Name") + " " + rs.getString("Surname"));
-        cmbRecieverList.setItems(nameList);
-    }
 
 
     public void baslanictaCalısacakMetodlar(ActionEvent event) {
@@ -313,11 +270,16 @@ public class Controller {
 
 
     public void showApartmentInformation(ActionEvent event) {
-        //Todo: DB'ye Apartments olarak table açılacak ve oradan bilgiler çekilip, işlemler oradan yapılacak
+
     }
 
-    public void updateApartmentInformation(ActionEvent event) {
-        //Todo: DB'ye Apartments olarak table açılacak ve oradan bilgiler çekilip, işlemler oradan yapılacak
+    public void updateApartmentInformation(ActionEvent event) throws Exception{
+        Db_Connection.connectiondb();
+        String s = "UPDATE Users SET Adress = '" + apartmentAdress.getText() + "', FloorCount = '" + apartmentFloor.getText() + "', MemberCount = '" + apartmentMember.getText() + "', Manager = '" + apartmentManager.getText() + "'  WHERE managerCode = '" + getKullanici().getManagerCode() + "'";
+        Db_Connection.ExecuteSql(s);
+        System.out.println("Işlem tamamlandı");
+        Db_Connection.CloseConnection();
+        System.out.println("DB kapandı");
 
     }
 
@@ -366,8 +328,8 @@ public class Controller {
         if(txtAnnouncement.getText() != null) {
             String query = ("INSERT INTO Announcements (AnnouncementDescription) Values" + "( '" + txtAnnouncement.getText() + "')");
             Db_Connection.ExecuteSql(query);
-            loadAnnouncements();
             Db_Connection.CloseConnection();
+            loadAnnouncements();
         }
         else {
             System.out.println("Announcement cant be empty!");
@@ -383,9 +345,8 @@ public class Controller {
         while (rs.next()) {
             items.add(rs.getString("AnnouncementDescription"));
         }
-        lstAnnouncementsManager.setItems(items);
+        lstAnnouncements.setItems(items);
     }
-    /*
 
     public void loadMessages() throws Exception {
         String sql = "SELECT SenderId FROM Messages";
@@ -421,20 +382,15 @@ public class Controller {
         cmbUser.setItems(userList);
     }
 
-     */
-
     public void showAlert (ActionEvent event) throws Exception{
         Db_Connection.connectiondb();
-        String s = "SELECT userId FROM dues WHERE isPaid = 0 ";
+        String s = "SELECT userID FROM dues WHERE isPaid = 0 ";
         ResultSet rs = Db_Connection.executeQuery(s);
-        ObservableList<String> nonPaidUsers = FXCollections.observableArrayList();
-        while (rs.next()) {
-            nonPaidUsers.add(rs.getString("userId"));
-        }
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Members paid in person");
-        alert.setContentText(nonPaidUsers.toString());
-        alert.showAndWait();
+        for (int i = 0; i <rs.getFetchSize() ; i++) {
+            alert.setContentText(rs.getString(i));
+        }
     }
 
 }

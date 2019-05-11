@@ -6,6 +6,7 @@ import Project_Classes.Isbank;
 import Project_Classes.Vakifbank;
 import Project_Classes.YapiKredi;
 import Project_Classes.Ziraatbank;
+import com.mysql.cj.protocol.Resultset;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
+import java.sql.ResultSet;
 
 import java.io.File;
 import java.net.URL;
@@ -74,8 +76,8 @@ public class Member_Controller implements Initializable {
 
     boolean status = false;
     int type;
-    boolean confrimPayment=false;
-    boolean paidinPerson;
+    boolean confrimPayment = false;
+    boolean paidinPerson = false;
     String date;
 
 
@@ -188,9 +190,12 @@ public class Member_Controller implements Initializable {
         String query;
         String userID;
         ResultSet rs;
+        boolean confrimPayment = false;
+        boolean paidinPerson = false;
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PDF Files" , "*.pdf"));
         File file = fileChooser.showOpenDialog(null);
+
 
         if(file!=null) {
             switch (bankBox.getValue()) {
@@ -233,28 +238,29 @@ public class Member_Controller implements Initializable {
                     break;
                 case "Other/Paid in Person":
                     paidinPerson = true;
+                    this.paidinPerson = paidinPerson;
                     break;
                 default:
                     paymentStatus.setText("ERROR: Please be sure that you choose a bank.");
                     break;
             }
-        }
-        if(confrimPayment) {
-            paymentStatus.setText("Tax is paid on :"+ date);
-            paymentStatus.setTextFill(Color.web("#0FE808"));
-            userID = "SELECT UserId FROM users WHERE userName" + userName ;
-            query= "UPDATE dues WHERE UserID "+ userID +"SET isPaid 1";
-        }
-        else if(paidinPerson) {
-            paymentStatus.setText("Sent a messeage to manager that you paid tax in person/via Other bank");
-            paymentStatus.setTextFill(Color.web("#0FE808"));
-        }
 
-        else {
-            paymentStatus.setText("ERROR: IBAN/TAX not valid");
-            paymentStatus.setTextFill(Color.web("#FF0000"));
-        }
+            if (paidinPerson) {
+                System.out.println("test");
+                isPaid.setText("Sent a messeage to manager that you paid tax in person/via Other bank");
+                isPaid.setTextFill(Color.web("#0FE808"));
+            }
 
+            if (confrimPayment) {
+                isPaid.setText("Tax is paid on :" + date);
+                isPaid.setTextFill(Color.web("#0FE808"));
+                userID = "SELECT UserId FROM users WHERE userName" + userName;
+                query = "UPDATE dues WHERE UserID " + userID + "SET isPaid 1";
+            } else {
+                isPaid.setText("ERROR: IBAN/TAX not valid");
+                isPaid.setTextFill(Color.web("#FF0000"));
+            }
+        }
 
 
     }
@@ -266,11 +272,30 @@ public class Member_Controller implements Initializable {
                     " ('" + getKullanici().getUserId() + "',1)");
             Db_Connection.ExecuteSql(query);
         }
-        else if(paidinPerson){
-            String query = "INSERT INTO dues (userID , IsPaid) Values " + " ('" + getKullanici().getUserId() + "',' '0')";
+        if(paidinPerson){
+            String query = ("INSERT INTO dues (userID,IsPaid) Values" +
+                    " ('" + getKullanici().getUserId() + "',2)");
             Db_Connection.ExecuteSql(query);
             System.out.println("Başarılı");
         }
+    }
+
+    public void labelStatus () throws Exception {
+        Db_Connection.connectiondb();
+        String query = "SELECT isPaid FROM dues WHERE UserId = '" + getKullanici().getUserId() + "'";
+        ResultSet rs = Db_Connection.executeQuery(query);
+
+        if(rs.equals("1") || rs.equals("0"))
+        {
+            paymentStatus.setTextFill(Color.web("#00FF1E"));
+            paymentStatus.setText("PAID");
+        }
+        else
+        {
+            paymentStatus.setTextFill(Color.web("#FF0000"));
+            paymentStatus.setText("NOT PAID");
+        }
+
 
     }
 }
