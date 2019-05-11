@@ -6,7 +6,7 @@ import java.sql.*;
 public class Db_Connection {
     //Database related variables
     private static String username = "root";
-    private static String password = "12345678";
+    private static String password = "";
 
     private static String connectionString = "jdbc:mysql://localhost:3306/cse_102_project_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     private static Connection connection;
@@ -24,6 +24,18 @@ public class Db_Connection {
         } finally {
             System.out.println("Connection Established! QUERY WORKED RIGHT! INSERT ops. Successuful!");
             return null;
+        }
+    }
+
+    public static boolean ExecuteUpdate(String s) {
+        try {
+            Statement st = getConnection().createStatement();
+            st.executeUpdate(s);
+            return true;
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
         }
     }
 

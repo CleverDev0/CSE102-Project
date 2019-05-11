@@ -18,11 +18,16 @@ import javafx.stage.FileChooser;
 import java.io.File;
 import java.net.URL;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 import static Login_Page.Controller.getKullanici;
 
 public class Member_Controller implements Initializable {
+    public ListView listAnnouncements;
+    public ListView listMessages;
+    public ComboBox cmbReciever;
+    public TextArea txtMessage;
     @FXML
     private RadioButton complaint;
 
@@ -63,6 +68,9 @@ public class Member_Controller implements Initializable {
     private Label isPaid;
 
     ObservableList<String> bankList = FXCollections.observableArrayList("Isbank" , "YapiKredi" , "Vakifbank" , "Ziraatbank" , "Other/Paid in Person");
+    ObservableList<String> announcementList = FXCollections.observableArrayList();
+    ObservableList<String> messageList = FXCollections.observableArrayList();
+    ObservableList<String> nameList = FXCollections.observableArrayList();
 
     boolean status = false;
     int type;
@@ -93,6 +101,48 @@ public class Member_Controller implements Initializable {
         System.out.println("Islem tamamlandi.");
         Db_Connection.CloseConnection();
         System.out.println("DB kapandi.");
+    }
+
+    public void onSocialTabOpened() throws Exception {
+        loadAnnouncements();
+        getMessages();
+        setRecieverList();
+    }
+
+    public void loadAnnouncements() throws Exception {
+        Db_Connection.connectiondb();
+        ResultSet rs = Db_Connection.executeQuery("SELECT * FROM Announcements");
+        while (rs.next())
+            announcementList.add(rs.getString("AnnouncementDescription"));
+        listAnnouncements.setItems(announcementList);
+    }
+
+    public void getMessages() throws Exception {
+        Db_Connection.connectiondb();
+        ResultSet messages = Db_Connection.executeQuery("SELECT * FROM Messages where RecieverId ='" +getKullanici().userId+"'");
+        while (messages.next())
+            messageList.add(messages.getString("Message"));
+        listMessages.setItems(messageList);
+    }
+
+    public void sendMessage() throws Exception {
+        try {
+            Db_Connection.connectiondb();
+            String Query = "INSERT INTO Messages (SenderId,RecieverId,RecieverName,Message) VALUES" + "('" + getKullanici().userId + "','"+"1"+"','"+ cmbReciever.getValue() + "','" + txtMessage.getText() + "')";
+            Db_Connection.ExecuteUpdate(Query);
+            Db_Connection.CloseConnection();
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void setRecieverList() throws Exception {
+        Db_Connection.connectiondb();
+        ResultSet rs = Db_Connection.executeQuery("SELECT Name,Surname FROM USERS");
+        while (rs.next())
+            nameList.add(rs.getString("Name") + " " + rs.getString("Surname"));
+        cmbReciever.setItems(nameList);
     }
 
     public void sendFeedback(ActionEvent event) {

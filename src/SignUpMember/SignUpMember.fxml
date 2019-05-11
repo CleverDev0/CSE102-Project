@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SignUpMember.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="600.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SignUpMember.Controller">
    <children>
       <VBox alignment="CENTER_RIGHT" layoutX="335.0" layoutY="32.0" prefHeight="397.0" prefWidth="235.0" spacing="15.0">
          <children>
@@ -17,11 +17,11 @@
             <TextField fx:id="tcNumber" promptText="TC Number" />
             <TextField fx:id="apartmentNumber" promptText="Apartment Number" />
             <TextField fx:id="managerCode" promptText="Manager Code" />
-            <Button mnemonicParsing="false" onAction="#createUsers" prefHeight="0.0" prefWidth="66.0" text="Kayıt Ol" />
+            <Button mnemonicParsing="false" onAction="#createUsers" prefHeight="0.0" prefWidth="66.0" style="-fx-background-color: #6DD3FF; -fx-background-radius: 15;" text="Kayıt Ol" />
             <Label fx:id="signUpStatus" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="215.0" />
          </children>
       </VBox>
-      <Text layoutX="46.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign UP for Member">
+      <Text fill="#57ad68" layoutX="46.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign UP for Member">
          <font>
             <Font size="26.0" />
          </font>
