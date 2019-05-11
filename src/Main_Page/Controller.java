@@ -67,16 +67,10 @@ public class Controller {
     private Label nameSurname;
 
     @FXML
-    private ImageView depositStatusImage;
+    private Label depositStatus;
 
     @FXML
-    private Label depositStatusText;
-
-    @FXML
-    private Label withdrawalStatusText;
-
-    @FXML
-    private ImageView withdrawalStatusImage;
+    private Label withdrawalStatus;
 
     @FXML
     private Label field;
@@ -198,21 +192,16 @@ public class Controller {
             String s = "UPDATE Building SET balance = '"+newBalance+"' WHERE managerCode = '"+getKullanici().getManagerCode()+"'";
             Db_Connection.ExecuteSql(s);
 
-            Image image = new Image(getClass().getResourceAsStream("../Project_IMG/successfull.png"));
-            depositStatusImage.setImage(image);
-
-            Thread.sleep(3000);
-
-            Image imageBlank = new Image(getClass().getResourceAsStream("../Project_IMG/images.png"));
-            withdrawalStatusImage.setImage(image);
+            withdrawalStatus.setTextFill(Color.GREEN);
+            withdrawalStatus.setText("Successful");
 
 
         } catch (CustomExceptions exceptions){
-            withdrawalStatusText.setTextFill(Color.RED);
-            withdrawalStatusText.setText(exceptions.getMessage());
+            withdrawalStatus.setTextFill(Color.RED);
+            withdrawalStatus.setText(exceptions.getMessage());
         } catch (Exception e) {
-            withdrawalStatusText.setTextFill(Color.RED);
-            withdrawalStatusText.setText("Unsuccesfull..");
+            withdrawalStatus.setTextFill(Color.RED);
+            withdrawalStatus.setText("Unsuccesfull..");
         }
 
 
@@ -261,18 +250,15 @@ public class Controller {
             String s = "UPDATE Building SET balance = '"+newBalance+"' WHERE managerCode = '"+getKullanici().getManagerCode()+"'";
             Db_Connection.ExecuteSql(s);
 
-            Image image = new Image(getClass().getResourceAsStream("../Project_IMG/successfull.png"));
-            withdrawalStatusImage.setImage(image);
+            withdrawalStatus.setTextFill(Color.GREEN);
+            withdrawalStatus.setText("Successful");
 
-            Thread.sleep(3000);
-
-            Image imageBlank = new Image(getClass().getResourceAsStream("../Project_IMG/images.png"));
-            withdrawalStatusImage.setImage(image);
-
-
+        } catch (CustomExceptions exceptions){
+            withdrawalStatus.setTextFill(Color.RED);
+            withdrawalStatus.setText(exceptions.getMessage());
         } catch (Exception e) {
-            withdrawalStatusText.setTextFill(Color.RED);
-            withdrawalStatusText.setText("Unsuccesfull..");
+            withdrawalStatus.setTextFill(Color.RED);
+            withdrawalStatus.setText("Unsuccesfull..");
         }
     }
 

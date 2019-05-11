@@ -13,31 +13,7 @@ public class Users {
     public String TCNumber;
     public String ManagerCode;
     public String ApartmentNumber;
-    public boolean isAdmin; //TODO: Inferface olarak ayarlancak
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public boolean isAdmin;
 
     public String getUserId() {
         return userId;
