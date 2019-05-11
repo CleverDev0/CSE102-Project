@@ -186,10 +186,6 @@ public class Member_Controller implements Initializable {
     }
 
     public void fileProceccing(ActionEvent event) throws Exception{
-        Db_Connection.connectiondb();
-        String query;
-        String userID;
-        ResultSet rs;
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PDF Files" , "*.pdf"));
         File file = fileChooser.showOpenDialog(null);
@@ -251,8 +247,6 @@ public class Member_Controller implements Initializable {
             if (confrimPayment) {
                 isPaid.setText("Tax is paid on :" + date);
                 isPaid.setTextFill(Color.web("#0FE808"));
-                userID = "SELECT UserId FROM users WHERE userName" + userName;
-                query = "UPDATE dues WHERE UserID " + userID + "SET isPaid 1";
             } else {
                 isPaid.setText("ERROR: IBAN/TAX not valid");
                 isPaid.setTextFill(Color.web("#FF0000"));
@@ -281,10 +275,10 @@ public class Member_Controller implements Initializable {
 
     public void labelStatus () throws Exception {
         Db_Connection.connectiondb();
-        String query = "SELECT isPaid FROM dues WHERE UserId = '" + getKullanici().getUserId() + "'";
+        String query = "SELECT * FROM dues WHERE UserId = '" + getKullanici().getUserId() + "'";
         ResultSet rs = Db_Connection.executeQuery(query);
 
-        if(rs.equals("1") || rs.equals("0"))
+        if(rs.next())
         {
             paymentStatus.setTextFill(Color.web("#00FF1E"));
             paymentStatus.setText("PAID");
