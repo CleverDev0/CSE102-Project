@@ -1,6 +1,7 @@
 package Main_Page;
 
 import Db_Connection.Db_Connection;
+import Project_Classes.CustomExceptions;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -171,6 +172,9 @@ public class Controller {
             }
 
             int value = Integer.parseInt(depositValue.getText());
+            if (value < 0) {
+                throw new CustomExceptions("Please check your amount");
+            }
             String managerNotes = depositNote.getText();
             String asd = "";
             String managerCode = getKullanici().getManagerCode();
@@ -197,9 +201,15 @@ public class Controller {
             Image image = new Image(getClass().getResourceAsStream("../Project_IMG/successfull.png"));
             depositStatusImage.setImage(image);
 
-            Db_Connection.CloseConnection();
+            Thread.sleep(3000);
+
+            Image imageBlank = new Image(getClass().getResourceAsStream("../Project_IMG/images.png"));
+            withdrawalStatusImage.setImage(image);
 
 
+        } catch (CustomExceptions exceptions){
+            withdrawalStatusText.setTextFill(Color.RED);
+            withdrawalStatusText.setText(exceptions.getMessage());
         } catch (Exception e) {
             withdrawalStatusText.setTextFill(Color.RED);
             withdrawalStatusText.setText("Unsuccesfull..");
@@ -219,6 +229,9 @@ public class Controller {
             }
 
             int value = Integer.parseInt(withdrawalValue.getText());
+            if (value < 0) {
+                throw new CustomExceptions("Please check your amount");
+            }
             String managerNotes = withDrawalNote.getText();
             String asd = "";
             String managerCode = getKullanici().getManagerCode();
@@ -251,6 +264,10 @@ public class Controller {
             Image image = new Image(getClass().getResourceAsStream("../Project_IMG/successfull.png"));
             withdrawalStatusImage.setImage(image);
 
+            Thread.sleep(3000);
+
+            Image imageBlank = new Image(getClass().getResourceAsStream("../Project_IMG/images.png"));
+            withdrawalStatusImage.setImage(image);
 
 
         } catch (Exception e) {
