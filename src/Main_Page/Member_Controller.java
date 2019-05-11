@@ -190,15 +190,14 @@ public class Member_Controller implements Initializable {
         String query;
         String userID;
         ResultSet rs;
-        boolean confrimPayment = false;
-        boolean paidinPerson = false;
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PDF Files" , "*.pdf"));
         File file = fileChooser.showOpenDialog(null);
 
 
         if(file!=null) {
-            switch (bankBox.getValue()) {
+
+           switch (bankBox.getValue()) {
                 case "Isbank":
                     Isbank isbank = new Isbank("", "");
                     if (isbank.checkTax(file.getAbsolutePath()))
@@ -236,19 +235,17 @@ public class Member_Controller implements Initializable {
                         } else
                             confrimPayment = false;
                     break;
-                case "Other/Paid in Person":
-                    paidinPerson = true;
-                    this.paidinPerson = paidinPerson;
-                    break;
                 default:
                     paymentStatus.setText("ERROR: Please be sure that you choose a bank.");
                     break;
             }
 
-            if (paidinPerson) {
+
+            if (this.paidinPerson) {
                 System.out.println("test");
                 isPaid.setText("Sent a messeage to manager that you paid tax in person/via Other bank");
                 isPaid.setTextFill(Color.web("#0FE808"));
+                this.paidinPerson=paidinPerson;
             }
 
             if (confrimPayment) {
@@ -272,10 +269,12 @@ public class Member_Controller implements Initializable {
                     " ('" + getKullanici().getUserId() + "',1)");
             Db_Connection.ExecuteSql(query);
         }
-        if(paidinPerson){
+        if(bankBox.getValue().equals("Other/Paid in Person")){
             String query = ("INSERT INTO dues (userID,IsPaid) Values" +
-                    " ('" + getKullanici().getUserId() + "',2)");
+                    " ('" + getKullanici().getUserId() + "',0)");
             Db_Connection.ExecuteSql(query);
+            isPaid.setText("Sent a messeage to manager that you paid tax in person/via Other bank");
+            isPaid.setTextFill(Color.web("#0FE808"));
             System.out.println("Başarılı");
         }
     }
