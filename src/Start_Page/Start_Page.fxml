@@ -6,9 +6,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="831.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Start_Page.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="831.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Start_Page.Controller">
    <children>
-      <Text layoutX="46.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur" wrappingWidth="752.5380859375">
+      <Text fill="#57ad68" layoutX="46.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur" wrappingWidth="752.5380859375">
          <font>
             <Font size="34.0" />
          </font>
@@ -17,14 +17,14 @@
          <font>
             <Font size="16.0" />
          </font></Text>
-      <Button layoutX="46.0" layoutY="397.0" mnemonicParsing="false" onAction="#loginBtn" prefHeight="27.0" prefWidth="95.0" text="Giriş Yap" />
-      <MenuButton layoutX="157.0" layoutY="397.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="27.0" prefWidth="95.0" text="Kayıt Ol">
+      <Button layoutX="46.0" layoutY="397.0" mnemonicParsing="false" onAction="#loginBtn" prefHeight="27.0" prefWidth="95.0" style="-fx-background-color: #6DD3FF; -fx-background-radius: 15;" text="Giriş Yap" />
+      <MenuButton layoutX="157.0" layoutY="397.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="27.0" prefWidth="95.0" style="-fx-background-color: #6DD3FF; -fx-background-radius: 15;" text="Kayıt Ol">
         <items>
           <MenuItem mnemonicParsing="false" onAction="#signManager" text="Yönetici Olarak" />
           <MenuItem mnemonicParsing="false" onAction="#signMember" text="Daire Sakini Olarak" />
         </items>
       </MenuButton>
-      <ImageView fitHeight="394.0" fitWidth="530.0" layoutX="285.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="394.0" fitWidth="530.0" layoutX="287.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Project_IMG/Header_Image.png" />
          </image>
