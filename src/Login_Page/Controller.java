@@ -27,8 +27,6 @@ public class Controller {
 
     public static Users kullanici;
 
-//TODO: ÖNCE KULLANIDAN BİGİLERİ AL SONRA SORGUYA ATIP KONTROL ET NULL DÖNERSE BÖYLE BİR KULLANICI YOK DE
-
     public void login(ActionEvent event) throws Exception {
         int result = 0;
         Users user = new Users();
