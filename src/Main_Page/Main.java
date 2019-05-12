@@ -1,14 +1,12 @@
 package Main_Page;
 
-import Login_Page.Controller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import java.sql.*;
 
-import static Login_Page.Controller.getKullanici;
+import static Login_Page.Controller.getUsers;
 
 //import static Login_Page.Controller.email;
 
@@ -29,9 +27,9 @@ public class Main extends Application {
 
         launch(args);
 
-        System.out.println(getKullanici().getUserId());
-        System.out.println(getKullanici().getPassword());
-        System.out.println(getKullanici().getName());
+        System.out.println(getUsers().getUserId());
+        System.out.println(getUsers().getPassword());
+        System.out.println(getUsers().getName());
 
         //System.out.println(Controller.getEmail()+"  "+Controller.getPassword());
 

@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="CSE102-Project:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CSE102_Project_jar</output-path>
+    <root id="root">
+      <element id="archive" name="CSE102-Project.jar">
+        <element id="module-output" name="CSE102-Project" />
+      </element>
+      <element id="library" level="project" name="mysql-connector-java-8.0.15 (3)" />
+      <element id="library" level="project" name="pdfbox-app-1.8.16 (3)" />
+      <element id="library" level="project" name="pdfbox-tools-2.0.14" />
+      <element id="library" level="project" name="pdfbox-1.8.16 (2)" />
+      <element id="library" level="project" name="pdfbox-app-1.8.16 (2)" />
+      <element id="library" level="project" name="mysql-connector-java-8.0.15" />
+      <element id="library" level="project" name="pdfbox-2.0.14 (2)" />
+      <element id="library" level="project" name="mysql-connector-java-8.0.16" />
+      <element id="library" level="project" name="lib" />
+      <element id="library" level="project" name="pdfbox-app-1.8.16" />
+      <element id="library" level="project" name="mysql-connector-java-8.0.15 (2)" />
+      <element id="library" level="project" name="pdfbox-1.8.16" />
+    </root>
+  </artifact>
+</component>

@@ -7,7 +7,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="600.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SignUpMember.Controller">
    <children>
-      <VBox alignment="CENTER_RIGHT" layoutX="335.0" layoutY="32.0" prefHeight="397.0" prefWidth="235.0" spacing="15.0">
+      <VBox alignment="CENTER_RIGHT" layoutX="335.0" layoutY="14.0" prefHeight="397.0" prefWidth="235.0" spacing="15.0">
          <children>
             <TextField fx:id="nameField" promptText="Name" />
             <TextField fx:id="surname" promptText="Surname" />
@@ -16,6 +16,7 @@
             <TextField fx:id="phoneNumber" promptText="Phone Number" />
             <TextField fx:id="tcNumber" promptText="TC Number" />
             <TextField fx:id="apartmentNumber" promptText="Apartment Number" />
+            <TextField fx:id="floorNumber" promptText="Floor Number" />
             <TextField fx:id="managerCode" promptText="Manager Code" />
             <Button mnemonicParsing="false" onAction="#createUsers" prefHeight="0.0" prefWidth="66.0" style="-fx-background-color: #6DD3FF; -fx-background-radius: 15;" text="Kayıt Ol" />
             <Label fx:id="signUpStatus" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="215.0" />
@@ -26,6 +27,6 @@
             <Font size="26.0" />
          </font>
       </Text>
-      <Text layoutX="46.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo" wrappingWidth="205.7490234375" />
+      <Text layoutX="46.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please be careful when sign up. Fill all the blank for easiest management. We promise, we won't be share your information other company/person.Please inform your Manager if you have not manager code." wrappingWidth="205.7490234375" />
    </children>
 </Pane>
