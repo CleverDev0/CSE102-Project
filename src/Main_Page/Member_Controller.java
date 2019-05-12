@@ -1,12 +1,10 @@
 package Main_Page;
 
 import Db_Connection.Db_Connection;
-import Login_Page.Controller;
 import Project_Classes.Isbank;
 import Project_Classes.Vakifbank;
 import Project_Classes.YapiKredi;
 import Project_Classes.Ziraatbank;
-import com.mysql.cj.protocol.Resultset;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,17 +17,48 @@ import java.sql.ResultSet;
 
 import java.io.File;
 import java.net.URL;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ResourceBundle;
 
-import static Login_Page.Controller.getKullanici;
+import static Login_Page.Controller.getUsers;
 
 public class Member_Controller implements Initializable {
     public ListView listAnnouncements;
     public ListView listMessages;
     public ComboBox cmbReciever;
     public TextArea txtMessage;
+    public TextField homeAddress;
+    public Label homeName;
+    public Label homeFloor;
+    public Label homeDepartment;
+    public Label feedbackDepartment;
+    public Label feedbackFloor;
+    public Label feedbackName;
+    public TextArea txtNoteToManager;
+    public Button uploadFile;
+    public Label paymentsDepartment;
+    public Label paymentsFloor;
+    public Label paymentsName;
+    public Label announcementsDepartment;
+    public Label announcementsFloor;
+    public Label announcementsName;
+    public Label infoAddress;
+    public Label infoFloorCount;
+    public Label infoMemberCount;
+    public Label infoManager;
+    public Label infoBalance;
+    public Label infoApartment;
+    public Label infoDepartment;
+    public Label infoFloor;
+    public Label infoName;
+    public TextField infoTC;
+    public TextField infoNameLabel;
+    public Label infoEmail;
+    public TextField infoPhone;
+    public TextField infoSurname;
+    public Label infoBalanceInfo;
+    public Label announcementsBalance;
+    public Label feedbackBalance;
+    public Label homeBalance;
     @FXML
     private RadioButton complaint;
 
@@ -89,11 +118,11 @@ public class Member_Controller implements Initializable {
     }
 
     public void showPersonalInformation (ActionEvent event) {
-        userTC.setText(getKullanici().getTCNumber());
-        userName.setText(getKullanici().getName());
-        userSurname.setText(getKullanici().getSurname());
-        userPNumber.setText(getKullanici().getPhoneNumber());
-        userEmail.setText(getKullanici().getEmail());
+        userTC.setText(getUsers().getTCNumber());
+        userName.setText(getUsers().getName());
+        userSurname.setText(getUsers().getSurname());
+        userPNumber.setText(getUsers().getPhoneNumber());
+        userEmail.setText(getUsers().getEmail());
     }
 
     public void updatePersonalInformation (ActionEvent event) throws Exception {
@@ -121,7 +150,7 @@ public class Member_Controller implements Initializable {
 
     public void getMessages() throws Exception {
         Db_Connection.connectiondb();
-        ResultSet messages = Db_Connection.executeQuery("SELECT * FROM Messages where RecieverId ='" +getKullanici().userId+"'");
+        ResultSet messages = Db_Connection.executeQuery("SELECT * FROM Messages where RecieverId ='" + getUsers().userId+"'");
         while (messages.next())
             messageList.add(messages.getString("Message"));
         listMessages.setItems(messageList);
@@ -130,7 +159,7 @@ public class Member_Controller implements Initializable {
     public void sendMessage() throws Exception {
         try {
             Db_Connection.connectiondb();
-            String Query = "INSERT INTO Messages (SenderId,RecieverId,RecieverName,Message) VALUES" + "('" + getKullanici().userId + "','"+"1"+"','"+ cmbReciever.getValue() + "','" + txtMessage.getText() + "')";
+            String Query = "INSERT INTO Messages (SenderId,RecieverId,RecieverName,Message) VALUES" + "('" + getUsers().userId + "','"+"1"+"','"+ cmbReciever.getValue() + "','" + txtMessage.getText() + "')";
             Db_Connection.ExecuteUpdate(Query);
             Db_Connection.CloseConnection();
         }
@@ -165,7 +194,7 @@ public class Member_Controller implements Initializable {
 
             if (status) {
                 String query = ("INSERT INTO feedback (feedbackType,message,managerCode) Values" +
-                        " ('" + type + "','" + feedbackText.getText() + "','" + getKullanici().getManagerCode() + "')");
+                        " ('" + type + "','" + feedbackText.getText() + "','" + getUsers().getManagerCode() + "')");
 
                 Db_Connection.ExecuteSql(query);
                 feedbackStatus.setTextFill(Color.GREEN);
@@ -186,14 +215,19 @@ public class Member_Controller implements Initializable {
     }
 
     public void fileProceccing(ActionEvent event) throws Exception{
+        Db_Connection.connectiondb();
+        String query;
+        String userID;
+        ResultSet rs;
+        boolean confrimPayment = false;
+        boolean paidinPerson = false;
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PDF Files" , "*.pdf"));
         File file = fileChooser.showOpenDialog(null);
 
 
         if(file!=null) {
-
-           switch (bankBox.getValue()) {
+            switch (bankBox.getValue()) {
                 case "Isbank":
                     Isbank isbank = new Isbank("", "");
                     if (isbank.checkTax(file.getAbsolutePath()))
@@ -231,22 +265,26 @@ public class Member_Controller implements Initializable {
                         } else
                             confrimPayment = false;
                     break;
+                case "Other/Paid in Person":
+                    paidinPerson = true;
+                    this.paidinPerson = paidinPerson;
+                    break;
                 default:
                     paymentStatus.setText("ERROR: Please be sure that you choose a bank.");
                     break;
             }
 
-
-            if (this.paidinPerson) {
+            if (paidinPerson) {
                 System.out.println("test");
                 isPaid.setText("Sent a messeage to manager that you paid tax in person/via Other bank");
                 isPaid.setTextFill(Color.web("#0FE808"));
-                this.paidinPerson=paidinPerson;
             }
 
             if (confrimPayment) {
                 isPaid.setText("Tax is paid on :" + date);
                 isPaid.setTextFill(Color.web("#0FE808"));
+                userID = "SELECT UserId FROM users WHERE userName" + userName;
+                query = "UPDATE dues WHERE UserID " + userID + "SET isPaid 1";
             } else {
                 isPaid.setText("ERROR: IBAN/TAX not valid");
                 isPaid.setTextFill(Color.web("#FF0000"));
@@ -260,25 +298,23 @@ public class Member_Controller implements Initializable {
         Db_Connection.connectiondb();
         if(confrimPayment) {
             String query = ("INSERT INTO dues (userID,IsPaid) Values" +
-                    " ('" + getKullanici().getUserId() + "',1)");
+                    " ('" + getUsers().getUserId() + "',1)");
             Db_Connection.ExecuteSql(query);
         }
-        if(bankBox.getValue().equals("Other/Paid in Person")){
+        if(paidinPerson){
             String query = ("INSERT INTO dues (userID,IsPaid) Values" +
-                    " ('" + getKullanici().getUserId() + "',0)");
+                    " ('" + getUsers().getUserId() + "',2)");
             Db_Connection.ExecuteSql(query);
-            isPaid.setText("Sent a messeage to manager that you paid tax in person/via Other bank");
-            isPaid.setTextFill(Color.web("#0FE808"));
             System.out.println("Başarılı");
         }
     }
 
     public void labelStatus () throws Exception {
         Db_Connection.connectiondb();
-        String query = "SELECT * FROM dues WHERE UserId = '" + getKullanici().getUserId() + "'";
+        String query = "SELECT isPaid FROM dues WHERE UserId = '" + getUsers().getUserId() + "'";
         ResultSet rs = Db_Connection.executeQuery(query);
 
-        if(rs.next())
+        if(rs.equals("1") || rs.equals("0"))
         {
             paymentStatus.setTextFill(Color.web("#00FF1E"));
             paymentStatus.setText("PAID");

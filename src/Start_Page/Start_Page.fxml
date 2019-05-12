@@ -8,12 +8,12 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="831.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Start_Page.Controller">
    <children>
-      <Text fill="#57ad68" layoutX="46.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur" wrappingWidth="752.5380859375">
+      <Text fill="#57ad68" layoutX="46.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy, Fast and Free: Sisago" wrappingWidth="752.5380859375">
          <font>
             <Font size="34.0" />
          </font>
       </Text>
-      <Text layoutX="46.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia " wrappingWidth="250.7490234375">
+      <Text layoutX="46.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is the easiest way of the management. Sisago manage apartment for you. It has expense and revenue table, member information, announcements and messages. Also you can do other sophisticated process in Sisago. Sign up now for management easily with Sisago." wrappingWidth="250.7490234375">
          <font>
             <Font size="16.0" />
          </font></Text>

@@ -13,6 +13,7 @@ import javafx.scene.paint.Color;
 import java.sql.*;
 
 public class Controller {
+    public TextField floorNumber;
     @FXML
     private TextField email;
 
@@ -65,8 +66,8 @@ public class Controller {
                         String apartNumber = apartmentNumber.getText();
 
                         //Database Query
-                        String query = ("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin) Values" +
-                                " ('" + mail + "','" + pass + "','" + name + "','" + surnamee + "','" + phone + "','" + tc + "','" + managerCode.getText() + "','" + apartNumber + "',0)");
+                        String query = ("INSERT INTO users (Username,Password,Name,Surname,PhoneNumber,TCNumber,SerialNumber,ApartmentNumber,IsAdmin,floorNumber) Values" +
+                                " ('" + mail + "','" + pass + "','" + name + "','" + surnamee + "','" + phone + "','" + tc + "','" + managerCode.getText() + "','" + apartNumber + "',0,'"+floorNumber.getText()+"')");
 
                         //Database Connection
 

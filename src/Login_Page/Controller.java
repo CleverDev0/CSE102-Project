@@ -9,9 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.Statement;
 
 
 public class Controller {
@@ -25,7 +23,7 @@ public class Controller {
     @FXML
     private Label status;
 
-    public static Users kullanici;
+    public static Users users;
 
     public void login(ActionEvent event) throws Exception {
         int result = 0;
@@ -53,9 +51,10 @@ public class Controller {
                     user.setName(rs.getString("name"));
                     user.setSurname(rs.getString("surname"));
                     user.setTCNumber(rs.getString("tcnumber"));
-                    user.setUserId(rs.getString("UserId"));
+                    user.setUserId(rs.getInt("UserId"));
                     user.setPhoneNumber(rs.getString("phonenumber"));
                     user.setApartmentNumber(rs.getString("apartmentnumber"));
+                    user.setFloorNumber(rs.getString("floorNumber"));
                     user.setManagerCode(rs.getString("serialnumber"));
 
                     if (rs.getString("isadmin").equals("1")) {
@@ -104,11 +103,11 @@ public class Controller {
         load.loadPasswordRemember();
     }
 
-    public static Users getKullanici() {
-        return kullanici;
+    public static Users getUsers() {
+        return users;
     }
 
     public void setKullanici(Users kullanici) {
-        this.kullanici = kullanici;
+        this.users = kullanici;
     }
 }

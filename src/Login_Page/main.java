@@ -1,14 +1,12 @@
 package Login_Page;
 
-import Project_Classes.Users;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import static Login_Page.Controller.getKullanici;
-import static Login_Page.Controller.kullanici;
+import static Login_Page.Controller.getUsers;
 
 public class main extends Application {
     @Override
@@ -25,9 +23,9 @@ public class main extends Application {
 
         launch(args);
 
-        System.out.println(getKullanici().getUserId());
-        System.out.println(getKullanici().getPassword());
-        System.out.println(getKullanici().getName());
+        System.out.println(getUsers().getUserId());
+        System.out.println(getUsers().getPassword());
+        System.out.println(getUsers().getName());
 
 
     }

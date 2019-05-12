@@ -4,7 +4,7 @@ import java.security.PublicKey;
 
 public class Users {
 
-    public String userId;
+    public int userId;
     public String Email;
     public String Name;
     public String Surname;
@@ -13,13 +13,14 @@ public class Users {
     public String TCNumber;
     public String ManagerCode;
     public String ApartmentNumber;
+    private String FloorNumber;
     public boolean isAdmin;
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
@@ -97,5 +98,13 @@ public class Users {
 
     public Users() {
 
+    }
+
+    public String getFloorNumber() {
+        return FloorNumber;
+    }
+
+    public void setFloorNumber(String floorNumber) {
+        FloorNumber = floorNumber;
     }
 }

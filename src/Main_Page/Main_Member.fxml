@@ -44,7 +44,7 @@
                         <Font size="30.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="70.0" layoutY="727.0" prefHeight="40.0" prefWidth="631.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20; -fx-border-image-width: 3; -fx-padding: 4; -fx-background-color: transparent;" />
+                  <TextField fx:id="homeAddress" layoutX="70.0" layoutY="727.0" prefHeight="40.0" prefWidth="631.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20; -fx-border-image-width: 3; -fx-padding: 4; -fx-background-color: transparent;" />
                   <Label layoutX="115.0" layoutY="695.0" text="Address" textFill="#ffad00">
                      <font>
                         <Font size="20.0" />
@@ -82,12 +82,12 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="256.0" layoutY="103.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label fx:id="homeName" layoutX="256.0" layoutY="103.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="140.0" layoutY="162.0" prefHeight="35.0" prefWidth="65.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label fx:id="homeFloor" layoutX="140.0" layoutY="162.0" prefHeight="35.0" prefWidth="65.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -97,34 +97,24 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="370.0" layoutY="162.0" prefHeight="35.0" prefWidth="65.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label fx:id="homeDepartment" layoutX="370.0" layoutY="162.0" prefHeight="35.0" prefWidth="65.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="580.0" layoutY="103.0" prefHeight="35.0" prefWidth="248.0" text="Revenue For This Period :" textFill="#ffad00">
+                  <Label layoutX="580.0" layoutY="103.0" prefHeight="35.0" prefWidth="248.0" text="Balance" textFill="#ffad00">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="580.0" layoutY="162.0" prefHeight="35.0" prefWidth="248.0" text="Expense For This Period :" textFill="#ffad00">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="836.0" layoutY="162.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="836.0" layoutY="103.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label fx:id="homeBalance" layoutX="836.0" layoutY="103.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
                   <ImageView fitHeight="350.0" fitWidth="343.0" layoutX="759.0" layoutY="314.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../Desktop/Rentido-Sprite.png" />
+                        <Image url="@../Project_IMG/Rentido-Sprite.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="138.0" layoutY="381.0" prefHeight="34.0" prefWidth="68.0" text="FEE :">
@@ -198,27 +188,17 @@
                         <Font size="19.0" />
                      </font>
                   </Label>
-                  <Label layoutX="846.0" layoutY="107.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label fx:id="feedbackBalance" layoutX="846.0" layoutY="107.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="846.0" layoutY="166.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label layoutX="590.0" layoutY="107.0" prefHeight="35.0" prefWidth="248.0" text="Balance" textFill="#ffad00">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="590.0" layoutY="166.0" prefHeight="35.0" prefWidth="248.0" text="Expense For This Period :" textFill="#ffad00">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="590.0" layoutY="107.0" prefHeight="35.0" prefWidth="248.0" text="Revenue For This Period :" textFill="#ffad00">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="380.0" layoutY="166.0" prefHeight="35.0" prefWidth="65.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label fx:id="feedbackDepartment" layoutX="380.0" layoutY="166.0" prefHeight="35.0" prefWidth="65.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -228,12 +208,12 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="150.0" layoutY="166.0" prefHeight="35.0" prefWidth="65.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label fx:id="feedbackFloor" layoutX="150.0" layoutY="166.0" prefHeight="35.0" prefWidth="65.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="266.0" layoutY="107.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label fx:id="feedbackName" layoutX="266.0" layoutY="107.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -246,6 +226,11 @@
                   <Label layoutX="80.0" layoutY="107.0" prefHeight="35.0" prefWidth="196.0" text="Name - Surname :" textFill="#ffad00">
                      <font>
                         <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="84.0" layoutY="736.0" text="Attention! This proccess can not be revert. Check your value and type." textFill="RED">
+                     <font>
+                        <Font size="22.0" />
                      </font>
                   </Label>
                </children>
@@ -267,7 +252,7 @@
                                           <Font name="Arial Rounded MT Bold" size="20.0" />
                                        </font>
                                     </Label>
-                                    <TextArea layoutX="60.0" layoutY="248.0" prefHeight="120.0" prefWidth="575.0" promptText="Click for write note" style="-fx-border-radius: 20; -fx-border-width: 3; -fx-padding: 4; -fx-border-color: #6DD3FF; -fx-background-color: transparent; -fx-background-radius: 20;">
+                                    <TextArea fx:id="txtNoteToManager" layoutX="60.0" layoutY="248.0" prefHeight="120.0" prefWidth="575.0" promptText="Click for write note" style="-fx-border-radius: 20; -fx-border-width: 3; -fx-padding: 4; -fx-border-color: #6DD3FF; -fx-background-color: transparent; -fx-background-radius: 20;">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -290,6 +275,11 @@
                                        </font>
                                     </Button>
                                     <Label fx:id="isPaid" layoutX="81.0" layoutY="106.0" prefHeight="21.0" prefWidth="447.0" />
+                                    <Label text="Attention! This proccess can not be revert. Check your value and type." textFill="RED">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Label>
                                  </children>
                               </AnchorPane>
                            </content>
@@ -308,27 +298,17 @@
                         <Font size="30.0" />
                      </font>
                   </Label>
-                  <Label layoutX="846.0" layoutY="108.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label fx:id="paymentsBalance" layoutX="846.0" layoutY="108.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="846.0" layoutY="167.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label layoutX="590.0" layoutY="108.0" prefHeight="35.0" prefWidth="248.0" text="Balance" textFill="#ffad00">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="590.0" layoutY="167.0" prefHeight="35.0" prefWidth="248.0" text="Expense For This Period :" textFill="#ffad00">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="590.0" layoutY="108.0" prefHeight="35.0" prefWidth="248.0" text="Revenue For This Period :" textFill="#ffad00">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="380.0" layoutY="167.0" prefHeight="35.0" prefWidth="65.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label fx:id="paymentsDepartment" layoutX="380.0" layoutY="167.0" prefHeight="35.0" prefWidth="65.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -338,12 +318,12 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="150.0" layoutY="167.0" prefHeight="35.0" prefWidth="65.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label fx:id="paymentsFloor" layoutX="150.0" layoutY="167.0" prefHeight="35.0" prefWidth="65.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="266.0" layoutY="108.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label fx:id="paymentsName" layoutX="266.0" layoutY="108.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -451,27 +431,17 @@
                   <Line endX="1068.0" layoutX="100.0" layoutY="233.0" startX="-100.0" />
                   <Line endX="1068.0" layoutX="100.0" layoutY="70.0" startX="-100.0" />
                   <Button layoutX="1030.0" layoutY="683.0" mnemonicParsing="false" style="-fx-background-color: #6DD3FF; -fx-background-radius: 10;" text="Gönder" />
-                  <Label layoutX="842.0" layoutY="107.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label fx:id="announcementsBalance" layoutX="842.0" layoutY="107.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="842.0" layoutY="166.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label layoutX="586.0" layoutY="107.0" prefHeight="35.0" prefWidth="248.0" text="Balance" textFill="#ffad00">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="586.0" layoutY="166.0" prefHeight="35.0" prefWidth="248.0" text="Expense For This Period :" textFill="#ffad00">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="586.0" layoutY="107.0" prefHeight="35.0" prefWidth="248.0" text="Revenue For This Period :" textFill="#ffad00">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="376.0" layoutY="166.0" prefHeight="35.0" prefWidth="65.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label fx:id="announcementsDepartment" layoutX="376.0" layoutY="166.0" prefHeight="35.0" prefWidth="65.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -481,12 +451,12 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="146.0" layoutY="166.0" prefHeight="35.0" prefWidth="65.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label fx:id="announcementsFloor" layoutX="146.0" layoutY="166.0" prefHeight="35.0" prefWidth="65.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="262.0" layoutY="107.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label fx:id="announcementsName" layoutX="262.0" layoutY="107.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -576,33 +546,23 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="816.0" layoutY="300.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;" />
-                  <Label layoutX="816.0" layoutY="360.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;" />
-                  <Label layoutX="816.0" layoutY="420.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;" />
-                  <Label layoutX="816.0" layoutY="480.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;" />
-                  <Label layoutX="816.0" layoutY="540.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;" />
-                  <Label layoutX="292.0" layoutY="600.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;" />
-                  <Label layoutX="841.0" layoutY="107.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label fx:id="infoAddress" layoutX="816.0" layoutY="300.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;" />
+                  <Label fx:id="infoFloorCount" layoutX="816.0" layoutY="360.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;" />
+                  <Label fx:id="infoMemberCount" layoutX="816.0" layoutY="420.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;" />
+                  <Label fx:id="infoManager" layoutX="816.0" layoutY="480.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;" />
+                  <Label fx:id="infoBalance" layoutX="816.0" layoutY="540.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;" />
+                  <Label fx:id="infoApartment" layoutX="292.0" layoutY="600.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;" />
+                  <Label fx:id="infoBalanceInfo" layoutX="841.0" layoutY="107.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="841.0" layoutY="166.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label layoutX="585.0" layoutY="107.0" prefHeight="35.0" prefWidth="248.0" text="Balance" textFill="#ffad00">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="585.0" layoutY="166.0" prefHeight="35.0" prefWidth="248.0" text="Expense For This Period :" textFill="#ffad00">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="585.0" layoutY="107.0" prefHeight="35.0" prefWidth="248.0" text="Revenue For This Period :" textFill="#ffad00">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="375.0" layoutY="166.0" prefHeight="35.0" prefWidth="65.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label fx:id="infoDepartment" layoutX="375.0" layoutY="166.0" prefHeight="35.0" prefWidth="65.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -612,12 +572,12 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="145.0" layoutY="166.0" prefHeight="35.0" prefWidth="65.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label fx:id="infoFloor" layoutX="145.0" layoutY="166.0" prefHeight="35.0" prefWidth="65.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="261.0" layoutY="107.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
+                  <Label fx:id="infoName" layoutX="261.0" layoutY="107.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -632,11 +592,11 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="292.0" layoutY="300.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20; -fx-background-radius: 20;" />
-                  <TextField layoutX="292.0" layoutY="360.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-background-radius: 20; -fx-border-radius: 20;" />
-                  <TextField layoutX="292.0" layoutY="420.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-background-radius: 20; -fx-border-radius: 20;" />
-                  <TextField layoutX="292.0" layoutY="480.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-background-radius: 20; -fx-border-radius: 20;" />
-                  <Label layoutX="292.0" layoutY="540.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;" />
+                  <TextField fx:id="infoTC" layoutX="292.0" layoutY="300.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20; -fx-background-radius: 20;" />
+                  <TextField fx:id="infoNameLabel" layoutX="292.0" layoutY="360.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-background-radius: 20; -fx-border-radius: 20;" />
+                  <TextField fx:id="infoSurname" layoutX="292.0" layoutY="420.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-background-radius: 20; -fx-border-radius: 20;" />
+                  <TextField fx:id="infoPhone" layoutX="292.0" layoutY="480.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-background-radius: 20; -fx-border-radius: 20;" />
+                  <Label fx:id="infoEmail" layoutX="292.0" layoutY="540.0" prefHeight="35.0" prefWidth="250.0" style="-fx-border-color: #6DD3FF; -fx-border-radius: 20;" />
                </children>
             </AnchorPane>
          </content>

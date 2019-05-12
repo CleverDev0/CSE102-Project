@@ -7,18 +7,47 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.web.WebView;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.sql.ResultSet;
 
-import static Login_Page.Controller.getKullanici;
+import static Login_Page.Controller.getUsers;
 
 public class Controller {
+
+    public Label addressMain;
+    public Label homeDepartment;
+    public Label homeFloor;
+    public Label homeName;
+    public ListView lstHomeAnnouncements;
+    public ListView lstMembersPaid;
+    public Label infoBalance;
+    public TextField infoTC;
+    public TextField inforNamelbl;
+    public TextField infoManager;
+    public TextField infoMemberCount;
+    public TextField infoFloorCount;
+    public TextField infoAddress;
+    public TextField infoPhone;
+    public TextField infoEmail;
+    public TextField infoSurname;
+    public Label infoName;
+    public Label infoFloor;
+    public Label infoDepartment;
+    public Label infoApartment;
+    public Label announcementsDepartment;
+    public Label announcementsFloor;
+    public Label announcementsName;
+    public Label paymentsDepartment;
+    public Label paymentsFloor;
+    public Label paymentsName;
+    public Label paymentsBalance;
+    public Label homeBalance;
+    public Label announcementsBalance;
+    public Label infoBalanceInfo;
+
+
     //Todo:Değişken isimleri kontrol edilip düzelecenecek!
 
     @FXML
@@ -139,28 +168,29 @@ public class Controller {
     ObservableList<String> feedbackSenderList = FXCollections.observableArrayList();
 
 
-    public void baslanictaCalısacakMetodlar(ActionEvent event) {
+    public void baslanictaCalısacakMetodlar(ActionEvent event) throws Exception {
         showPersonalInformation(event);
     }
 
     public void deneme(ActionEvent event) {
-        field.setText(getKullanici().getName() + "  "
-                + getKullanici().getSurname() + "  "
-                + getKullanici().getUserId() + "  "
-                + getKullanici().getApartmentNumber() + "  "
-                + getKullanici().getEmail() + "  "
-                + getKullanici().getManagerCode() + "  "
-                + getKullanici().getPhoneNumber() + "  "
-                + getKullanici().getTCNumber());
+        field.setText(getUsers().getName() + "  "
+                + getUsers().getSurname() + "  "
+                + getUsers().getUserId() + "  "
+                + getUsers().getApartmentNumber() + "  "
+                + getUsers().getEmail() + "  "
+                + getUsers().getManagerCode() + "  "
+                + getUsers().getPhoneNumber() + "  "
+                + getUsers().getTCNumber());
     }
 
     public void deposit(ActionEvent event) throws Exception {
         try {
-            int balance = 0;
+
             Db_Connection.connectiondb();
 
             //Get Balance
-            ResultSet rs = Db_Connection.executeQuery("SELECT balance FROM Building where managerCode ='"+getKullanici().getManagerCode()+"'");
+            int balance = 0;
+            ResultSet rs = Db_Connection.executeQuery("SELECT balance FROM Building where managerCode ='"+ getUsers().getManagerCode()+"'");
             if (rs.next()){
                 balance = Integer.parseInt(rs.getString("balance"));
             }
@@ -171,7 +201,7 @@ public class Controller {
             }
             String managerNotes = depositNote.getText();
             String asd = "";
-            String managerCode = getKullanici().getManagerCode();
+            String managerCode = getUsers().getManagerCode();
 
             //Explain Deposit
             if (depositAidat.isSelected()) {
@@ -189,7 +219,7 @@ public class Controller {
             Db_Connection.ExecuteSql(query);
 
             //Update Balance
-            String s = "UPDATE Building SET balance = '"+newBalance+"' WHERE managerCode = '"+getKullanici().getManagerCode()+"'";
+            String s = "UPDATE Building SET balance = '"+newBalance+"' WHERE managerCode = '"+ getUsers().getManagerCode()+"'";
             Db_Connection.ExecuteSql(s);
 
             withdrawalStatus.setTextFill(Color.GREEN);
@@ -209,10 +239,11 @@ public class Controller {
 
     public void withdrawal(ActionEvent event) {
         try {
-            int balance = 0;
+
             Db_Connection.connectiondb();
 
-            ResultSet rs = Db_Connection.executeQuery("SELECT balance FROM Building where managerCode ='"+getKullanici().getManagerCode()+"'");
+            ResultSet rs = Db_Connection.executeQuery("SELECT balance FROM Building where managerCode ='"+ getUsers().getManagerCode()+"'");
+            int balance = 0;
             if (rs.next()){
                 balance = Integer.parseInt(rs.getString("balance"));
             }
@@ -223,7 +254,7 @@ public class Controller {
             }
             String managerNotes = withDrawalNote.getText();
             String asd = "";
-            String managerCode = getKullanici().getManagerCode();
+            String managerCode = getUsers().getManagerCode();
 
             if (withdrawalCleaner.isSelected()) {
                 asd = "temizlik";
@@ -247,7 +278,7 @@ public class Controller {
             Db_Connection.ExecuteSql(query);
 
             //Update Balance
-            String s = "UPDATE Building SET balance = '"+newBalance+"' WHERE managerCode = '"+getKullanici().getManagerCode()+"'";
+            String s = "UPDATE Building SET balance = '"+newBalance+"' WHERE managerCode = '"+ getUsers().getManagerCode()+"'";
             Db_Connection.ExecuteSql(s);
 
             withdrawalStatus.setTextFill(Color.GREEN);
@@ -262,23 +293,32 @@ public class Controller {
         }
     }
 
-    public void showPersonalInformation(ActionEvent event) {
-        userTc.setText(getKullanici().getTCNumber());
-        userName.setText(getKullanici().getName());
-        userSurname.setText(getKullanici().getSurname());
-        userNumber.setText(getKullanici().getPhoneNumber());
-        userMail.setText(getKullanici().getEmail());
-        userApartmentCode.setText(getKullanici().getManagerCode());
+    public void showPersonalInformation(ActionEvent event) throws Exception {
+        userTc.setText(getUsers().getTCNumber());
+        userName.setText(getUsers().getName());
+        userSurname.setText(getUsers().getSurname());
+        userNumber.setText(getUsers().getPhoneNumber());
+        userMail.setText(getUsers().getEmail());
+        userApartmentCode.setText(getUsers().getManagerCode());
     }
 
 
-    public void showApartmentInformation(ActionEvent event) {
-
+    public void showApartmentInformation() throws Exception {
+        try {
+            Db_Connection.connectiondb();
+            String s = "Select * from building";
+            ResultSet rs = Db_Connection.executeQuery(s);
+            while(rs.next())
+            infoAddress.setText(rs.getString("Adress"));
+        }
+        catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
-    public void updateApartmentInformation(ActionEvent event) throws Exception{
+    public void updateApartmentInformation() throws Exception{
         Db_Connection.connectiondb();
-        String s = "UPDATE Users SET Adress = '" + apartmentAdress.getText() + "', FloorCount = '" + apartmentFloor.getText() + "', MemberCount = '" + apartmentMember.getText() + "', Manager = '" + apartmentManager.getText() + "'  WHERE managerCode = '" + getKullanici().getManagerCode() + "'";
+        String s = "UPDATE Building SET Adress = '" + apartmentAdress.getText() + "', FloorCount = '" + apartmentFloor.getText() + "', MemberCount = '" + apartmentMember.getText() + "', Manager = '" + apartmentManager.getText() + "'  WHERE managerCode = '" + getUsers().getManagerCode() + "'";
         Db_Connection.ExecuteSql(s);
         System.out.println("Işlem tamamlandı");
         Db_Connection.CloseConnection();
@@ -286,7 +326,7 @@ public class Controller {
 
     }
 
-    public void updatePersonalInformation(ActionEvent event) throws Exception {
+    public void updatePersonalInformation() throws Exception {
         Db_Connection.connectiondb();
         String s = "UPDATE Users SET Name = '" + userName.getText() + "', Surname = '" + userSurname.getText() + "', PhoneNumber = '" + userNumber.getText() + "', UserEmail = '" + userMail.getText() + "'  WHERE TCNumber = '" + userTc.getText() + "'";
         Db_Connection.ExecuteSql(s);
@@ -299,7 +339,7 @@ public class Controller {
     public void getFeedback(ActionEvent event) throws Exception {
 
         Db_Connection.connectiondb();
-        String sql = "SELECT feedbacktype,message,userid FROM feedback WHERE managerCode='" + getKullanici().getManagerCode() + "'";
+        String sql = "SELECT feedbacktype,message,userid FROM feedback WHERE managerCode='" + getUsers().getManagerCode() + "'";
         ResultSet rs = Db_Connection.executeQuery(sql);
         while (rs.next()) {
             feedbackTypeList.add(rs.getString("feedbacktype"));
@@ -316,6 +356,28 @@ public class Controller {
 
     public void checkBill() {
         webViewId.getEngine().load("https://www.faturaodemeislemleri.com/");
+    }
+
+
+    public void showInfoHome() throws Exception {
+            Db_Connection.connectiondb();
+            String sql = "SELECT * FROM users WHERE UserId ='" + getUsers().userId + "'";
+            ResultSet resultSet = Db_Connection.executeQuery(sql);
+            assert resultSet != null;
+            if(resultSet.next()) {
+                homeName.setText(resultSet.getString("Name") + " " + resultSet.getString("Surname"));
+                homeDepartment.setText(resultSet.getString("ApartmentNumber"));
+                homeFloor.setText(resultSet.getString("floorNumber"));
+            }
+            Db_Connection.connectiondb();
+            String sql1 = "SELECT * FROM dues WHERE isPaid = 1";
+            ResultSet rs = Db_Connection.executeQuery(sql1);
+            ObservableList<String> list = FXCollections.observableArrayList();
+            while (rs.next())
+            list.add(rs.getString("UserId"));
+
+            lstMembersPaid.setItems(list);
+
     }
 
 
