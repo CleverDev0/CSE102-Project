@@ -222,8 +222,6 @@ public class Member_Controller implements Initializable {
         String query = "SELECT IBAN,Dues FROM Building where BuildingId = 1";
         String userID;
         ResultSet rs = Db_Connection.executeQuery(query);
-        boolean confrimPayment = false;
-        boolean paidinPerson = false;
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PDF Files" , "*.pdf"));
         File file = fileChooser.showOpenDialog(null);
@@ -268,10 +266,6 @@ public class Member_Controller implements Initializable {
                         } else
                             confrimPayment = false;
                     break;
-                case "Other/Paid in Person":
-                    paidinPerson = true;
-                    this.paidinPerson = paidinPerson;
-                    break;
                 default:
                     paymentStatus.setText("ERROR: Please be sure that you choose a bank.");
                     break;
@@ -300,13 +294,13 @@ public class Member_Controller implements Initializable {
     public void confrimPayment (ActionEvent event) throws Exception{
         Db_Connection.connectiondb();
         if(confrimPayment) {
-            String query = ("INSERT INTO dues (userID,IsPaid) Values" +
-                    " ('" + getUsers().getUserId() + "',1)");
+            String query = ("INSERT INTO dues (userID,IsPaid,ManagerCode) Values" +
+                    " ('" + getUsers().getUserId() + "',1"+ getUsers().getManagerCode() + ")");
             Db_Connection.ExecuteSql(query);
         }
         if(paidinPerson){
-            String query = ("INSERT INTO dues (userID,IsPaid) Values" +
-                    " ('" + getUsers().getUserId() + "',2)");
+            String query = ("INSERT INTO dues (userID,IsPaid,ManagerCode) Values" +
+                    " ('" + getUsers().getUserId() + "',0," + getUsers().getManagerCode() + ")");
             Db_Connection.ExecuteSql(query);
             System.out.println("Başarılı");
         }
@@ -314,7 +308,7 @@ public class Member_Controller implements Initializable {
 
     public void labelStatus () throws Exception {
         Db_Connection.connectiondb();
-        String query = "SELECT isPaid FROM dues WHERE UserId = '" + getUsers().getUserId() + "'";
+        String query = "SELECT * FROM dues WHERE UserId = '" + getUsers().getUserId() + "'";
         ResultSet rs = Db_Connection.executeQuery(query);
 
         String query1 = "SELECT Dues,IBAN FROM Building";
@@ -325,7 +319,7 @@ public class Member_Controller implements Initializable {
             lblIBAN.setText(rs1.getString("IBAN"));
         }
 
-        if(rs.equals("1") || rs.equals("0"))
+        if(rs.next())
         {
             paymentStatus.setTextFill(Color.web("#00FF1E"));
             paymentStatus.setText("PAID");
