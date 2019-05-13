@@ -22,7 +22,7 @@
             <Label fx:id="signUpStatus" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="215.0" />
          </children>
       </VBox>
-      <Text fill="#57ad68" layoutX="46.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign UP for Member">
+      <Text fill="#57ad68" layoutX="46.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Signup for Member">
          <font>
             <Font size="26.0" />
          </font>

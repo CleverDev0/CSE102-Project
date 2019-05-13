@@ -15,7 +15,6 @@ public class Controller {
     public void loginBtn(ActionEvent event) throws Exception {
         Load_Pages load = new Load_Pages();
         load.loadLogin();
-        //Yeni sayfa açıldığında eski sayfanın kalmaması için
         ((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
@@ -23,16 +22,10 @@ public class Controller {
         Load_Pages load = new Load_Pages();
         load.loadSignManager();
 
-        //Yeni sayfa açıldığında eski sayfanın kalmaması için
-        //((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
     public void signMember(ActionEvent event) throws Exception{
         Load_Pages load = new Load_Pages();
         load.loadSignMember();
-
-
-        //Yeni sayfa açıldığında eski sayfanın kalmaması için
-        //((Node)(event.getSource())).getScene().getWindow().hide();
     }
 }

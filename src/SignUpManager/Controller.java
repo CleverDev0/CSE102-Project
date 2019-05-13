@@ -65,7 +65,7 @@ public class Controller {
                 String sql = "SELECT username FROM users WHERE username='" + email.getText() + "'";
                 ResultSet rs = Db_Connection.executeQuery(sql);
                 if (rs.next()) {
-                    System.out.println("böyle kullancı var");
+                    System.out.println("User with same email exists.");
                     throw new CustomExceptions();
                 } else {
 
@@ -99,7 +99,7 @@ public class Controller {
 
             } catch (CustomExceptions e) {
                 signUpStatus.setTextFill(Color.RED);
-                signUpStatus.setText("There is a user same username");
+                signUpStatus.setText("There is a user with same username");
             } catch (Exception e) {
                 signUpStatus.setTextFill(Color.RED);
                 signUpStatus.setText("Sign Up Unsuccesful");

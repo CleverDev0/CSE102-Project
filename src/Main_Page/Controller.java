@@ -48,8 +48,6 @@ public class Controller {
     public Label infoBalanceInfo;
 
 
-    //Todo:Değişken isimleri kontrol edilip düzelecenecek!
-
     @FXML
     private RadioButton depositAidat;
 
@@ -168,21 +166,6 @@ public class Controller {
     ObservableList<String> feedbackSenderList = FXCollections.observableArrayList();
 
 
-    public void baslanictaCalısacakMetodlar(ActionEvent event) throws Exception {
-        showPersonalInformation(event);
-    }
-
-    public void deneme(ActionEvent event) {
-        field.setText(getUsers().getName() + "  "
-                + getUsers().getSurname() + "  "
-                + getUsers().getUserId() + "  "
-                + getUsers().getApartmentNumber() + "  "
-                + getUsers().getEmail() + "  "
-                + getUsers().getManagerCode() + "  "
-                + getUsers().getPhoneNumber() + "  "
-                + getUsers().getTCNumber());
-    }
-
     public void deposit(ActionEvent event) throws Exception {
         try {
 
@@ -293,7 +276,7 @@ public class Controller {
         }
     }
 
-    public void showPersonalInformation(ActionEvent event) throws Exception {
+    public void showPersonalInformation() throws Exception {
         userTc.setText(getUsers().getTCNumber());
         userName.setText(getUsers().getName());
         userSurname.setText(getUsers().getSurname());
@@ -320,9 +303,7 @@ public class Controller {
         Db_Connection.connectiondb();
         String s = "UPDATE Building SET Adress = '" + apartmentAdress.getText() + "', FloorCount = '" + apartmentFloor.getText() + "', MemberCount = '" + apartmentMember.getText() + "', Manager = '" + apartmentManager.getText() + "'  WHERE managerCode = '" + getUsers().getManagerCode() + "'";
         Db_Connection.ExecuteSql(s);
-        System.out.println("Işlem tamamlandı");
         Db_Connection.CloseConnection();
-        System.out.println("DB kapandı");
 
     }
 
@@ -330,28 +311,31 @@ public class Controller {
         Db_Connection.connectiondb();
         String s = "UPDATE Users SET Name = '" + userName.getText() + "', Surname = '" + userSurname.getText() + "', PhoneNumber = '" + userNumber.getText() + "', UserEmail = '" + userMail.getText() + "'  WHERE TCNumber = '" + userTc.getText() + "'";
         Db_Connection.ExecuteSql(s);
-        System.out.println("Işlem tamamlandı");
         Db_Connection.CloseConnection();
-        System.out.println("DB kapandı");
 
     }
 
     public void getFeedback(ActionEvent event) throws Exception {
 
-        Db_Connection.connectiondb();
-        String sql = "SELECT feedbacktype,message,userid FROM feedback WHERE managerCode='" + getUsers().getManagerCode() + "'";
-        ResultSet rs = Db_Connection.executeQuery(sql);
-        while (rs.next()) {
-            feedbackTypeList.add(rs.getString("feedbacktype"));
-            feedbackMessageList.add(rs.getString("message"));
-            ResultSet user = Db_Connection.executeQuery("Select name,surname FROM users WHERE userId = '" + rs.getString("userId") + "'");
-            while (user.next()) {
-                feedbackSenderList.add(user.getString("name") + " " + user.getString("surname"));
+        try {
+            Db_Connection.connectiondb();
+            String sql = "SELECT feedbacktype,message,userid FROM feedback WHERE managerCode='" + getUsers().getManagerCode() + "'";
+            ResultSet rs = Db_Connection.executeQuery(sql);
+            while (rs.next()) {
+                feedbackTypeList.add(rs.getString("feedbacktype"));
+                feedbackMessageList.add(rs.getString("message"));
+                ResultSet user = Db_Connection.executeQuery("Select name,surname FROM users WHERE userId = '" + rs.getString("userId") + "'");
+                while (user.next()) {
+                    feedbackSenderList.add(user.getString("name") + " " + user.getString("surname"));
+                }
             }
+            feedbackType.setItems(feedbackTypeList);
+            feedbackMessage.setItems(feedbackMessageList);
+            feedbackSender.setItems(feedbackSenderList);
         }
-        feedbackType.setItems(feedbackTypeList);
-        feedbackMessage.setItems(feedbackMessageList);
-        feedbackSender.setItems(feedbackSenderList);
+        catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
     public void checkBill() {
@@ -360,23 +344,43 @@ public class Controller {
 
 
     public void showInfoHome() throws Exception {
+        try {
             Db_Connection.connectiondb();
             String sql = "SELECT * FROM users WHERE UserId ='" + getUsers().userId + "'";
             ResultSet resultSet = Db_Connection.executeQuery(sql);
             assert resultSet != null;
-            if(resultSet.next()) {
+            if (resultSet.next()) {
                 homeName.setText(resultSet.getString("Name") + " " + resultSet.getString("Surname"));
                 homeDepartment.setText(resultSet.getString("ApartmentNumber"));
                 homeFloor.setText(resultSet.getString("floorNumber"));
             }
-            Db_Connection.connectiondb();
+            ResultSet rs2 = Db_Connection.executeQuery("SELECT * FROM Building");
+            assert rs2 != null;
+            if (rs2.next())
+                homeBalance.setText(rs2.getString("Balance"));
             String sql1 = "SELECT * FROM dues WHERE isPaid = 1";
             ResultSet rs = Db_Connection.executeQuery(sql1);
             ObservableList<String> list = FXCollections.observableArrayList();
             while (rs.next())
-            list.add(rs.getString("UserId"));
+                list.add(rs.getString("UserId"));
 
             lstMembersPaid.setItems(list);
+
+            String sql3 = "SELECT * FROM Announcements";
+            Db_Connection.connectiondb();
+            ResultSet rs3 = Db_Connection.executeQuery(sql3);
+            ObservableList<String> items = FXCollections.observableArrayList();
+            assert rs3 != null;
+            while (rs3.next()) {
+                items.add(rs3.getString("AnnouncementDescription"));
+            }
+            lstHomeAnnouncements.setItems(items);
+
+            Db_Connection.CloseConnection();
+        }
+        catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
 
     }
 

@@ -44,7 +44,6 @@ public class Controller {
             if (rs.getString("username").equals(mail.getText())) {
 
                 if (rs.getString("password").equals(passwordField.getText())) {
-                    System.out.println("Girişiniz başarılı hoş geldiniz");
                     status.setTextFill(Color.GREEN);
                     status.setText("Login Succesfull");
                     user.setEmail(username);
@@ -65,7 +64,7 @@ public class Controller {
 
 
                     result = 1;
-                    setKullanici(user);
+                    setUser(user);
 
 
                     if (user.isAdmin() == true) {
@@ -107,7 +106,7 @@ public class Controller {
         return users;
     }
 
-    public void setKullanici(Users kullanici) {
+    public void setUser(Users kullanici) {
         this.users = kullanici;
     }
 }
