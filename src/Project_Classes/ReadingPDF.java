@@ -23,8 +23,6 @@ public abstract class ReadingPDF
         this.lineofAmount = lineofAmount;
         this.lineofIBAN = lineofIBAN;
     }
-    //TODO:public abstract String getDate(String filePath);
-
 
     public boolean correctIBAN(String filePath)
     {

@@ -59,6 +59,8 @@ public class Member_Controller implements Initializable {
     public Label announcementsBalance;
     public Label feedbackBalance;
     public Label homeBalance;
+    public Label dueAmount;
+    public Label lblIBAN;
     @FXML
     private RadioButton complaint;
 
@@ -115,29 +117,30 @@ public class Member_Controller implements Initializable {
         complaint.setToggleGroup(group);
         suggestion.setToggleGroup(group);
         breakdown.setToggleGroup(group);
+
     }
 
-    public void showPersonalInformation (ActionEvent event) {
-        userTC.setText(getUsers().getTCNumber());
-        userName.setText(getUsers().getName());
-        userSurname.setText(getUsers().getSurname());
-        userPNumber.setText(getUsers().getPhoneNumber());
-        userEmail.setText(getUsers().getEmail());
+    public void showPersonalInformation () {
+        infoTC.setText(getUsers().getTCNumber());
+        infoName.setText(getUsers().getName() + " " + getUsers().getSurname());
+        infoNameLabel.setText(getUsers().getName());
+        infoSurname.setText(getUsers().getSurname());
+        infoPhone.setText(getUsers().getPhoneNumber());
+        infoEmail.setText(getUsers().getEmail());
     }
 
-    public void updatePersonalInformation (ActionEvent event) throws Exception {
+    public void updatePersonalInformation () throws Exception {
         Db_Connection.connectiondb();
-        String s = "UPDATE Users SET Name = '" + userName.getText() + "', Surname = '" + userSurname.getText() + "', PhoneNumber = '" + userPNumber.getText() + "', Email = '" + userEmail.getText() + "' WHERE TCnumber = '" + userTC.getText() + "'";
+        String s = "UPDATE Users SET Name = '" + infoName.getText() + "', Surname = '" + infoSurname.getText() + "', PhoneNumber = '" + infoPhone.getText() + "', Username = '" + infoEmail.getText() + "' WHERE TCnumber = '" + infoTC.getText() + "'";
         Db_Connection.ExecuteSql(s);
-        System.out.println("Islem tamamlandi.");
         Db_Connection.CloseConnection();
-        System.out.println("DB kapandi.");
+        showPersonalInformation();
     }
 
     public void onSocialTabOpened() throws Exception {
         loadAnnouncements();
-        getMessages();
-        setRecieverList();
+        //getMessages();
+        //setRecieverList();
     }
 
     public void loadAnnouncements() throws Exception {
@@ -147,7 +150,7 @@ public class Member_Controller implements Initializable {
             announcementList.add(rs.getString("AnnouncementDescription"));
         listAnnouncements.setItems(announcementList);
     }
-
+/*
     public void getMessages() throws Exception {
         Db_Connection.connectiondb();
         ResultSet messages = Db_Connection.executeQuery("SELECT * FROM Messages where RecieverId ='" + getUsers().userId+"'");
@@ -175,7 +178,7 @@ public class Member_Controller implements Initializable {
             nameList.add(rs.getString("Name") + " " + rs.getString("Surname"));
         cmbReciever.setItems(nameList);
     }
-
+*/
     public void sendFeedback(ActionEvent event) {
         try {
             if (complaint.isSelected() && !suggestion.isSelected() && !breakdown.isSelected()) {
@@ -216,9 +219,9 @@ public class Member_Controller implements Initializable {
 
     public void fileProceccing(ActionEvent event) throws Exception{
         Db_Connection.connectiondb();
-        String query;
+        String query = "SELECT IBAN,Dues FROM Building where BuildingId = 1";
         String userID;
-        ResultSet rs;
+        ResultSet rs = Db_Connection.executeQuery(query);
         boolean confrimPayment = false;
         boolean paidinPerson = false;
         FileChooser fileChooser = new FileChooser();
@@ -226,10 +229,10 @@ public class Member_Controller implements Initializable {
         File file = fileChooser.showOpenDialog(null);
 
 
-        if(file!=null) {
+        if(file!=null && rs.next()) {
             switch (bankBox.getValue()) {
                 case "Isbank":
-                    Isbank isbank = new Isbank("", "");
+                    Isbank isbank = new Isbank(rs.getString("Dues"), rs.getString("IBAN"));
                     if (isbank.checkTax(file.getAbsolutePath()))
                         if (isbank.correctIBAN(file.getAbsolutePath())) {
                             confrimPayment = true;
@@ -238,7 +241,7 @@ public class Member_Controller implements Initializable {
                             confrimPayment = false;
                     break;
                 case "YapiKredi":
-                    YapiKredi yapiKredi = new YapiKredi("2", "4");
+                    YapiKredi yapiKredi = new YapiKredi(rs.getString("Dues"), rs.getString("IBAN"));
                     if (yapiKredi.checkTax(file.getAbsolutePath()))
                         if (yapiKredi.correctIBAN(file.getAbsolutePath())) {
                             confrimPayment = true;
@@ -247,7 +250,7 @@ public class Member_Controller implements Initializable {
                             confrimPayment = false;
                     break;
                 case "Vakifbank":
-                    Vakifbank vakifbank = new Vakifbank("", "");
+                    Vakifbank vakifbank = new Vakifbank(rs.getString("Dues"), rs.getString("IBAN"));
                     if (vakifbank.checkTax(file.getAbsolutePath()))
                         if (vakifbank.correctIBAN(file.getAbsolutePath())) {
                             confrimPayment = true;
@@ -313,6 +316,14 @@ public class Member_Controller implements Initializable {
         Db_Connection.connectiondb();
         String query = "SELECT isPaid FROM dues WHERE UserId = '" + getUsers().getUserId() + "'";
         ResultSet rs = Db_Connection.executeQuery(query);
+
+        String query1 = "SELECT Dues,IBAN FROM Building";
+        ResultSet rs1 = Db_Connection.executeQuery(query1);
+        assert rs1 != null;
+        if(rs1.next()) {
+            dueAmount.setText(rs1.getString("Dues"));
+            lblIBAN.setText(rs1.getString("IBAN"));
+        }
 
         if(rs.equals("1") || rs.equals("0"))
         {

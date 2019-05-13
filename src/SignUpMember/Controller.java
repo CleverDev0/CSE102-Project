@@ -58,7 +58,7 @@ public class Controller {
 
                     ResultSet rs2 = Db_Connection.executeQuery("SELECT username FROM users WHERE username='" + email.getText() + "'");
                     if (rs2.next()) {
-                        throw new CustomExceptions("There is a user same username");
+                        throw new CustomExceptions("There is a user with same username");
                     } else {
                         String pass = passwordField.getText();
                         String phone = phoneNumber.getText();
